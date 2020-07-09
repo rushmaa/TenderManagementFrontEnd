@@ -1,0 +1,62 @@
+/*Common*/
+ /* a {
+  text-decoration: none;
+  color: #fff !important;
+} */
+/*Navbar Component*/
+.navbar-light .navbar-nav .nav-link {
+    color: #fff !important;
+    font-size: 14px;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #252525 !important;
+    background-color: #dc7572;
+    border-radius: 10px;
+  } 
+  .dropdown-menu .dropdown-item a {
+    color: aqua;
+    text-decoration: none;
+  } 
+
+  /*Header Component*/
+  .rowHeader {
+    padding: 0.75% 2%;
+  }
+  .logo .header-title {
+    color: #000;
+    font-family: "Lato", sans-serif, Roboto, Helvetica, Verdana, Geneva, Arial, sans-serif;
+    font-size: 36px;
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 0px;
+  }
+  .header-title h1 {
+    color: #000;
+    font-family: 'Lato', sans-serif, Roboto, Helvetica, Verdana, Geneva, Arial, sans-serif;
+    background-color: #fff !important;
+    font-size: 32px;
+    padding-top: 25px;
+  }  
+
+  /*Login Page*/
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  .App-header {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+  
