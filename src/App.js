@@ -17,19 +17,18 @@ import AcrossGovContracts from "./views/AcrossGovContracts";
 
 import Tenders from "./views/Tenders";
 import Contracts from "./views/Contracts";
-
 import News from "./views/News";
-
+import history from './history';
 import FAQ from "./views/FAQ";
 import RequestSupport from "./views/RequestSupport";
 import DocumentLibrary from "./views/DocumentLibrary";
 
 const App = () => {
   return (
-    <Router>
+    <Router history={history}>
       <Header /> 
       <Navbar />
-      <Switch>
+      <Switch >
         <Route exact path="/" component={Home} />
         
         <Route exact path="/tenders/Current" component={Current} />

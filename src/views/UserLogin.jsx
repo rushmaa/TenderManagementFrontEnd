@@ -14,6 +14,7 @@ class UserLogin extends React.Component {
     }
   }
   login=()=>{
+    var history=this.props.history;
     fetch(`http://localhost:5000/user/login/`, {
       method: "post",
       body: JSON.stringify({ email: this.state.username, pass: this.state.password }),
@@ -23,7 +24,7 @@ class UserLogin extends React.Component {
     })
       .then((response) => response.json())
       .then((data) => {
-
+        data.success && history.push('/search/tenders')
       });
   };
 render() {
