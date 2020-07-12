@@ -52,13 +52,6 @@
     border: none !important;
   }
 
-  /*Title*/
-  .header-body h2{
-    font-family: 'Lato', Verdana, Geneva, Arial, Helvetica, sans-serif;
-    color: #173d6e;
-    font-size: 25px;
-    font-weight: 300;
-  }
   /*Login Page*/
   .App {
     text-align: center;

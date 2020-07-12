@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Card from "../components/Card";
-import Title from "../components/Title";
 
 class RequestSupport extends React.Component {
   render() {

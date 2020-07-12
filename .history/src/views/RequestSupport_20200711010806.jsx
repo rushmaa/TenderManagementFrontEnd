@@ -10,6 +10,7 @@ class RequestSupport extends React.Component {
         <Card
           title="Request Support"
         />
+        <Title header="Select Criteria"/>
       </div>
     </div>
     );
