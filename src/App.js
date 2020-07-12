@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import {Navbar} from './components/Navbar';
+import Navbar from './components/Navbar';
 import {Header} from './components/Header';
 
 import UserLogin from "./views/UserLogin";
@@ -22,12 +22,16 @@ import history from './history';
 import FAQ from "./views/FAQ";
 import RequestSupport from "./views/RequestSupport";
 import DocumentLibrary from "./views/DocumentLibrary";
-
+import { Provider } from 'react-redux'
+import { createStore } from "redux";
+import Reducer from "./store/reducers/Reducer";
 const App = () => {
+  const store = createStore(Reducer);
   return (
+    <Provider store={store}>
     <Router history={history}>
       <Header /> 
-      <Navbar />
+      <Navbar store={store}/>
       <Switch >
         <Route exact path="/" component={Home} />
         
@@ -53,6 +57,7 @@ const App = () => {
         <Route exact path="/Login" component={UserLogin} />
       </Switch>
     </Router>
+    </Provider>
   );
 };
 

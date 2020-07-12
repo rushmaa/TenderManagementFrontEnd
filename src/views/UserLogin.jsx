@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
 import {Link} from 'react-router-dom';
 import "../assets/css/theme.css";
 import { Button } from "reactstrap";
 import { IoIosLock, IoMdPerson } from "react-icons/io";
-
+import { connect } from "react-redux";
 class UserLogin extends React.Component {
   constructor(props){
     super(props);
@@ -24,7 +24,9 @@ class UserLogin extends React.Component {
     })
       .then((response) => response.json())
       .then((data) => {
-        data.success && history.push('/search/tenders')
+        if (data.success) {
+          this.props.setUser(data.user);
+        }
       });
   };
 render() {
@@ -64,7 +66,7 @@ render() {
               Agency Login
             </Button>
           </div>
-          <img src={require('../assets/img/logo.jpg')} style={{paddingTop:"2%"}}/>,
+          <img src={require('../assets/img/logo.jpg')} style={{paddingTop:"2%"}} alt='logo'/>,
           <div style={{ padding: "8%" }}>
             <InputGroup style={{ width: "60%", margin: "auto" }}>
               <InputGroupAddon addonType="prepend">
@@ -99,5 +101,13 @@ render() {
     );
   }
 }
-
-export default UserLogin;
+const mapStateToProps = (state) => {
+  var data={User: state.User }
+  return data;
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setUser: (data) => dispatch({ type: "SET_USER", payload:data }),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(UserLogin);
