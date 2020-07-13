@@ -1,0 +1,25 @@
+import React, { Component } from "react";
+
+//Components
+import Card from "../components/Card";
+import Title from "../components/Title";
+import InputField from "../components/InputField";
+
+class Elodgement extends React.Component {
+  render() {
+    return (
+      <div className="pt-3">
+      <div className="container-fluid">
+        <Card
+          title="Electronic Lodgement"
+          text="This page shows all open tenders that can accept electronic responses. Click on the Respond to Tender icon to submit an electronic response, or click on the tender title to view full tender details."
+        />
+        <Title header="Search Result"/>
+        <Title header="Search Criteria"/>
+      </div>
+    </div>
+    );
+  }
+}
+
+export default Elodgement;
