@@ -59,17 +59,6 @@
     font-size: 25px;
     font-weight: 300;
   }
-
-  /*TenderTable*/
-  .table-bordered thead td, .table-bordered thead th {
-    border-bottom-width: 2px;
-    background-color: #C74E4A;
-    color: #FFFFFF;
-    font-weight: 400;
-    font-size: 1em;
-    padding: 5px 15px 5px 15px;
-  }
-  
   /*Login Page*/
   .App {
     text-align: center;
@@ -107,25 +96,40 @@
     border-color: #adadad;
 }
 
-/*Current Page*/
-.main-container {
-  padding-bottom: 10rem;
+
+
+
+
+
+
+
+/**/
+div {
+  outline: 1px solid red;
 }
 :root {
   --landscape-width: 25;
   --portrait-width: 80vw;
-  --header-height: 2rem;
+  --header-height: 4rem;
   --secs: 0.4s;
-  --bg-left: #dcdcdc;
+  --bg-left: springgreen;
+  --bg-right: cyan;
+  --bg-main: lemonchiffon;
+}
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  margin: 0;
+  overflow: hidden;
 }
 #layout {
   display: flex;
   overflow: hidden;
-  padding-top: 2rem;
 }
 #layout .header {
   position: relative;
   height: var(--header-height);
+  text-align: center;
 }
 #layout .header .title {
   position: absolute;
@@ -139,7 +143,11 @@
   padding: 1rem;
 }
 #main {
-  padding: 0 25px;
+  background: var(--bg-main);
+  flex-grow: 1;
+}
+#main .header {
+  background: linear-gradient(to right, var(--bg-left), var(--bg-right));
 }
 @media (orientation: landscape) {
   #main .header .title {
@@ -152,18 +160,17 @@
     right: var(--header-height);
  }
 }
-#left {
+#left, #right {
   transition: width var(--secs);
   width: 0;
 }
 @media (orientation: landscape) {
-  #left.open {
+  #left.open, #right.open {
     width: calc(1% * var(--landscape-width));
  }
 }
-#left .icon {
+#left .icon, #right .icon {
   position: fixed;
-  /* transform: translate(21rem, -8rem); */
   z-index: 10;
   width: var(--header-height);
   height: var(--header-height);
@@ -173,20 +180,20 @@
   user-select: none;
   cursor: pointer;
 }
-#left .sidebar {
+#left .sidebar, #right .sidebar {
   transition: transform var(--secs);
 }
 @media (orientation: portrait) {
-  #left .sidebar {
+  #left .sidebar, #right .sidebar {
     width: var(--portrait-width);
  }
 }
 @media (orientation: landscape) {
-  #left .sidebar {
+  #left .sidebar, #right .sidebar {
     width: calc(1vw * var(--landscape-width));
  }
 }
-#left .sidebar .header {
+#left .sidebar .header, #right .sidebar .header {
   width: calc(100% - var(--header-height));
 }
 #left {
@@ -200,4 +207,15 @@
 }
 #left .sidebar .header {
   left: var(--header-height);
+}
+#right .icon {
+  right: 0;
+}
+#right .sidebar {
+  background: var(--bg-right);
+}
+@media (orientation: portrait) {
+  #right .sidebar.open {
+    transform: translateX(-100%);
+ }
 }

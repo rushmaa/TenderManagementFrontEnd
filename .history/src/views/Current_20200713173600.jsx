@@ -1,7 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, } from "react";
 import { Form, Row, Col, Button, FormControl } from "react-bootstrap";
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
-import { Search, Calendar3, Arrow} from "react-bootstrap-icons";
+import { Search, Calendar3 } from "react-bootstrap-icons";
+import React, {useState, useEffect} from 'react';
+
+import axios from 'axios';
+import BootstrapTable from "react-bootstrap-table-next";
+import paginationFactory from "react-bootstrap-table2-paginator";
+import * as ReactBootstrap from "react-bootstrap";
 
 //Css
 import "../assets/css/theme.css";
@@ -10,7 +16,6 @@ import "../assets/css/theme.css";
 import Card from "../components/Card";
 import Title from "../components/Title";
 import MainForm from "../components/Form/MainForm";
-import TenderTable from "../components/TenderTable";
 
 class Current extends React.Component {
   constructor(props) {
@@ -27,11 +32,33 @@ class Current extends React.Component {
     this.setState({ [key]: !this.state[key] });
   };
 
-  
-  
+  const [User, setUsers] = useState([]);
+  const [lodding, setLoading] = useState(false);
+
+  const getUserData = async () => {
+    try{
+      const data = await axios.get("http://jsonplaceholder.typicode.com/comments");
+      console.log(data);
+      setUsers(data.data);
+    } catch(e) {
+      console.log(e);
+    } 
+  };
+
+  const columns = [
+    {dataField: "id", text:"Client Id"},
+    {dataField: "name", text:"Client Name"},
+    {dataField: "email", text:"Client Email"},
+  ];
+
+  useEffect (() => {
+    getUserData();
+  }, []);
   render() {
     let leftOpen = this.state.leftOpen ? "open" : "closed";
-   
+    let rightOpen = this.state.rightOpen ? "open" : "closed";
+
+
     return (
       <div className="main-container pt-3">
         <div className="container-fluid">
@@ -50,25 +77,54 @@ class Current extends React.Component {
                 </div>
                 <div className="content">
                   <h3>Left content</h3>
-                  <p>links</p>
+                  <p>
+                   links 
+                  </p>
                 </div>
               </div>
             </div>
             <div id="main">
               <h3
-                className={`
+                  className={`
                       title
                       ${"left-" + leftOpen}
                   `}
-              >
-                <Title header="Currently showing All results. Please select a group from the summary panel on the left hand side." />
-              </h3>
-              <p>
-                If you cannot find your tender, please use the keywords field on
-                the form below{" "}
-              </p>
-              <div>
-                <TenderTable />
+                >
+                   <Title header="Currently showing All results. Please select a group from the summary panel on the left hand side." />
+                </h3>
+                <p>If you cannot find your tender, please use the keywords field on the form below </p>
+              <div className="content">
+                <p>
+                  Nam accumsan eleifend metus at imperdiet. Mauris pellentesque
+                  ipsum nisi, et fringilla leo blandit sed. In tempor, leo sit
+                  amet fringilla imperdiet, ipsum enim sagittis sem, non
+                  molestie nisi purus consequat sapien. Proin at velit id elit
+                  tincidunt iaculis ac ac libero. Vivamus vitae tincidunt ex.
+                  Duis sit amet lacinia massa. Quisque lobortis tincidunt metus
+                  ut commodo. Sed euismod quam gravida condimentum commodo.
+                </p>
+                <br />
+                <p>
+                  Vivamus tincidunt risus ut sapien tincidunt, ac fermentum
+                  libero dapibus. Duis accumsan enim ac magna tempor, vestibulum
+                  euismod nisl pharetra. Ut dictum lacus eu venenatis
+                  vestibulum. Vestibulum euismod at arcu ac blandit. Curabitur
+                  eu imperdiet magna. Duis bibendum efficitur diam, eget
+                  placerat nunc imperdiet eget. Morbi porta at leo sed porta.
+                  Nullam eleifend eleifend quam eget dictum.
+                </p>
+                <br />
+                <p>
+                  Sed nulla erat, lacinia sit amet dui at, cursus blandit neque.
+                  In ultricies, dui a laoreet dignissim, risus mi cursus risus,
+                  at luctus sem arcu non tortor. In hac habitasse platea
+                  dictumst. Etiam ut vulputate augue. Aenean efficitur commodo
+                  ipsum, in aliquet arcu blandit non. Praesent sed tempus dui,
+                  non eleifend nisi. Proin non finibus diam, quis finibus ante.
+                  Fusce aliquam faucibus mauris, id consequat velit ultricies
+                  at. Aliquam neque erat, fermentum non aliquam id, mattis nec
+                  justo. Nullam eget suscipit lectus.
+                </p>
               </div>
             </div>
           </div>

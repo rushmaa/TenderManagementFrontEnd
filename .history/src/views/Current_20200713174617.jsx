@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { Form, Row, Col, Button, FormControl } from "react-bootstrap";
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
-import { Search, Calendar3, Arrow} from "react-bootstrap-icons";
+import { Search, Calendar3 } from "react-bootstrap-icons";
+import { useState, useEffect } from "react";
+
+import axios from "axios";
+import BootstrapTable from "react-bootstrap-table-next";
+import paginationFactory from "react-bootstrap-table2-paginator";
 
 //Css
 import "../assets/css/theme.css";
@@ -10,7 +15,6 @@ import "../assets/css/theme.css";
 import Card from "../components/Card";
 import Title from "../components/Title";
 import MainForm from "../components/Form/MainForm";
-import TenderTable from "../components/TenderTable";
 
 class Current extends React.Component {
   constructor(props) {
@@ -32,6 +36,29 @@ class Current extends React.Component {
   render() {
     let leftOpen = this.state.leftOpen ? "open" : "closed";
    
+    const [User, setUsers] = useState([]);
+    
+    const getUserData = async () => {
+      try {
+        const data = await axios.get(
+          "http://jsonplaceholder.typicode.com/comments"
+        );
+        console.log(data);
+        setUsers(data.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
+    const columns = [
+      { dataField: "id", text: "Client Id" },
+      { dataField: "name", text: "Client Name" },
+      { dataField: "email", text: "Client Email" },
+    ];
+
+    useEffect(() => {
+      getUserData();
+    }, []);
     return (
       <div className="main-container pt-3">
         <div className="container-fluid">
@@ -67,9 +94,15 @@ class Current extends React.Component {
                 If you cannot find your tender, please use the keywords field on
                 the form below{" "}
               </p>
-              <div>
-                <TenderTable />
+              <div className="container table table-striped pt-3">
+                <BootstrapTable
+                  keyField="name"
+                  data={User}
+                  columns={columns}
+                  pagination={paginationFactory()}
+                />
               </div>
+              ;
             </div>
           </div>
           <Title header="Search Criteria" />

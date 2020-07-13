@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form, Row, Col, Button, FormControl } from "react-bootstrap";
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
-import { Search, Calendar3, Arrow} from "react-bootstrap-icons";
+import { Search, Calendar3 } from "react-bootstrap-icons";
 
 //Css
 import "../assets/css/theme.css";
@@ -67,9 +67,8 @@ class Current extends React.Component {
                 If you cannot find your tender, please use the keywords field on
                 the form below{" "}
               </p>
-              <div>
                 <TenderTable />
-              </div>
+             
             </div>
           </div>
           <Title header="Search Criteria" />

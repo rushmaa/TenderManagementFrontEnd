@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form, Row, Col, Button, FormControl } from "react-bootstrap";
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
-import { Search, Calendar3, Arrow} from "react-bootstrap-icons";
+import { Search, Calendar3 } from "react-bootstrap-icons";
 
 //Css
 import "../assets/css/theme.css";
@@ -10,7 +10,6 @@ import "../assets/css/theme.css";
 import Card from "../components/Card";
 import Title from "../components/Title";
 import MainForm from "../components/Form/MainForm";
-import TenderTable from "../components/TenderTable";
 
 class Current extends React.Component {
   constructor(props) {
@@ -68,8 +67,9 @@ class Current extends React.Component {
                 the form below{" "}
               </p>
               <div>
-                <TenderTable />
+                Table
               </div>
+              ;
             </div>
           </div>
           <Title header="Search Criteria" />

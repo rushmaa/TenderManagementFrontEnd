@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form, Row, Col, Button, FormControl } from "react-bootstrap";
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
-import { Search, Calendar3, Arrow} from "react-bootstrap-icons";
+import { Search, Calendar3, bi-arrow-left-circle-fill} from "react-bootstrap-icons";
 
 //Css
 import "../assets/css/theme.css";
@@ -42,7 +42,8 @@ class Current extends React.Component {
           <div id="layout">
             <div id="left" className={leftOpen}>
               <div className="icon" onClick={this.toggleSidebar}>
-                &equiv;
+               <arrow-left-circle-fill color="#173d6e" size={25} />
+                {/* &equiv; */}
               </div>
               <div className={`sidebar ${leftOpen}`}>
                 <div className="header">

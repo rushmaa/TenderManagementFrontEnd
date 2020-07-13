@@ -42,7 +42,8 @@ class Current extends React.Component {
           <div id="layout">
             <div id="left" className={leftOpen}>
               <div className="icon" onClick={this.toggleSidebar}>
-                &equiv;
+               <Arrow color="#173d6e" size={25} />
+                {/* &equiv; */}
               </div>
               <div className={`sidebar ${leftOpen}`}>
                 <div className="header">
