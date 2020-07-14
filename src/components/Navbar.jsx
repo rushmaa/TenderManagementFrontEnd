@@ -40,6 +40,9 @@ class Navbar extends Component {
               </ReactBootStrap.NavDropdown>
             </ReactBootStrap.Nav>
             <ReactBootStrap.Nav>
+              <ReactBootStrap.Nav.Link><Link to="/download" className="main-nav">Download</Link></ReactBootStrap.Nav.Link>
+            </ReactBootStrap.Nav>
+            <ReactBootStrap.Nav>
               <ReactBootStrap.Nav.Link><Link to="/" className="main-nav">{ user?.User?.User?.firstName && 'Welcome, '+user?.User?.User?.firstName}</Link></ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
             <ReactBootStrap.Nav>

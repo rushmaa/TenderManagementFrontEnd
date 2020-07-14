@@ -25,6 +25,7 @@ import DocumentLibrary from "./views/DocumentLibrary";
 import { Provider } from 'react-redux'
 import { createStore } from "redux";
 import Reducer from "./store/reducers/Reducer";
+import {MyDocument} from "./views/MyDocument";
 const App = () => {
   const store = createStore(Reducer);
   return (
@@ -52,7 +53,7 @@ const App = () => {
         <Route exact path="/HELP/FAQ" component={FAQ} />
         <Route exact path="/HELP/Request-Support" component={RequestSupport} />
         <Route exact path="/HELP/Document-Library" component={DocumentLibrary} />
-
+        <Route exact path="/download" component={MyDocument} />
 
         <Route exact path="/Login" component={UserLogin} />
       </Switch>
