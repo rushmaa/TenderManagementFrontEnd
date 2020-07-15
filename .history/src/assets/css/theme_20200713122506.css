@@ -1,0 +1,83 @@
+/*Navbar Component*/
+.main-nav {
+  color: #fff;
+}
+.nav-link:hover, .main-nav:hover {
+  color: #252525;
+  text-decoration: none;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #fff !important;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #252525 !important;
+    background-color: #dc7572;
+    border-radius: 10px;
+  }  
+  .dropdown-menu .dropdown-item a {
+    color: #252525;
+    text-decoration: none;
+  }
+  .dropdown-item:hover {
+    background-color: #dc7572 !important;
+  }  
+
+  /*Header Component*/
+  .rowHeader {
+    padding: 0.75% 2%;
+  }
+  .logo .header-title {
+    color: #000;
+    font-family: "Lato", sans-serif, Roboto, Helvetica, Verdana, Geneva, Arial, sans-serif;
+    font-size: 36px;
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 0px;
+  }
+  .header-title h1 {
+    color: #000;
+    font-family: 'Lato', sans-serif, Roboto, Helvetica, Verdana, Geneva, Arial, sans-serif;
+    background-color: #fff !important;
+    font-size: 32px;
+    padding-top: 25px;
+  }  
+
+  /*Card Component*/
+  .card {
+    background-color: #E7EBF0 !important;
+    border: none !important;
+  }
+
+  /*Title*/
+  .header-body h2{
+    font-family: 'Lato', Verdana, Geneva, Arial, Helvetica, sans-serif;
+    color: #173d6e;
+    font-size: 25px;
+    font-weight: 300;
+  }
+  /*Login Page*/
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  .App-header {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
+.col-form-label {
+  text-align: end;
+}
