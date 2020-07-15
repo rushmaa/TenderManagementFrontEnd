@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import {Link} from 'react-router-dom';
 import "../assets/css/theme.css";
 import * as ReactBootStrap from 'react-bootstrap';
-
-export class Navbar extends Component {
+import { connect } from "react-redux";
+class Navbar extends Component {
+  
   render() {
+    const user=this.props.store.getState();
+    
+    console.log('store==', )
     return (
       <div>
         <ReactBootStrap.Navbar collapseOnSelect expand="lg" bg="danger">
@@ -36,7 +40,13 @@ export class Navbar extends Component {
               </ReactBootStrap.NavDropdown>
             </ReactBootStrap.Nav>
             <ReactBootStrap.Nav>
-              <ReactBootStrap.Nav.Link><Link to="/Login" className="main-nav">Log In</Link></ReactBootStrap.Nav.Link>
+              <ReactBootStrap.Nav.Link><Link to="/download" className="main-nav">Download</Link></ReactBootStrap.Nav.Link>
+            </ReactBootStrap.Nav>
+            <ReactBootStrap.Nav>
+              <ReactBootStrap.Nav.Link><Link to="/" className="main-nav">{ user?.User?.User?.firstName && 'Welcome, '+user?.User?.User?.firstName}</Link></ReactBootStrap.Nav.Link>
+            </ReactBootStrap.Nav>
+            <ReactBootStrap.Nav>
+              <ReactBootStrap.Nav.Link><Link to="/Login" className="main-nav">{user?.User?.User?.firstName ? 'Log Out': 'Log In'}</Link></ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
           </ReactBootStrap.Navbar.Collapse>
         </ReactBootStrap.Navbar>
@@ -45,4 +55,14 @@ export class Navbar extends Component {
   }
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+  var data={User: state.User }
+  return data;
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setUser: (data) => dispatch({ type: "SET_USER", payload:data }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
