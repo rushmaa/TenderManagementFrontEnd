@@ -35,7 +35,7 @@ const App = () => {
       <Header /> 
       <Navbar store={store}/>
       <Switch >
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={UserLogin} />
         
         <Route exact path="/tenders/Current" component={Current} />
         <Route exact path="/tenders/Current/DH046241" component={Current2} />

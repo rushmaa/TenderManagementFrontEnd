@@ -15,19 +15,20 @@ class UserLogin extends React.Component {
   }
   login=()=>{
     var history=this.props.history;
-    fetch(`http://localhost:5000/user/login/`, {
-      method: "post",
-      body: JSON.stringify({ email: this.state.username, pass: this.state.password }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          this.props.setUser(data.user);
-        }
-      });
+    history.push('/tenders/Current')
+    // fetch(`http://localhost:5000/user/login/`, {
+    //   method: "post",
+    //   body: JSON.stringify({ email: this.state.username, pass: this.state.password }),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     if (data.success) {
+    //       this.props.setUser(data.user);
+    //     }
+    //   });
   };
 render() {
 
@@ -40,7 +41,7 @@ render() {
           style={{
             backgroundColor: "#FFF",
             width: "50rem",
-            height: "30rem",
+            height: "35rem",
             borderRadius: 10,
             border: "1px solid #000",
           }}
