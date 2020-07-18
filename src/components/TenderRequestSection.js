@@ -14,27 +14,26 @@ const TenderRequestSection = (props) => {
             <Col sm="2">
               <b>Tender State</b>
             </Col>
-            <Col sm>Open</Col>
+              <Col sm>{props.tenderState}</Col>
           </Row>
           <Row>
             <Col sm="2">
               <b>Tender Code</b>
             </Col>
-            <Col sm>DH046241</Col>
+            <Col sm>{props.tenderCode}</Col>
           </Row>
           <Row>
             <Col sm="2">
               <b>Contract Number</b>
             </Col>
-            <Col sm>SAH2018-1623</Col>
+          <Col sm>{props.contractNumber}</Col>
           </Row>
           <Row>
             <Col sm="2">
               <b>Category</b>
             </Col>
             <Col sm>
-              Medical Equipment and Accessories and Supplies - (20%)<br /> Management
-              and Business Professionals and Administrative Services - (80%)
+              {props.category}
             </Col>
           </Row>
         </Container>

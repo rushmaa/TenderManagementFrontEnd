@@ -1,12 +1,12 @@
 import React from "react";
 import TitleContainer from "./TitleContainer";
-export const Contacts = () => {
+export const Contacts = (props) => {
   return (
     <div class="container-fluid float-left">
       <TitleContainer title={"Contacts"} />
-      <p style={{ marginBottom: -5 }}>Mr. John Doe</p>
+      <p style={{ marginBottom: -5 }}>{props.name}</p>
       <u>
-        <a href={"mailto:" + "johndoe@email.com"}>johndoe@email.com</a>
+        <a href={"mailto:" + props.email}>{props.email}</a>
       </u>
     </div>
   );

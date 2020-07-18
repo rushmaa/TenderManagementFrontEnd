@@ -9,26 +9,26 @@ class UserLogin extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      username:'',
-      password:''
+      username:'test@test.com',
+      password:'12345'
     }
   }
   login=()=>{
     var history=this.props.history;
     history.push('/tenders/Current')
-    // fetch(`http://localhost:5000/user/login/`, {
-    //   method: "post",
-    //   body: JSON.stringify({ email: this.state.username, pass: this.state.password }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     if (data.success) {
-    //       this.props.setUser(data.user);
-    //     }
-    //   });
+    fetch(`http://localhost:5000/user/login/`, {
+      method: "post",
+      body: JSON.stringify({ email: this.state.username, pass: this.state.password }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          this.props.setUser(data.user);
+        }
+      });
   };
 render() {
 

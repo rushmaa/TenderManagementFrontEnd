@@ -11,7 +11,11 @@ const generateRows = () => {
         data.push({
             code: <div><div><b>{element.code}</b></div>
                 <div className="tender-row-state ">{element.codeState}</div></div>,
-            details: <React.Fragment><div><Link to={`/tenders/Current/${element.code}`}><span className="tender-link">{element.detailsHead}</span></Link>
+            details: <React.Fragment><div><Link
+                to={{
+                    pathname: '/tenders/Current/DisplayTender',
+                    state: { code: element.code }}}>
+                    <span className="tender-link">{element.detailsHead}</span></Link>
                 <Paperclip color="#173d6e" size={15} />
             </div>
                 <div>{element.detailsIssuedBy}</div>
@@ -20,7 +24,7 @@ const generateRows = () => {
                 </div>
             </React.Fragment>,
             date: <React.Fragment><div>closing</div>
-            <div className="closing_date">{element.closing_date}</div></React.Fragment>
+                <div className="closing_date">{element.closing_date}</div></React.Fragment>
         })
     });
     return data;
@@ -50,7 +54,7 @@ export default function DataTable() {
             }
         ],
         rows: generateRows(),
-});
+    });
 
-return <MDBDataTableV5 hover entriesOptions={[5, 20, 25]} entries={5} pagesAmount={4} data={datatable} striped={true} searching={false}/>;
+    return <MDBDataTableV5 hover entriesOptions={[5, 20, 25]} entries={5} pagesAmount={4} data={datatable} striped={true} searching={false} />;
 }

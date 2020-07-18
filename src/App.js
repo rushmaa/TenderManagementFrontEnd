@@ -22,6 +22,7 @@ import News from "./views/News";
 import history from './history';
 import FAQ from "./views/FAQ";
 import RequestSupport from "./views/RequestSupport";
+import DisplayTender from "./views/DisplayTender";
 import DocumentLibrary from "./views/DocumentLibrary";
 import { Provider } from 'react-redux'
 import { createStore } from "redux";
@@ -38,7 +39,7 @@ const App = () => {
         <Route exact path="/" component={UserLogin} />
         
         <Route exact path="/tenders/Current" component={Current} />
-        <Route exact path="/tenders/Current/DH046241" component={Current2} />
+        <Route exact path="/tenders/Current/DisplayTender" component={DisplayTender} />
         <Route exact path="/tenders/E-Lodgement" component={Elodgement} />
         <Route exact path="/tenders/Future" component={Future} />
         <Route exact path="/tenders/Closed" component={Closed} />

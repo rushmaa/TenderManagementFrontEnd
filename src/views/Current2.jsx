@@ -33,7 +33,6 @@ class Current extends React.Component {
   
   
   render() {
-    let leftOpen = this.state.leftOpen ? "open" : "closed";
    
     return (
       <div className="main-container pt-3">

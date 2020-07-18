@@ -1,15 +1,15 @@
 import React from "react";
 
-export const TenderTitle = () => {
+export const TenderTitle = (props) => {
   return (
     <div
       class="border-bottom"
       style={{ paddingTop: 20, paddingLeft: 20, width: "80%" }}
     >
       <p style={{ fontSize: 24, fontWeight: 500, color: "#173D6E" }}>
-         SA Health Professional Services Panel
+         {props.issuedByHeader}
       </p>
-      <p style={{ marginTop: -20, fontWeight: 500 }}>Issued By SA Health</p>
+  <p style={{ marginTop: -20, fontWeight: 500 }}>{props.issuedBy}</p>
     </div>
   );
 };

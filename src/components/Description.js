@@ -1,26 +1,15 @@
 import React from "react";
 import TitleContainer from "./TitleContainer";
-const Description = () => {
+const Description = (props) => {
   return (
     <div className="container-fluid float-left">
       <TitleContainer title={"Description"} />
       <div className="container-fluid pt-4">
       <p>
-        SA Health would like to invite additional suppliers to apply for the SA
-        Health Professional Services Panel Contract which includes:
+        {props.descriptionLevel1}
         <ul>
-          <li>Project Services (including ICT)</li>
-          <li>
-            Business and Advisory Services (incl. ICT, Clinical Coding & Health
-            Information Management)
-          </li>
-          <li>
-            Biomedical Engineering Services (relating to medical equipment,
-            ‘biomedical technology’ (bio medical / bio-medical) equipment.)
-          </li>
-          <li>
-            Asset Planning Support Services
-          </li>
+          <li>{props.descriptionListItem1}</li>
+          <li>{props.descriptionListItem2}</li>
         </ul>
         Applications from Suppliers are now
             being accepted.
