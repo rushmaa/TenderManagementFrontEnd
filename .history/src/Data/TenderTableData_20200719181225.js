@@ -1,0 +1,112 @@
+export const TenderTableData = [
+  {
+    code: "DH046241",
+    codeState: "Open",
+    detailsHead: "SA Health Professional Services Panel",
+    detailsIssuedBy: "Issued by SA Health",
+    categories: [
+      "Category 1: Medical Equipment and Accessories and Supplies - 20%",
+      "Category 2: Management and Business Professionals and Administrative Services - 80%",
+    ],
+    closing_date: "15 Apr, 2024",
+  },
+  {
+    code: "DPC042814",
+    codeState: "Open",
+    detailsHead: "Communication Services Panel",
+    detailsIssuedBy: "Issued by Department of the Premier and Cabinet",
+    categories: [
+      "Category: Advertising",
+    ],
+    closing_date: "31 Dec, 2020",
+  },
+  {
+    code: "DPC038672",
+    codeState: "Open",
+    detailsHead: "SA Health Professional Services Panel",
+    detailsIssuedBy: "Issued by SA Health",
+    categories: [
+      "Category: Information Technology Broadcasting and Telecommunications",
+      "Category: Information Technology Broadcasting and Telecommunications",
+    ],
+    closing_date: "30 Nov, 2020",
+  },
+  {
+    code: "DH046244",
+    codeState: "Open",
+    detailsHead: "SA Health Professional Services Panel",
+    detailsIssuedBy: "Issued by SA Health",
+    categories: [
+      "Category: Information Technology Broadcasting and Telecommunications",
+      "Category: Information Technology Broadcasting and Telecommunications",
+    ],
+    closing_date: "30 Nov, 2020",
+  },
+];
+
+export const TenderData = {
+  DH046241: {
+    issuedByHeader: "S.A Tenders",
+    issuedBy: "Issued by S.A Government",
+    tenderState: "Open",
+    tenderCode: "DH046241",
+    contractNumber: "1212-DFDF",
+    category: "Agriculture",
+    enquiry:'Enquiries goes here.',
+    name:'Mr. John Doe',
+    email:'johndoe@email.com',
+    descriptionLevel1:'SA Health would like to invite additional suppliers to apply for the SA Health Professional Services Panel Contract which includes:',
+    descriptionListItem1:'Project Services (including ICT)',
+    descriptionListItem2:'Business and Advisory Services (incl. ICT, Clinical Coding & Health  Information Management)',
+    responsesItem1:'responsesItem1',
+    specificationItem1:'specification Item1'
+},
+  DH046242: {
+    issuedByHeader: "S.A Tenders",
+    issuedBy: "Issued by S.A Government",
+    tenderState: "Open",
+    tenderCode: "DH046241",
+    contractNumber: "1212-DFDF",
+    category: "Agriculture",
+    enquiry:'Enquiries goes here.',
+    name:'Mr. John Doe',
+    email:'johndoe@email.com',
+    descriptionLevel1:'SA Health would like to invite additional suppliers to apply for the SA Health Professional Services Panel Contract which includes:',
+    descriptionListItem1:'Project Services (including ICT)',
+    descriptionListItem2:'Business and Advisory Services (incl. ICT, Clinical Coding & Health  Information Management)',
+    responsesItem1:'responsesItem1',
+    specificationItem1:'specification Item1'
+  },
+  DH046243: {
+    issuedByHeader: "S.A Tenders",
+    issuedBy: "Issued by S.A Government",
+    tenderState: "Open",
+    tenderCode: "DH046241",
+    contractNumber: "1212-DFDF",
+    category: "Agriculture",
+    enquiry:'Enquiries goes here.',
+    name:'Mr. John Doe',
+    email:'johndoe@email.com',
+    descriptionLevel1:'SA Health would like to invite additional suppliers to apply for the SA Health Professional Services Panel Contract which includes:',
+    descriptionListItem1:'Project Services (including ICT)',
+    descriptionListItem2:'Business and Advisory Services (incl. ICT, Clinical Coding & Health  Information Management)',
+    responsesItem1:'responsesItem1',
+    specificationItem1:'specification Item1'
+  },
+  DH046244: {
+    issuedByHeader: "S.A Tenders",
+    issuedBy: "Issued by S.A Government",
+    tenderState: "Open",
+    tenderCode: "DH046241",
+    contractNumber: "1212-DFDF",
+    category: "Agriculture",
+    enquiry:'Enquiries goes here.',
+    name:'Mr. John Doe',
+    email:'johndoe@email.com',
+    descriptionLevel1:'SA Health would like to invite additional suppliers to apply for the SA Health Professional Services Panel Contract which includes:',
+    descriptionListItem1:'Project Services (including ICT)',
+    descriptionListItem2:'Business and Advisory Services (incl. ICT, Clinical Coding & Health  Information Management)',
+    responsesItem1:'responsesItem1',
+    specificationItem1:'specification Item1'
+  },
+};
