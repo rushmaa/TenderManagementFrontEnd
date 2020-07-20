@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 //Components
 import Card from "../components/Card";
@@ -12,6 +12,7 @@ class DocumentLibrary extends React.Component {
           title="Library Documents"
           text="The library is an access point to documents, policies, user guides and further information on relevant issues relating to SA Tenders & Contracts."
         />
+        <h3>Document Library</h3>
       </div>
     </div>
     );

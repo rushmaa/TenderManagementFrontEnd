@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-
+import React from "react";
 //Components
 import Card from "../components/Card";
 import Title from "../components/Title";
@@ -14,7 +13,7 @@ class AcrossGovContracts extends React.Component {
           text="Find contracts that match specified criteria."
         />
          <Title header="Search Result"/>
-         
+         <h3>Across Government Tenders</h3>
       </div>
     </div>
     );

@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
 //Components
 import Card from "../components/Card";
 import Title from "../components/Title";
-import InputField from "../components/Form/InputField";
 
 class Contracts extends React.Component {
   render() {
@@ -15,6 +14,7 @@ class Contracts extends React.Component {
           text="Find contracts that match specified criteria."
         />
         <Title header="Search Criteria"/>
+        <h3>Contracts</h3>
       </div>
     </div>
     );

@@ -7,8 +7,6 @@ class Navbar extends Component {
   
   render() {
     const user=this.props.store.getState();
-    
-    console.log('store==', )
     return (
       <div>
         <ReactBootStrap.Navbar collapseOnSelect expand="lg" bg="danger">
@@ -38,9 +36,6 @@ class Navbar extends Component {
                 <ReactBootStrap.NavDropdown.Item><Link to="/HELP/Request-Support">Request Support</Link></ReactBootStrap.NavDropdown.Item>
                 <ReactBootStrap.NavDropdown.Item><Link to="/HELP/Document-Library">Document Library</Link></ReactBootStrap.NavDropdown.Item>
               </ReactBootStrap.NavDropdown>
-            </ReactBootStrap.Nav>
-            <ReactBootStrap.Nav>
-              <ReactBootStrap.Nav.Link><Link to="/download" className="main-nav">Download</Link></ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
             <ReactBootStrap.Nav>
               <ReactBootStrap.Nav.Link><Link to="/" className="main-nav">{ user?.User?.User?.firstName && 'Welcome, '+user?.User?.User?.firstName}</Link></ReactBootStrap.Nav.Link>

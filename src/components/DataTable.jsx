@@ -3,18 +3,13 @@ import "../assets/css/datatable.css";
 import { MDBDataTableV5 } from "mdbreact";
 import { Link } from "react-router-dom";
 import { Paperclip } from "react-bootstrap-icons";
-import { TenderTableData } from "../Data/TenderTableData";
-import { propTypes } from "react-bootstrap/esm/Image";
-
-
-
 const DataTable = (props) => {
 
     const generateRows = (searchCode) => {
         var data = [];
         props.searchCode.forEach((element) => {
           console.log(searchCode);
-          console.log(props);
+          console.log(props, setDatatable);
 
           data.push({
             code: (

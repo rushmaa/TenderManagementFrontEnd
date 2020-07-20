@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React  from "react";
 
 //Components
 import Card from "../components/Card";
@@ -15,6 +15,7 @@ class Closed extends React.Component {
           text="This page shows all tenders that have closed for responses, and not yet been awarded. The list includes all public tenders, as well as selective tenders to which your business was invited to respond. You must be signed in to see selective tenders."
         />
         <Title header="Search Criteria"/>
+        <h3>Closed Tenders</h3>
         <MainForm />
       </div>
     </div>

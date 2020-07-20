@@ -1,46 +1,37 @@
-import React, { Component } from "react";
-import { Form, Row, Col, Button, Table } from "react-bootstrap";
-import { InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
-import { Search, Calendar3, Paperclip } from "react-bootstrap-icons";
-import {Link} from 'react-router-dom';
+import React from "react";
 import DataTable from "../components/DataTable";
 import Card from "../components/Card";
 import "../assets/css/theme.css";
 import Title from "../components/Title";
 import MainForm from "../components/Form/MainForm";
-import {TenderTableData} from "../Data/TenderTableData"
+import { TenderTableData } from "../Data/TenderTableData";
 
-class Current extends React.Component {
-  constructor(props) {
-    super(props);
+const Current = (props) => {
+  const [showTable, setShowTable] = React.useState(true);
+  const [searchCode, setsearchCode] = React.useState(TenderTableData);
 
-    this.state = {
-      leftOpen: true,
-    };
-  }
-
-  toggleSidebar = (event) => {
-    let key = `${event.currentTarget.parentNode.id}Open`;
-    this.setState({ [key]: !this.state[key] });
+  const proxy = (searchCode) => {
+    console.log(searchCode);
+    const results = TenderTableData.filter(
+      (element) => element.code === searchCode
+    );
+    setsearchCode(results);
+    setShowTable(!showTable);
   };
 
-  render() {
-    let leftOpen = this.state.leftOpen ? "open" : "closed";
-
-    return (
-      <div className="main-container pt-3">
-        <div className="container-fluid">
-          <Card
-            title="Current Tenders"
-            text="This page shows all open tenders. The list includes all public tenders, as well as selective tenders to which your business can respond. You must be signed in to see selective tenders."
-          />
-          <DataTable searchCode = {TenderTableData}/>
-          <Title header="Search Criteria" /> 
-          <MainForm />
-        </div>
-      </div> 
-    );
-  }
-}
+  return (
+    <div className="main-container pt-3">
+      <div className="container-fluid">
+        <Card
+          title="Current Tenders"
+          text="This page shows all open tenders. The list includes all public tenders, as well as selective tenders to which your business can respond. You must be signed in to see selective tenders."
+        />
+        <div>{showTable && <DataTable searchCode={searchCode} />}</div>
+        <Title header="Search Criteria" />
+        <MainForm toggleTable={proxy} />
+      </div>
+    </div>
+  );
+};
 
 export default Current;

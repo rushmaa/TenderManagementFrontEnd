@@ -1,12 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { Form, Row, Col, Button, Table } from "react-bootstrap";
+import { Form, Row, Col, Button } from "react-bootstrap";
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
-import { Search, Calendar3, Paperclip } from "react-bootstrap-icons";
-import { TenderTableData } from "../../Data/TenderTableData";
-import DataTable  from "../DataTable";
-
-
+import { Search, Calendar3 } from "react-bootstrap-icons";
 const people = [
   "Siri",
   "Alexa",
@@ -31,10 +26,7 @@ const MainForm = (props) => {
     );
     setSearchResults(results);
   }, [searchTerm]);
-
-  function clickHandler() {
-    return <DataTable />
-  }
+  
   function HandelInput(e) {
     setSearchCode(e.target.value);
 
@@ -246,10 +238,11 @@ const MainForm = (props) => {
             </Form.Label>
             <Col sm="4">
               <select className="form-control">
-                <option value="grapefruit">Grapefruit</option>
-                <option value="lime">Lime</option>
-                <option value="coconut">Coconut</option>
-                <option value="mango">Mango</option>
+                <option value="None">None</option>
+                <option value="Buyer">Buyer</option>
+                <option value="Categories">Categories</option>
+                <option value="Status">Status</option>
+                <option value="Type">Type</option>
               </select>
             </Col>
           </Form.Group>

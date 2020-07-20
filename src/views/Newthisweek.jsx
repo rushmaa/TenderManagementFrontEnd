@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React  from "react";
 
 //Components
 import Card from "../components/Card";
@@ -16,6 +16,7 @@ class Newthisweek extends React.Component {
         />
         <Title header="Search Result"/>
         <Title header="Search Criteria"/>
+        <h3>NEW THIS WEEK Tenders</h3>
         <MainForm />
       </div>
     </div>

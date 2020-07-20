@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React  from "react";
 
 //Components
 import Card from "../components/Card";
@@ -12,9 +12,8 @@ const Tenders = (props) => {
   const [searchCode, setsearchCode] = React.useState(TenderTableData);
 
   const proxy = (searchCode) => {
-    console.log(searchCode);
     const results = TenderTableData.filter((element) =>
-      element.code == searchCode
+      element.code === searchCode
     );
     setsearchCode(results);
     setShowTable(!showTable);

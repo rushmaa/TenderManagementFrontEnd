@@ -1,8 +1,6 @@
-import React, { Component } from "react";
-
+import React from "react";
 //Components
 import Card from "../components/Card";
-
 
 class RequestSupport extends React.Component {
   render() {
@@ -12,6 +10,7 @@ class RequestSupport extends React.Component {
         <Card
           title="Request Support"
         />
+        <h3>Request Support</h3>
       </div>
     </div>
     );
