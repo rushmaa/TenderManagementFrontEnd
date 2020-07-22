@@ -21,7 +21,8 @@ import DocumentLibrary from "./views/DocumentLibrary";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import Reducer from "./store/reducers/Reducer";
-
+import Home from "./views/Home";
+import AdminDashboard from "./views/Admin/AdminDashboard";
 const App = () => {
   const store = createStore(Reducer);
   return (
@@ -31,6 +32,8 @@ const App = () => {
         <Navbar store={store} />
         <Switch>
           <Route exact path="/" component={UserLogin} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/admin" component={AdminDashboard} />
           <Route exact path="/tenders/Current" component={Current} />
           <Route
             exact

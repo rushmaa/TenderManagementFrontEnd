@@ -13,7 +13,7 @@ class Navbar extends Component {
           <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
             <ReactBootStrap.Nav className="mr-auto" color="#fff">
-              <ReactBootStrap.Nav.Link><Link to="/" className="main-nav">HOME</Link></ReactBootStrap.Nav.Link>
+              <ReactBootStrap.Nav.Link><Link to="/home" className="main-nav">HOME</Link></ReactBootStrap.Nav.Link>
               <ReactBootStrap.NavDropdown title="TENDERS" id="collasible-nav-dropdown">
                 <ReactBootStrap.NavDropdown.Item><Link to="/tenders/Current">Current</Link></ReactBootStrap.NavDropdown.Item>
                 <ReactBootStrap.NavDropdown.Item><Link to="/tenders/E-Lodgement">E-Lodgement</Link></ReactBootStrap.NavDropdown.Item>
