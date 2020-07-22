@@ -8,9 +8,6 @@ const DataTable = (props) => {
     const generateRows = (searchCode) => {
         var data = [];
         props.searchCode.forEach((element) => {
-          console.log(searchCode);
-          console.log(props, setDatatable);
-
           data.push({
             code: (
               <div>

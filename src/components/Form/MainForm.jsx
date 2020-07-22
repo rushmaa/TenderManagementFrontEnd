@@ -247,8 +247,8 @@ const MainForm = (props) => {
             </Col>
           </Form.Group>
           <div className="btnPosition">
-            <Button as="input" value="Submit" onClick={codeTable}/>{" "}
-            <Button as="input" type="reset" value="Reset" />
+            <Button variant="primary" value="Submit" onClick={codeTable}>Submit</Button>{" "}
+            <Button variant="primary" type="reset" value="Reset" >Reset</Button>
           </div>
         </Form>
       </div>
