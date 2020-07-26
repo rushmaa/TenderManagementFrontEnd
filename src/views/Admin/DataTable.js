@@ -3,35 +3,50 @@ import { MDBDataTableV5 } from "mdbreact";
 import { Button } from "react-bootstrap";
 
 var selectedList = [];
-var rowList = [];
-
-function accept() {
-  selectedList.forEach(element => {
-    fetch(`http://localhost:5000/user/update`, {
-    method: "post",
-    body: JSON.stringify({ email: element }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('in succ')
-    });
-  });
-  
-}
-
-
 export default function DataTable(props) {
-
-  props.userList.forEach((element) => {
-    rowList.push({
-      name: element.businessName,
-      email: element.email,
+const [listitems, setListItems] = React.useState([]);
+  function accept() {
+    selectedList.forEach(element => {
+      fetch(`http://localhost:5000/user/update`, {
+      method: "post",
+      body: JSON.stringify({ email: element }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('in succ',props?.userList);
+        var outcome=props?.userList;
+        for (let index = 0; index < props?.userList.length; index++) {
+          const item = props?.userList[index];
+          outcome.splice(index, 1);
+        }
+        // var outcome=props?.userList.filter(row => row.email !== element);
+        console.log('outcome==',outcome)
+        setListItems(outcome)
+        props.update(outcome)
+      });
     });
-  });
-  
+    
+  }
+
+  function reject() {
+    selectedList.forEach(element => {
+      fetch(`http://localhost:5000/user/reject`, {
+      method: "post",
+      body: JSON.stringify({ email: element }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('in succ',props?.userList);
+      });
+    });
+  }
+
   const [datatable, setDatatable] = React.useState({
     columns: [
       {
@@ -50,7 +65,7 @@ export default function DataTable(props) {
         width: 270,
       },
     ],
-    rows: rowList,
+    rows: props?.userList,
   });
   const [checkbox1, setCheckbox1] = React.useState([]);
 
@@ -67,7 +82,7 @@ export default function DataTable(props) {
       }
     }
   };
-
+console.log('rendering===',props?.userList)
   return (
     <>
       <MDBDataTableV5
@@ -90,7 +105,7 @@ export default function DataTable(props) {
         multipleCheckboxes
       />
       <div className="row justify-content-md-center">
-        <Button variant="danger" className={"w-25 m-5"} active >
+        <Button variant="danger" className={"w-25 m-5"} active onClick={()=>{accept()}}>
           Reject
         </Button>
         <Button variant="success" className={"w-25 m-5"} active onClick={()=>{accept()}}>

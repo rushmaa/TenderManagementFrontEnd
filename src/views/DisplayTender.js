@@ -25,26 +25,26 @@ const DisplayTender = (props) => {
           text="This page shows all open tenders. The list includes all public tenders, as well as selective tenders to which your business can respond. You must be signed in to see selective tenders."
         />
         <TenderTitle
-          issuedByHeader={element.issuedByHeader}
-          issuedBy={element.issuedBy}
+          issuedByHeader={element?.issuedByHeader}
+          issuedBy={element?.issuedBy}
         />
         <TenderRequestSection
-          tenderState={element.tenderState}
-          contractNumber={element.contractNumber}
-          category={element.category}
-          tenderCode={element.tenderCode}
+          tenderState={element?.tenderState}
+          contractNumber={element?.contractNumber}
+          category={element?.category}
+          tenderCode={element?.tenderCode}
         />
-        <Enquiries enquiry={element.enquiry} />
-        <Contacts name={element.name} email={element.email} />
+        <Enquiries enquiry={element?.enquiry} />
+        <Contacts name={element?.name} email={element?.email} />
         <Description
-          descriptionLevel1={element.descriptionLevel1}
-          descriptionListItem1={element.descriptionListItem1}
-          descriptionListItem2={element.descriptionListItem2}
+          descriptionLevel1={element?.descriptionLevel1}
+          descriptionListItem1={element?.descriptionListItem1}
+          descriptionListItem2={element?.descriptionListItem2}
         />
         <SpecificationDocuments
-          specificationItem1={element.specificationItem1}
+          specificationItem1={element?.specificationItem1}
         />
-        <Responses responsesItem1={element.responsesItem1} />
+        <Responses responsesItem1={element?.responsesItem1} />
       </div>
     </div>
   );
