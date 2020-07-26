@@ -14,8 +14,6 @@ class UserLogin extends React.Component {
     }
   }
   login=()=>{
-    var history=this.props.history;
-    history.push('/tenders/Current')
     fetch(`http://localhost:5000/user/login/`, {
       method: "post",
       body: JSON.stringify({ email: this.state.username, pass: this.state.password }),
@@ -25,8 +23,11 @@ class UserLogin extends React.Component {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.success) {
+        if (data.user) {
+          console.log('data.user==',data.user)
           this.props.setUser(data.user);
+          var history=this.props.history;
+          history.push('/tenders/Current')
         }
       });
   };
@@ -108,7 +109,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    setUser: (data) => dispatch({ type: "SET_USER", payload:data }),
+    setUser: (data) => dispatch({ type: "SET_USER", payload: data }),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(UserLogin);

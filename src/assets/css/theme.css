@@ -1,72 +1,69 @@
 /*Navbar Component*/
 .navbar {
-  background-color: #037 !important;
+  background-color: #037!important;
 }
 .main-nav {
   color: #fff;
 }
-.nav-link:hover,
-.main-nav:hover {
+.nav-link:hover, .main-nav:hover {
   color: #252525;
   text-decoration: none;
 }
 .navbar-light .navbar-nav .nav-link {
-  color: #fff !important;
-  font-size: 14px;
-  text-decoration: none;
-}
+    color: #fff !important;
+    font-size: 14px;
+    text-decoration: none;
+  }
 
-.navbar-light .navbar-nav .nav-link:hover {
-  color: #252525 !important;
-  background-color: #dff;
-  border-radius: 10px;
-}
-.dropdown-menu .dropdown-item a {
-  color: #252525;
-  text-decoration: none;
-}
-.dropdown-item:hover {
-  background-color: #dff !important;
-}
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #252525 !important;
+    background-color: #dff;
+    border-radius: 10px;
+  }  
+  .dropdown-menu .dropdown-item a {
+    color: #252525;
+    text-decoration: none;
+  }
+  .dropdown-item:hover {
+    background-color: #dff !important;
+  }  
 
-/*Header Component*/
-.rowHeader {
-  padding: 0.75% 2%;
-}
-.logo .header-title {
-  color: #000;
-  font-family: "Lato", sans-serif, Roboto, Helvetica, Verdana, Geneva, Arial,
-    sans-serif;
-  font-size: 36px;
-  text-decoration: none;
-  text-align: center;
-  background-color: white;
-  margin-bottom: 0px;
-}
-.header-title h1 {
-  color: #000;
-  font-family: "Lato", sans-serif, Roboto, Helvetica, Verdana, Geneva, Arial,
-    sans-serif;
-  background-color: #fff !important;
-  font-size: 32px;
-  padding-top: 25px;
-}
+  /*Header Component*/
+  .rowHeader {
+    padding: 0.75% 2%;
+  }
+  .logo .header-title {
+    color: #000;
+    font-family: "Lato", sans-serif, Roboto, Helvetica, Verdana, Geneva, Arial, sans-serif;
+    font-size: 36px;
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 0px;
+  }
+  .header-title h1 {
+    color: #000;
+    font-family: 'Lato', sans-serif, Roboto, Helvetica, Verdana, Geneva, Arial, sans-serif;
+    background-color: #fff !important;
+    font-size: 32px;
+    padding-top: 25px;
+  }  
 
-/*Card Component*/
-.card {
-  background-color: #e7ebf0 !important;
-  border: none !important;
-}
+  /*Card Component*/
+  .card {
+    background-color: #E7EBF0 !important;
+    border: none !important;
+  }
 
-/*Title*/
-.header-body h2 {
-  font-family: "Lato", Verdana, Geneva, Arial, Helvetica, sans-serif;
-  color: #173d6e;
-  font-size: 25px;
-  font-weight: 300;
-}
+  /*Title*/
+  .header-body h2{
+    font-family: 'Lato', Verdana, Geneva, Arial, Helvetica, sans-serif;
+    color: #173d6e;
+    font-size: 25px;
+    font-weight: 300;
+  }
 
-/* TenderTable
+  /* TenderTable
   .table-bordered thead td, .table-bordered thead th {
     border-bottom-width: 2px;
     background-color: #C74E4A;
@@ -76,30 +73,30 @@
     padding: 5px 15px 5px 15px;
   }
    */
-/*Login Page*/
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-.App-header {
-  min-height: 75vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  /*Login Page*/
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  .App-header {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
 
 .col-form-label {
   text-align: end;
 }
 .btnPosition {
-  width: 66%;
+  width: 66%;  
   margin: auto;
 }
 .btnPosition input {
@@ -107,10 +104,10 @@
   background-color: #fff;
   border-color: #ccc;
 }
-.btnPosition input:hover {
+.btnPosition input:hover{
   color: #333;
-  background-color: #e6e6e6;
-  border-color: #adadad;
+    background-color: #e6e6e6;
+    border-color: #adadad;
 }
 
 /*Current Page*/
@@ -150,13 +147,13 @@
 @media (orientation: landscape) {
   #main .header .title {
     transition: left var(--secs), right var(--secs);
-  }
+ }
   #main .header .title.left-closed {
     left: var(--header-height);
-  }
+ }
   #main .header .title.right-closed {
     right: var(--header-height);
-  }
+ }
 }
 #left {
   transition: width var(--secs);
@@ -165,7 +162,7 @@
 @media (orientation: landscape) {
   #left.open {
     width: calc(1% * var(--landscape-width));
-  }
+ }
 }
 #left .icon {
   position: fixed;
@@ -185,12 +182,12 @@
 @media (orientation: portrait) {
   #left .sidebar {
     width: var(--portrait-width);
-  }
+ }
 }
 @media (orientation: landscape) {
   #left .sidebar {
     width: calc(1vw * var(--landscape-width));
-  }
+ }
 }
 #left .sidebar .header {
   width: calc(100% - var(--header-height));
@@ -215,11 +212,10 @@
   color: #007700;
   font-weight: bold;
 }
-.table td,
-.table th {
+.table td, .table th{
   vertical-align: middle !important;
 }
-.tender-link {
+.tender-link{
   color: #003366;
   text-decoration: underline;
 }
@@ -234,19 +230,18 @@
 /*News and Home*/
 .n-title {
   border: 1px solid black;
-  background-color: #f0f0f0;
+  background-color: #F0F0F0;
   padding: 0;
 }
 .n-title h2 {
-  font-family: "Lato", Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-family: 'Lato', Verdana, Geneva, Arial, Helvetica, sans-serif;
   color: #173d6e;
   font-size: 20px;
   font-weight: bold;
   padding: 1vh 0.5vw;
   margin-bottom: 1vh;
 }
-.n-title h2 a:link,
-.n-title h2 a:active {
+.n-title h2 a:link, .n-title h2 a:active {
   text-decoration: underline;
   color: #003366;
 }
@@ -255,22 +250,12 @@
   font-style: italic;
 }
 .excerpt {
-  font-family: "Lato", sans-serif, Helvetica, Verdana, Geneva, Arial, Helvetica,
-    sans-serif;
+  font-family: 'Lato', sans-serif, Helvetica, Verdana, Geneva, Arial, Helvetica, sans-serif;
   font-size: 12pt;
 }
-.linkStyle {
+.linkStyle{
   color: #003366;
-  text-decoration: underline;
-}
-.registrationLink {
-  color: #990000;
-  text-decoration: underline;
-  display: inline-block;
-  padding-left: 10px;
-}
-.displayInline {
-  display: inline;
+    text-decoration: underline;
 }
 .btn-primary {
   color: #fff;

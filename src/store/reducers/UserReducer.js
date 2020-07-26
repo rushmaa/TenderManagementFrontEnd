@@ -7,7 +7,11 @@ const initialStore ={
 const UserReducer = (state = initialStore, action) => {
     switch (action.type) {
         case UserActions.SET_USER:
-            return {...state, User:action.payload?.contactPerson}
+            console.log('action.payload==',action.payload)
+            return {...state, User:action.payload}
+        case UserActions.SET_UNCONFIRMED_USER:
+            console.log('action.payload==',action.payload)
+            return {...state, unconfirmedusers:action.payload}
         default:
           return state
       }

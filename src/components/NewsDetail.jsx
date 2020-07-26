@@ -13,6 +13,10 @@ class NewsDetail extends React.Component {
             <span className="NEWS_DATE">{this.props.tenderDate}</span>
           </h2>
         </div>
+
+        <div>
+          <div class="excerpt pt-2">{this.props.tenderDetail}</div>
+        </div>
       </div>
     );
   }
