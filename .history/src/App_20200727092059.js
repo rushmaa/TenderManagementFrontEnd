@@ -22,12 +22,8 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import Reducer from "./store/reducers/Reducer";
 import Home from "./views/Home";
-import AddTender from "./views/AddTender";
 import AdminDashboard from "./views/Admin/AdminDashboard";
 import Signup from "./views/Signup";
-import PublishCouncil from "./views/PublishCouncil";
-import PublishContract from "./views/PublishContract";
-import PublishTender from "./views/PublishTender";
 
 const App = () => {
   const store = createStore(Reducer);
@@ -37,6 +33,8 @@ const App = () => {
         <Header />
         <Navbar store={store} />
         <Switch>
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/" component={UserLogin} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/admin" component={AdminDashboard} />
           <Route exact path="/tenders/Current" component={Current} />
@@ -58,9 +56,6 @@ const App = () => {
           <Route exact path="/search/tenders" component={Tenders} />
           <Route exact path="/search/contracts" component={Contracts} />
           <Route exact path="/News" component={News} />
-          <Route exact path="/News/Publish-Council" component={PublishCouncil} />
-          <Route exact path="/News/Publish-Contract" component={PublishContract} />
-          <Route exact path="/News/Publish-Tender" component={PublishTender} />
           <Route exact path="/HELP/FAQ" component={FAQ} />
           <Route
             exact
@@ -74,7 +69,6 @@ const App = () => {
           />
           <Route exact path="/add-tender" component={AddTender} />
           <Route exact path="/Login" component={UserLogin} />
-          <Route exact path="/signup" component={Signup} />
         </Switch>
       </Router>
     </Provider>

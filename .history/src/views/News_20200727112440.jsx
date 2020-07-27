@@ -6,7 +6,7 @@ import Card from "../components/Card";
 import NewsDetail from "../components/NewsDetail";
 
 import "../assets/css/theme.css";
-import { FileTextFill, ArrowRightCircleFill } from "react-bootstrap-icons";
+import { FileTextFill } from "react-bootstrap-icons";
 
 class News extends React.Component {
   render() {
@@ -25,10 +25,10 @@ class News extends React.Component {
           </Link>
           <div>
             <p className="displayInline">
-              The site is designed for the publication of all Australian Public
-              Sector tenders and any associated documentation that can be made
-              available for download by registered users of the site. Agencies
-              are responsible for the publication of tenders.{" "}
+              The site is designed for the publication of all Australian
+              Public Sector tenders and any associated documentation that can be
+              made available for download by registered users of the site.
+              Agencies are responsible for the publication of tenders.{" "}
             </p>
 
             <Link to="/News/Publish-Tender" className="linkStyle">
@@ -37,14 +37,13 @@ class News extends React.Component {
           </div>
           <div>
             <Link
-              to="/Files/AGovernment.doc"
+              to="/Files/SAGovernment.doc"
               target="_blank"
               download
               className="linkStyle"
             >
               <FileTextFill className="pr-1" />
-              Australian Government Advertisement Required Information V3.doc
-              (54 KB)
+              Australian Government Advertisement Required Information V3.doc (54 KB)
             </Link>
           </div>
           <Link to="/News/Publish-Council" className="linkStyle">
@@ -61,7 +60,7 @@ class News extends React.Component {
               authority (Agency) or receive help with placing your tender.{" "}
             </p>
 
-            <Link to="/News/Publish-Council" className="linkStyle">
+            <Link to="/News/Publish-Contract" className="linkStyle">
               Read More <ArrowRightCircleFill color="#003366" />
             </Link>
           </div>
@@ -86,14 +85,14 @@ class News extends React.Component {
           <div>
             <p className="displayInline">
               The site is designed for the publication of contracts within the
-              Australian Public Sector as required by the DPC Circular PC027
-              'Disclosure of Government Contracts'. To submit a contract for
-              publication to the site download the attached document, complete
-              the details as requested on the form and return it to ADB Tenders
-              & Contracts.{" "}
+              Australian Public Sector as required by the DPC Circular
+              PC027 'Disclosure of Government Contracts'. To submit a contract
+              for publication to the site download the attached document,
+              complete the details as requested on the form and return it to ADB
+              Tenders & Contracts.{" "}
             </p>
 
-            <Link to="/News/Publish-Contract" className="linkStyle">
+            <Link to="/News/Publish-Council" className="linkStyle">
               Read More <ArrowRightCircleFill color="#003366" />
             </Link>
           </div>

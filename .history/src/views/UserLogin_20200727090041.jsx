@@ -36,8 +36,8 @@ render() {
     // const [toggle, setToggle] = useState(true)
     
     return (      
-      <div className="main-container pt-3">
-        <div className="container">
+      <div className="App">
+      <header className="App-header">
         <div
           style={{
             backgroundColor: "#FFF",
@@ -45,7 +45,6 @@ render() {
             height: "35rem",
             borderRadius: 10,
             border: "1px solid #000",
-            margin: "auto",
           }}
         >
           <div style={{ height: 50, padding:2 }}>
@@ -69,7 +68,7 @@ render() {
               Agency Login
             </Button>
           </div>
-          <img src={require('../assets/img/logo.jpg')} style={{paddingTop:"2%",transform: "translate(20rem, 1.5rem)",}} alt='logo'/>
+          <img src={require('../assets/img/logo.jpg')} style={{paddingTop:"2%"}} alt='logo'/>,
           <div style={{ padding: "8%" }}>
             <InputGroup style={{ width: "60%", margin: "auto" }}>
               <InputGroupAddon addonType="prepend">
@@ -97,14 +96,10 @@ render() {
           >
             Sign In
           </Button>
-          <div style={{transform: "translate(17rem, 1.5rem)"}}>
-          <h2 className="displayInline textStyle">Don't have an account ? </h2>
-          <Link className="linkStyle" style={{fontSize:16}} to="/signup">Signup Here</Link>
-          </div>
+          <Link style={{color:'#000', fontSize:16}} to="google.com">Forgot your password?</Link>
         </div>
-      </div>
-        </div>
- 
+      </header>
+    </div>
     );
   }
 }
