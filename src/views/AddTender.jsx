@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
 import { Search, Calendar3 } from "react-bootstrap-icons";
-
+import axios from "axios";
 //Components
 import Card from "../components/Card";
 import Title from "../components/Title";
@@ -14,18 +14,42 @@ class AddTender extends React.Component {
   }
 
   handleClick(event) {
-    console.log("called click");
     event.preventDefault();
-    console.log(event.target.tenderCode.value);
-    console.log(event.target.tenderName.value);
-    console.log(event.target.tenderCategory.value);
-    console.log(event.target.tenderState.value);
-    console.log(event.target.tenderIssuedby.value);
-    console.log(event.target.tenderGrouping.value);
-    console.log(event.target.closingDateFrom.value);
-    console.log(event.target.closingDateTo.value);
-    console.log(event.target.openingDateFrom.value);
-    console.log(event.target.openingDateTo.value);
+
+    axios
+      .post("http://localhost:5000/tender/addNewTender", {
+        tenderCode: event.target.tenderCode.value,
+        tenderState: event.target.tenderState.value,
+        tenderName: event.target.tenderName.value,
+        category: event.target.tenderCategory.value,
+        issuedBy: event.target.tenderIssuedby.value,
+        openingdateFrom: event.target.openingDateFrom.value,
+        openingdateTo: event.target.openingDateTo.value,
+        closingdateFrom: event.target.closingDateFrom.value,
+        closingdateTo: event.target.closingDateTo.value,
+        grouping: event.target.tenderGrouping.value,
+      })
+      .then(
+        (response) => {
+          console.log(response);
+          if (response.data) {
+            if (response.data === "Successfully Added Tender") {
+              console.log("SuccessFull redirecting");
+              //TODO: redirect to another page
+            } else {
+              console.log("Unsucessfull");
+              //TODO: show message
+            }
+          } else {
+            console.log("No data received");
+            //TODO: show message
+          }
+        },
+        (error) => {
+          console.log(error);
+          //TODO: show message
+        }
+      );
   }
   render() {
     return (
