@@ -37,6 +37,8 @@ const App = () => {
         <Header />
         <Navbar store={store} />
         <Switch>
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/" component={UserLogin} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/admin" component={AdminDashboard} />
           <Route exact path="/tenders/Current" component={Current} />
@@ -74,7 +76,6 @@ const App = () => {
           />
           <Route exact path="/add-tender" component={AddTender} />
           <Route exact path="/Login" component={UserLogin} />
-          <Route exact path="/signup" component={Signup} />
         </Switch>
       </Router>
     </Provider>

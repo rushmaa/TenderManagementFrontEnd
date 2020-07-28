@@ -37,7 +37,7 @@ class News extends React.Component {
           </div>
           <div>
             <Link
-              to="/Files/AGovernment.doc"
+              to="/Files/SAGovernment.doc"
               target="_blank"
               download
               className="linkStyle"

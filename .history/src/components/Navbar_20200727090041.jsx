@@ -40,7 +40,6 @@ class Navbar extends Component {
                 <ReactBootStrap.NavDropdown.Item><Link to="/HELP/Request-Support">Request Support</Link></ReactBootStrap.NavDropdown.Item>
                 <ReactBootStrap.NavDropdown.Item><Link to="/HELP/Document-Library">Document Library</Link></ReactBootStrap.NavDropdown.Item>
               </ReactBootStrap.NavDropdown>
-            <ReactBootStrap.Nav.Link><Link to="/add-tender" className="main-nav">Add Tender</Link></ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
             <ReactBootStrap.Nav>
               <ReactBootStrap.Nav.Link><Link to="/" className="main-nav">{ user?.User?.User?.businessName && 'Welcome, '+user?.User?.User?.businessName}</Link></ReactBootStrap.Nav.Link>

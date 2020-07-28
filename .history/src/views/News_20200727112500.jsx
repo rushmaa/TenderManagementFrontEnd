@@ -37,7 +37,7 @@ class News extends React.Component {
           </div>
           <div>
             <Link
-              to="/Files/AGovernment.doc"
+              to="/Files/SAGovernment.doc"
               target="_blank"
               download
               className="linkStyle"
@@ -61,7 +61,7 @@ class News extends React.Component {
               authority (Agency) or receive help with placing your tender.{" "}
             </p>
 
-            <Link to="/News/Publish-Council" className="linkStyle">
+            <Link to="/News/Publish-Contract" className="linkStyle">
               Read More <ArrowRightCircleFill color="#003366" />
             </Link>
           </div>
@@ -93,7 +93,7 @@ class News extends React.Component {
               & Contracts.{" "}
             </p>
 
-            <Link to="/News/Publish-Contract" className="linkStyle">
+            <Link to="/News/Publish-Council" className="linkStyle">
               Read More <ArrowRightCircleFill color="#003366" />
             </Link>
           </div>

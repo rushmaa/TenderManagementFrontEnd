@@ -69,7 +69,7 @@ render() {
               Agency Login
             </Button>
           </div>
-          <img src={require('../assets/img/logo.jpg')} style={{paddingTop:"2%",transform: "translate(20rem, 1.5rem)",}} alt='logo'/>
+          <img src={require('../assets/img/logo.jpg')} style={{paddingTop:"2%"}} alt='logo'/>,
           <div style={{ padding: "8%" }}>
             <InputGroup style={{ width: "60%", margin: "auto" }}>
               <InputGroupAddon addonType="prepend">
@@ -97,7 +97,8 @@ render() {
           >
             Sign In
           </Button>
-          <div style={{transform: "translate(17rem, 1.5rem)"}}>
+          <Link style={{color:'#000', fontSize:16}} to="google.com">Forgot your password?</Link>
+          <div>
           <h2 className="displayInline textStyle">Don't have an account ? </h2>
           <Link className="linkStyle" style={{fontSize:16}} to="/signup">Signup Here</Link>
           </div>
