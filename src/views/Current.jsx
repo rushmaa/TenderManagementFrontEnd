@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 const Current = (props) => {
   const [showTable, setShowTable] = React.useState(true);
   const [searchCode, setsearchCode] = React.useState(TenderTableData);
+
   React.useEffect(() => {
     if (props.User.User.type === 'admin') {
       fetch(`http://localhost:5000/user/getunconfirmeduser`, {
@@ -36,6 +37,7 @@ const Current = (props) => {
     setShowTable(!showTable);
   };
 
+if (props?.User?.User?.confirmed === '1') {
   return (
     <div className="main-container pt-3">
       <div className="container-fluid">
@@ -49,6 +51,14 @@ const Current = (props) => {
       </div>
     </div>
   );
+} else {
+  return (
+    <div className="main-container pt-3">
+      {props.history.push('/NoAccess')}
+    </div>
+  );
+}
+
 };
 const mapStateToProps = (state) => {
   var data = { User: state.User }
