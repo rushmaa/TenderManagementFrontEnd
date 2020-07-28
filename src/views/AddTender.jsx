@@ -6,8 +6,14 @@ import axios from "axios";
 //Components
 import Card from "../components/Card";
 import Title from "../components/Title";
+import ModalDialog from "../components/ModalDialog";
 
 class AddTender extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { modalIsHiden: false };
+  }
+
   onChange(e) {
     let files = e.target.files;
     console.warn("data files", files);
@@ -36,6 +42,9 @@ class AddTender extends React.Component {
             if (response.data === "Successfully Added Tender") {
               console.log("SuccessFull redirecting");
               //TODO: redirect to another page
+              console.log(this.state.modalIsHiden);
+              this.state.modalIsHiden = true;
+              this.forceUpdate();
             } else {
               console.log("Unsucessfull");
               //TODO: show message
@@ -52,16 +61,25 @@ class AddTender extends React.Component {
       );
   }
   render() {
+    let modal;
+    if (this.state.modalIsHiden) {
+      console.log("in true");
+      modal = <ModalDialog />;
+    } else {
+      console.log("in false");
+    }
     return (
       <div className="pt-3">
+        {/* Suceess message -START */}
+        {modal}
+        {/* END */}
         <div className="container-fluid">
           <Card
             title="Add Tender"
             text="This page can add your tender and it will show it in Current Tender page."
           />
-
           <div className="pt-3 main-container">
-            <Form onSubmit={this.handleClick} noValidate>
+            <Form onSubmit={this.handleClick.bind(this)} noValidate>
               <Form.Group as={Row} controlId="formPlaintextPassword">
                 <Form.Label column sm="2">
                   Tender Code
