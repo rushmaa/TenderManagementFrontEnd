@@ -138,10 +138,12 @@ render() {
           >
             Sign In
           </Button>
-          <Link style={{color:'#000', fontSize:16}} to="google.com">Forgot your password?</Link>
+          <p><Link style={{color:'#000', fontSize:16}} to="google.com">Forgot your password?</Link></p>
+          <p><Link style={{color:'#000', fontSize:16}} to="/signup">Sign up here!</Link></p>
         </div>
       </header>
     </div>
+   
     );
   }
 }

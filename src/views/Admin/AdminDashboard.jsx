@@ -2,9 +2,10 @@ import React from 'react'
 import { connect } from "react-redux";
 import MUIDataTable from "mui-datatables";
 import { Button } from "@material-ui/core";
-const AdminDashboard = (props) => {
 
-  var [rowList, setRowList] = React.useState();
+const AdminDashboard = (props) => {
+  
+var [rowList, setRowList] = React.useState();
   var userList = props.User.unconfirmedusers;
   var selectedRows;
 
