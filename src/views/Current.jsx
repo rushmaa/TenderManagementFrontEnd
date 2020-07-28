@@ -9,26 +9,6 @@ import { TenderTableData } from "../Data/TenderTableData";
 import { connect } from "react-redux";
 import axios from "axios";
 
-const getTableData = () => {
-  axios.get("http://localhost:5000/tender/getalltenders").then(
-    (response) => {
-      console.log(response);
-      if (response.data.tenders) {
-        console.log(response.data.tenders);
-        console.log("returning value");
-        return response.data.tenders;
-      } else {
-        console.log("No data received");
-        //TODO: show message
-      }
-    },
-    (error) => {
-      console.log(error);
-      //TODO: show message
-    }
-  );
-};
-
 const Current = (props) => {
   const [showTable, setShowTable] = React.useState(true);
   const [searchCode, setsearchCode] = React.useState([]);
@@ -57,12 +37,10 @@ const Current = (props) => {
         console.log(response);
         if (response.data.tenders) {
           setShowTable(!showTable);
-          console.log(response.data.tenders);
           setsearchCode(response.data.tenders);
           setShowTable(showTable);
         } else {
           console.log("No data received");
-          //TODO: show message
         }
       },
       (error) => {
