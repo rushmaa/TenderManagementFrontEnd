@@ -28,6 +28,7 @@ import Signup from "./views/Signup";
 import PublishCouncil from "./views/PublishCouncil";
 import PublishContract from "./views/PublishContract";
 import PublishTender from "./views/PublishTender";
+import NoAccess from "./views/NoAccess";
 
 const App = () => {
   const store = createStore(Reducer);
@@ -37,6 +38,9 @@ const App = () => {
         <Header />
         <Navbar store={store} />
         <Switch>
+           <Route exact path="/NoAccess" component={NoAccess} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/" component={UserLogin} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/admin" component={AdminDashboard} />
           <Route exact path="/tenders/Current" component={Current} />
