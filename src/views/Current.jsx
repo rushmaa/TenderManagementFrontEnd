@@ -6,12 +6,13 @@ import Title from "../components/Title";
 import MainForm from "../components/Form/MainForm";
 import { TenderTableData } from "../Data/TenderTableData";
 import { connect } from "react-redux";
+import axios from "axios";
 
 const Current = (props) => {
   const [showTable, setShowTable] = React.useState(true);
   const [searchCode, setsearchCode] = React.useState(TenderTableData);
   React.useEffect(() => {
-    if (props.User.User.type === 'admin') {
+    if (props.User.User.type === "admin") {
       fetch(`http://localhost:5000/user/getunconfirmeduser`, {
         method: "get",
         headers: {
@@ -20,12 +21,27 @@ const Current = (props) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log('data.users==', data.users);
+          console.log("data.users==", data.users);
           props.setUnconfirmedUserList(data.users);
         });
     }
-  }, [])
-
+    // ! NEW CALL TO DB
+    axios.get("http://localhost:5000/tender/getalltenders").then(
+      (response) => {
+        console.log(response);
+        if (response.data.tenders) {
+          console.log(response.data.tenders);
+        } else {
+          console.log("No data received");
+          //TODO: show message
+        }
+      },
+      (error) => {
+        console.log(error);
+        //TODO: show message
+      }
+    );
+  }, []);
 
   const proxy = (searchCode) => {
     console.log(searchCode);
@@ -51,12 +67,13 @@ const Current = (props) => {
   );
 };
 const mapStateToProps = (state) => {
-  var data = { User: state.User }
+  var data = { User: state.User };
   return data;
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    setUnconfirmedUserList: (data) => dispatch({ type: "SET_UNCONFIRMED_USER", payload: data }),
+    setUnconfirmedUserList: (data) =>
+      dispatch({ type: "SET_UNCONFIRMED_USER", payload: data }),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Current);
