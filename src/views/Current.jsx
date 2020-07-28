@@ -1,5 +1,6 @@
 import React from "react";
-import DataTable from "../components/DataTable";
+// import DataTable from "../components/DataTable";
+import TenderDataTable from "../components/TenderDataTable";
 import Card from "../components/Card";
 import "../assets/css/theme.css";
 import Title from "../components/Title";
@@ -8,9 +9,34 @@ import { TenderTableData } from "../Data/TenderTableData";
 import { connect } from "react-redux";
 import axios from "axios";
 
+const getTableData = () => {
+  axios.get("http://localhost:5000/tender/getalltenders").then(
+    (response) => {
+      console.log(response);
+      if (response.data.tenders) {
+        console.log(response.data.tenders);
+        console.log("returning value");
+        return response.data.tenders;
+      } else {
+        console.log("No data received");
+        //TODO: show message
+      }
+    },
+    (error) => {
+      console.log(error);
+      //TODO: show message
+    }
+  );
+};
+
 const Current = (props) => {
   const [showTable, setShowTable] = React.useState(true);
-  const [searchCode, setsearchCode] = React.useState(TenderTableData);
+  const [searchCode, setsearchCode] = React.useState([]);
+
+  React.useEffect(() => {
+    console.log("mounted or updated");
+    console.log(searchCode);
+  });
   React.useEffect(() => {
     if (props.User.User.type === "admin") {
       fetch(`http://localhost:5000/user/getunconfirmeduser`, {
@@ -30,7 +56,10 @@ const Current = (props) => {
       (response) => {
         console.log(response);
         if (response.data.tenders) {
+          setShowTable(!showTable);
           console.log(response.data.tenders);
+          setsearchCode(response.data.tenders);
+          setShowTable(showTable);
         } else {
           console.log("No data received");
           //TODO: show message
@@ -45,6 +74,7 @@ const Current = (props) => {
 
   const proxy = (searchCode) => {
     console.log(searchCode);
+    console.log("searchcode");
     const results = TenderTableData.filter(
       (element) => element.code === searchCode
     );
@@ -59,7 +89,8 @@ const Current = (props) => {
           title="Current Tenders"
           text="This page shows all open tenders. The list includes all public tenders, as well as selective tenders to which your business can respond. You must be signed in to see selective tenders."
         />
-        <div>{showTable && <DataTable searchCode={searchCode} />}</div>
+
+        <div>{showTable && <TenderDataTable searchCode={searchCode} />}</div>
         <Title header="Search Criteria" />
         <MainForm toggleTable={proxy} />
       </div>
