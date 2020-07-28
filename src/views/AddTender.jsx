@@ -8,11 +8,25 @@ import Card from "../components/Card";
 import Title from "../components/Title";
 
 class AddTender extends React.Component {
-
   onChange(e) {
-      let files = e.target.files;
-      console.warn("data files", files);
-  }  
+    let files = e.target.files;
+    console.warn("data files", files);
+  }
+
+  handleClick(event) {
+    console.log("called click");
+    event.preventDefault();
+    console.log(event.target.tenderCode.value);
+    console.log(event.target.tenderName.value);
+    console.log(event.target.tenderCategory.value);
+    console.log(event.target.tenderState.value);
+    console.log(event.target.tenderIssuedby.value);
+    console.log(event.target.tenderGrouping.value);
+    console.log(event.target.closingDateFrom.value);
+    console.log(event.target.closingDateTo.value);
+    console.log(event.target.openingDateFrom.value);
+    console.log(event.target.openingDateTo.value);
+  }
   render() {
     return (
       <div className="pt-3">
@@ -23,13 +37,17 @@ class AddTender extends React.Component {
           />
 
           <div className="pt-3 main-container">
-            <Form>
+            <Form onSubmit={this.handleClick} noValidate>
               <Form.Group as={Row} controlId="formPlaintextPassword">
                 <Form.Label column sm="2">
                   Tender Code
                 </Form.Label>
                 <Col sm="4">
-                  <Form.Control type="Tender Code" placeholder="Tender Code" />
+                  <Form.Control
+                    id="tenderCode"
+                    type="Tender Code"
+                    placeholder="Tender Code"
+                  />
                 </Col>
               </Form.Group>
 
@@ -38,7 +56,7 @@ class AddTender extends React.Component {
                   Tender State
                 </Form.Label>
                 <Col sm="4">
-                  <select className="form-control">
+                  <select id="tenderState" className="form-control">
                     <option value="Any">Any</option>
                     <option value="Open">Open</option>
                     <option value="Closed">Closed</option>
@@ -54,16 +72,24 @@ class AddTender extends React.Component {
                   Tender Name
                 </Form.Label>
                 <Col sm="4">
-                  <Form.Control type="Tender Name" placeholder="Tender Name" />
+                  <Form.Control
+                    id="tenderName"
+                    type="Tender Name"
+                    placeholder="Tender Name"
+                  />
                 </Col>
               </Form.Group>
 
               <Form.Group as={Row} controlId="formPlaintextPassword">
                 <Form.Label column sm="2">
-                Category
+                  Category
                 </Form.Label>
                 <Col sm="4">
-                  <Form.Control type="Category" placeholder="Category" />
+                  <Form.Control
+                    id="tenderCategory"
+                    type="Category"
+                    placeholder="Category"
+                  />
                 </Col>
               </Form.Group>
 
@@ -72,7 +98,7 @@ class AddTender extends React.Component {
                   Issued By
                 </Form.Label>
                 <Col sm="4">
-                  <select className="form-control">
+                  <select id="tenderIssuedby" className="form-control">
                     <option value="grapefruit">Grapefruit</option>
                     <option value="lime">Lime</option>
                     <option value="coconut">Coconut</option>
@@ -92,7 +118,7 @@ class AddTender extends React.Component {
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>From</InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder=" " />
+                        <Input id="openingDateFrom" placeholder=" " />
                         <InputGroupAddon addonType="append">
                           <InputGroupText>
                             {" "}
@@ -106,7 +132,7 @@ class AddTender extends React.Component {
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>To</InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder=" " />
+                        <Input id="openingDateTo" placeholder=" " />
                         <InputGroupAddon addonType="append">
                           <InputGroupText>
                             {" "}
@@ -130,7 +156,7 @@ class AddTender extends React.Component {
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>From</InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder=" " />
+                        <Input id="closingDateFrom" placeholder=" " />
                         <InputGroupAddon addonType="append">
                           <InputGroupText>
                             {" "}
@@ -144,7 +170,7 @@ class AddTender extends React.Component {
                         <InputGroupAddon addonType="prepend">
                           <InputGroupText>To</InputGroupText>
                         </InputGroupAddon>
-                        <Input placeholder=" " />
+                        <Input id="closingDateTo" placeholder=" " />
                         <InputGroupAddon addonType="append">
                           <InputGroupText>
                             {" "}
@@ -162,7 +188,7 @@ class AddTender extends React.Component {
                   Grouping
                 </Form.Label>
                 <Col sm="4">
-                  <select className="form-control">
+                  <select id="tenderGrouping" className="form-control">
                     <option value="None">None</option>
                     <option value="Buyer">Buyer</option>
                     <option value="Categories">Categories</option>
@@ -171,18 +197,22 @@ class AddTender extends React.Component {
                   </select>
                 </Col>
               </Form.Group>
-              
+
               <Form.Group as={Row} controlId="formPlaintextPassword">
                 <Form.Label column sm="2">
                   Upload Documents
                 </Form.Label>
                 <Col sm="4">
-                  <input type="file" name="file" onChange={(e) => this.onChange(e)}/>
+                  <input
+                    type="file"
+                    name="file"
+                    onChange={(e) => this.onChange(e)}
+                  />
                 </Col>
               </Form.Group>
 
               <div className="btnPosition">
-                <Button variant="primary" value="Submit">
+                <Button variant="primary" value="Submit" type="submit">
                   Add Tender
                 </Button>{" "}
                 <Button variant="primary" type="reset" value="Reset">
