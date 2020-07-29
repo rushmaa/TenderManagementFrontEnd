@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 
 const ModalDialog = (props) => {
   const [show, setShow] = useState(true);
-
-  const handleClose = () => setShow(false);
+  const history = useHistory();
+  const handleClose = () => {
+    setShow(false);
+    history.push("/tenders/Current");
+  };
 
   return (
     <div>
