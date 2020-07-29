@@ -22,7 +22,7 @@ const DataTable = (props) => {
                 <div>
                   <Link
                     to={{
-                      pathname: "/tenders/Current/DisplayTender",
+                      pathname: `/tenders/Current/DisplayTender/${element.code}`,
                       state: { code: element.code },
                     }}
                   >

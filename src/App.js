@@ -38,14 +38,13 @@ const App = () => {
         <Header />
         <Navbar store={store} />
         <Switch>
-           <Route exact path="/NoAccess" component={NoAccess} />
+          <Route exact path="/NoAccess" component={NoAccess} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/" component={UserLogin} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/admin" component={AdminDashboard} />
           <Route exact path="/tenders/Current" component={Current} />
           <Route
-            exact
             path="/tenders/Current/DisplayTender"
             component={DisplayTender}
           />
