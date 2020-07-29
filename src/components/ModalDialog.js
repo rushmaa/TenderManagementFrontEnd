@@ -1,24 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import * as CONSTANTS from "../Data/Constants";
 
 const ModalDialog = (props) => {
+  const erroFlag = props.errorFlag;
   const [show, setShow] = useState(true);
+
   const history = useHistory();
   const handleClose = () => {
     setShow(false);
-    history.push(CONSTANTS.ROUTE_CURRENT_TENDERS);
+    if (!erroFlag) {
+      history.push(CONSTANTS.ROUTE_CURRENT_TENDERS);
+    }
   };
 
   return (
     <div>
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title>Tender added successfully</Modal.Title>
+          <Modal.Title>
+            {erroFlag
+              ? "Error while adding tender to DB"
+              : " Tender added successfully "}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          This tender will be visible in current tenders page
+          {erroFlag
+            ? "This can be due to connection error or database error"
+            : "  This tender will be visible in current tenders page"}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

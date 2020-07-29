@@ -11,7 +11,7 @@ import ModalDialog from "../components/ModalDialog";
 class AddTender extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { modalIsHiden: false };
+    this.state = { modalIsHiden: false, modalError: false };
   }
 
   onChange(e) {
@@ -44,18 +44,26 @@ class AddTender extends React.Component {
               //TODO: redirect to another page
               console.log(this.state.modalIsHiden);
               this.state.modalIsHiden = true;
-              this.forceUpdate();
+              this.state.modalError = false;
             } else {
               console.log("Unsucessfull");
+              this.state.modalIsHiden = true;
+              this.state.modalError = true;
               //TODO: show message
             }
           } else {
             console.log("No data received");
+            this.state.modalIsHiden = true;
+            this.state.modalError = true;
             //TODO: show message
           }
+          this.forceUpdate();
         },
         (error) => {
           console.log(error);
+          this.state.modalIsHiden = true;
+          this.state.modalError = true;
+          this.forceUpdate();
           //TODO: show message
         }
       );
@@ -64,7 +72,8 @@ class AddTender extends React.Component {
     let modal;
     if (this.state.modalIsHiden) {
       console.log("in true");
-      modal = <ModalDialog />;
+      console.log(`passing modal error ${this.state.modalError}`);
+      modal = <ModalDialog errorFlag={this.state.modalError} />;
     } else {
       console.log("in false");
     }
