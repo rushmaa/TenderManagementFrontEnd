@@ -43,7 +43,7 @@ const Signup = (props) => {
                 </MDBModal>
             </MDBContainer>
             <div className="App">
-                <header className="App-header">
+                <header className="App-header pt-3 pb-3">
                     <div
                         style={{
                             backgroundColor: "#FFF",

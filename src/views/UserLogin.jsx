@@ -79,7 +79,7 @@ render() {
                     </MDBModalFooter>
                 </MDBModal>
             </MDBContainer>
-      <header className="App-header">
+      <header className="App-header pt-3 pb-3">
         <div
           style={{
             backgroundColor: "#FFF",

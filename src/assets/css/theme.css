@@ -268,3 +268,9 @@
   color: black;
   font-size: 15px;
 }
+
+/*Scroll*/
+.modal-open {
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+}
