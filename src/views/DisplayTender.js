@@ -7,16 +7,15 @@ import { Contacts } from "../components/Contacts";
 import { SpecificationDocuments } from "../components/SpecificationDocuments";
 import { Responses } from "../components/Responses";
 import { TenderTitle } from "../components/TenderTitle";
-import { TenderData } from "../Data/TenderTableData";
+// import { TenderData } from "../Data/TenderTableData";
 import jsPDF from "jspdf";
 
 const DisplayTender = (props) => {
   var pdf = new jsPDF("p", "pt", "a1");
   pdf.addHTML(document.body, function () {
-    pdf.save(`${code}.pdf`);
+    pdf.save(`${element.tenderCode}.pdf`);
   });
-  const code = props.location.state.code;
-  const element = TenderData[code];
+  const element = props.location.state.tender;
   return (
     <div className="main-container pt-3">
       <div className="container-fluid">

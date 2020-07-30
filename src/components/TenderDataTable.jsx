@@ -23,7 +23,7 @@ const TenderDataTable = (props) => {
               <Link
                 to={{
                   pathname: `/tenders/Current/DisplayTender/${element.tenderCode}`,
-                  state: { code: element.code },
+                  state: { tender: element },
                 }}
               >
                 <span className="tender-link">{element.tenderName}</span>
