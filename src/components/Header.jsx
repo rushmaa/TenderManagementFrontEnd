@@ -1,18 +1,33 @@
 import React, { Component } from "react";
+import {
+  Form,
+  Button,
+  FormControl,
+  Row,
+  Col,
+  Container,
+} from "react-bootstrap";
 import "../assets/css/theme.css";
 
 export class Header extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <div className="row rowHeader logo">
-          <div className="col-sm-3 col-md-3">
-            <img src="https://adbsystems.com.au/wp-content/uploads/2017/03/final-logo-HR.jpg" alt="logo" />
-          </div>
-          <div className="col-sm-6 col-md-6 header-title">
-            <h1>Aussie Digital Tenders and Contracts</h1>
-          </div>
-        </div>
+        <Row className="headerRow">
+          <Col md={{ span: 7, offset: 2 }} className="col-Heading">
+            <h1>Aussie Digital Tenders and Contracts Management</h1>
+          </Col>
+          <Col md={3} className="col-Searching">
+            <Form inline>
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2"
+              />
+              <Button variant="outline-danger">Search</Button>
+            </Form>
+          </Col>
+        </Row>
       </div>
     );
   }

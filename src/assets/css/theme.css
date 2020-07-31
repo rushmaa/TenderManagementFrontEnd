@@ -1,21 +1,53 @@
+/*Main Header*/
+.headerRow {
+  background-color: #f5f5f5;
+  height: 75px;
+}
+.col-Heading h1 {
+  text-align: center;
+  color: #252525;
+  font-size: 30px;
+  padding-top: 15px;
+}
+.col-Searching {
+  padding-top: 17px;
+}
+.col-Searching .form-inline {
+  display: block !important;
+  text-align: center;
+}
+.btn-outline-danger {
+  background-color: #d11 !important;
+  border: none;
+  color: #fff !important;
+}
+.btn-outline-danger:hover {
+  color: #d11;
+  border: 1px solid #d11;
+  background: transparent;
+}
+
 /*Navbar Component*/
 .navbar {
   background-color: #037 !important;
 }
 .main-nav {
   color: #fff;
+  font-size: 17px;
+}
+.logRight {
+  justify-content: flex-end !important;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #fff !important;
+  font-size: 17px;
+  text-decoration: none;
 }
 .nav-link:hover,
 .main-nav:hover {
   color: #252525;
   text-decoration: none;
 }
-.navbar-light .navbar-nav .nav-link {
-  color: #fff !important;
-  font-size: 14px;
-  text-decoration: none;
-}
-
 .navbar-light .navbar-nav .nav-link:hover {
   color: #252525 !important;
   background-color: #dff;
