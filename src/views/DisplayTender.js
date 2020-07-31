@@ -1,3 +1,4 @@
+
 import React from "react";
 import Card from "../components/Card";
 import TenderRequestSection from "../components/TenderRequestSection";
@@ -11,10 +12,10 @@ import { TenderTitle } from "../components/TenderTitle";
 import jsPDF from "jspdf";
 
 const DisplayTender = (props) => {
-  var pdf = new jsPDF("p", "pt", "a1");
+  /*var pdf = new jsPDF("p", "pt", "a1");
   pdf.addHTML(document.body, function () {
     pdf.save(`${element.tenderCode}.pdf`);
-  });
+  })*/
   const element = props.location.state.tender;
   return (
     <div className="main-container pt-3">
