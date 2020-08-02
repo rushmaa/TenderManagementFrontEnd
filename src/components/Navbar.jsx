@@ -47,7 +47,11 @@ class Navbar extends Component {
             </ReactBootStrap.Nav>
             <ReactBootStrap.Nav>
               <ReactBootStrap.Nav.Link><Link to="/" className="main-nav">{ user?.User?.User?.businessName && 'Welcome, '+user?.User?.User?.businessName}</Link></ReactBootStrap.Nav.Link>
-              <ReactBootStrap.Nav.Link><Link to="/Login" className="main-nav">{user?.User?.User?.businessName ? 'LOG OUT': 'LOG IN'}</Link></ReactBootStrap.Nav.Link>
+              <ReactBootStrap.Nav.Link><Link to="/Login" onClick={()=>{
+                if (user?.User?.User?.businessName) {
+                  this.props.setUser({});
+                }
+              }} className="main-nav">{user?.User?.User?.businessName ? 'LOG OUT': 'LOG IN'}</Link></ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
           </ReactBootStrap.Navbar.Collapse>
         </ReactBootStrap.Navbar>

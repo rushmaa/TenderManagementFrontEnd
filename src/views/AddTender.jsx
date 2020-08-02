@@ -6,16 +6,40 @@ import axios from "axios";
 //Components
 import Card from "../components/Card";
 import Title from "../components/Title";
+import DatePicker from "../components/DatePicker";
 import ModalDialog from "../components/ModalDialog";
+import KeywordSelector from "../components/KeywordSelector";
 
 class AddTender extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { modalIsHiden: false, modalError: false };
+    this.state = { modalIsHiden: false, modalError: false, selectedFile: null };
+
+
+    // fetch("http://localhost:5000/tender/getfile").then((response) => response.blob()).then((blob) => {
+    //   const url = window.URL.createObjectURL(new Blob([blob]));
+    //   const link = document.createElement('a');
+    //   link.href = url;
+    //   link.setAttribute('download', `data.txt`);
+    //   document.body.appendChild(link);
+    //   link.click();
+    //   link.parentNode.removeChild(link);
+    // })
   }
 
   onChange(e) {
-    let files = e.target.files;
+    let files = e.target.files[0];
+    var form = new FormData();
+    form.append('filename', 'tendercode.pdf')
+    form.append('file', files)
+
+    axios.post("http://localhost:5000/upload", form, {
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then(res => { // then print response status
+        console.log(res.statusText)
+      })
+
     console.warn("data files", files);
   }
 
@@ -88,7 +112,7 @@ class AddTender extends React.Component {
             text="This page can add your tender and it will show it in Current Tender page."
           />
           <div className="pt-3 main-container">
-            <Form onSubmit={this.handleClick.bind(this)} noValidate>
+            <Form onSubmit={(event) => event.preventDefault()}>
               <Form.Group as={Row} controlId="formPlaintextPassword">
                 <Form.Label column sm="2">
                   Tender Code
@@ -166,30 +190,12 @@ class AddTender extends React.Component {
                   <Form.Group as={Row}>
                     <Col sm={6}>
                       <InputGroup>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>From</InputGroupText>
-                        </InputGroupAddon>
-                        <Input id="openingDateFrom" placeholder=" " />
-                        <InputGroupAddon addonType="append">
-                          <InputGroupText>
-                            {" "}
-                            <Calendar3 size={15} />
-                          </InputGroupText>
-                        </InputGroupAddon>
+                        <DatePicker label={'From'} />
                       </InputGroup>
                     </Col>
                     <Col sm={6}>
                       <InputGroup>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>To</InputGroupText>
-                        </InputGroupAddon>
-                        <Input id="openingDateTo" placeholder=" " />
-                        <InputGroupAddon addonType="append">
-                          <InputGroupText>
-                            {" "}
-                            <Calendar3 size={15} />
-                          </InputGroupText>
-                        </InputGroupAddon>
+                        <DatePicker label={'To'} />
                       </InputGroup>
                     </Col>
                   </Form.Group>
@@ -204,30 +210,12 @@ class AddTender extends React.Component {
                   <Form.Group as={Row}>
                     <Col sm={6}>
                       <InputGroup>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>From</InputGroupText>
-                        </InputGroupAddon>
-                        <Input id="closingDateFrom" placeholder=" " />
-                        <InputGroupAddon addonType="append">
-                          <InputGroupText>
-                            {" "}
-                            <Calendar3 size={15} />
-                          </InputGroupText>
-                        </InputGroupAddon>
+                        <DatePicker label={'From'} />
                       </InputGroup>
                     </Col>
                     <Col sm={6}>
                       <InputGroup>
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>To</InputGroupText>
-                        </InputGroupAddon>
-                        <Input id="closingDateTo" placeholder=" " />
-                        <InputGroupAddon addonType="append">
-                          <InputGroupText>
-                            {" "}
-                            <Calendar3 size={15} />
-                          </InputGroupText>
-                        </InputGroupAddon>
+                        <DatePicker label={'To'} />
                       </InputGroup>
                     </Col>
                   </Form.Group>
@@ -248,7 +236,12 @@ class AddTender extends React.Component {
                   </select>
                 </Col>
               </Form.Group>
-
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Keywords
+                </Form.Label>
+                <KeywordSelector />
+              </Form.Group>
               <Form.Group as={Row} controlId="formPlaintextPassword">
                 <Form.Label column sm="2">
                   Upload Documents
@@ -256,14 +249,14 @@ class AddTender extends React.Component {
                 <Col sm="4">
                   <input
                     type="file"
-                    name="file"
+                    name="foo"
                     onChange={(e) => this.onChange(e)}
                   />
                 </Col>
               </Form.Group>
 
               <div className="btnPosition">
-                <Button variant="primary" value="Submit" type="submit">
+                <Button variant="primary" value="Submit" type="submit" onClick={() => this.handleClick.bind(this)}>
                   Add Tender
                 </Button>{" "}
                 <Button variant="primary" type="reset" value="Reset">

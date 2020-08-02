@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import {
   Form,
   Button,
-  FormControl,
   Row,
   Col,
-  Container,
 } from "react-bootstrap";
 import "../assets/css/theme.css";
+import ComboBox  from "../components/Autcomplete";
 
 export class Header extends Component {
   render() {
@@ -19,11 +18,7 @@ export class Header extends Component {
           </Col>
           <Col md={3} className="col-Searching">
             <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-              />
+              <ComboBox/>
               <Button variant="outline-danger">Search</Button>
             </Form>
           </Col>

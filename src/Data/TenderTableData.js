@@ -77,7 +77,8 @@ export const TenderData = {
     "openingdateFrom": "28/07/2020",
     "closingdateFrom":"28/07/2020",
     "closingdateTo":"28/07/2020",
-    "grouping":"buyer"
+    "grouping":"buyer",
+    "keywords":"['buyer1', 'buyer2', 'buyer3', ]"
   },
   DH046243: {
     issuedByHeader: "S.A Tenders",
