@@ -16,24 +16,21 @@ class Home extends React.Component {
       <div className="main-container pt-3">
         <div className="container-fluid">
           <Card
-            title="Welcome to the Aussie Digital Tenders & Contracts website"
-            text="You can register new supplier here."
+            title="Welcome to the ADB Systems website"
           />
           <p className="pt-3">
-            Welcome to the Aussie Digital Tenders & Contracts website. The
-            site provides easy-to-use access to all publicly available bidding
-            opportunities within the Australian Government. Electronic
-            submissions can be made using the Electronic Lodgement Service. You
-            can also view the details of all Australian Government-awarded
-            contracts for goods, services and works.
+            Welcome to the ADB Systems website. The site offers convenient access to all procurement opportunities open to the public within the Australian Government.
+            You may make online submissions using the Online Lodgement System.
+            You will also access the list of all goods, facilities,
+            and works contracts issued by the Australian Government.    
           </p>
           <Title header="Electronic Notification" />
           <p>
-            If you are a registered member with ADB Tenders & Contracts, you can
-            elect to be notified by e-mail of tenders that may be of interest to
-            you. How? You Search the site for the latest tenders that match your
-            interests, save the results as a Search Profile and then select the
-            Alert option to receive automatic updates by email.
+            If you're an ADB Systems Tenders & Contracts registered member, you may 
+            choose to be informed of tenders that might be of interest to you via e-mail.
+            How? You check online for the latest tenders that suit your preferences,
+            save the results as a search profile and then choose the Notification option
+            to receive automatic email updates.
           </p>
           <h4 className="displayInline">Not a registered member: </h4>
           <span className="registrationLink">
@@ -49,10 +46,9 @@ class Home extends React.Component {
           </Link>
           <div>
             <p className="displayInline">
-              The site is designed for the publication of all Australian
-              Public Sector tenders and any associated documentation that can be
-              made available for download by registered users of the site.
-              Agencies are responsible for the publication of tenders.{" "}
+              The website is designed to publish all Australian Public Sector tenders and any 
+              related documents which may be provided available for download by registered site users.
+              The agencies are responsible for granting of tenders.{" "}
             </p>
 
             <Link to="/News/Publish-Tender" className="linkStyle">
@@ -78,10 +74,10 @@ class Home extends React.Component {
           </Link>
           <div>
             <p className="displayInline">
-              Councils can either contact the Electronic Services Program at the
-              LGA on (08) 8224 2000, OR contact ADB Tenders & Contracts Helpdesk
-              on (08) 84621401to set up your Council as a tender issuing
-              authority (Agency) or receive help with placing your tender.{" "}
+              Councils may either contact the LGA Electronic Services Program at 
+              (08) 8224 2000, OR contact ADB Tenders & Contracts Helpdesk
+              on 1300 784 249 to arrange the Council as a contract issuing authority
+              ("Agency") or seek help with the tender.{" "}
             </p>
 
             <Link to="/News/Publish-Contract" className="linkStyle">
@@ -108,12 +104,11 @@ class Home extends React.Component {
           </Link>
           <div>
             <p className="displayInline">
-              The site is designed for the publication of contracts within the
-              Australian Public Sector as required by the DPC Circular
-              PC027 'Disclosure of Government Contracts'. To submit a contract
-              for publication to the site download the attached document,
-              complete the details as requested on the form and return it to ADB
-              Tenders & Contracts.{" "}
+              The site is designed as required by the DPC Circular PC027 'Disclosure of Government
+              Contracts' to disclose contracts within the Australian Public Sector. To send 
+              a publication contract to the site download the attached document, fill out the 
+              specifics as needed in the application and submit it to ADB Systems Tenders 
+              & Contracts.{" "}
             </p>
 
             <Link to="/News/Publish-Council" className="linkStyle">
