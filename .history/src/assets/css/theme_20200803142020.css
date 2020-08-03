@@ -262,7 +262,6 @@
 }
 .heading {
   color: #fff;
-  font-weight: 100;
 }
 .button-wrap {
   display: table-cell;
@@ -270,21 +269,5 @@
   vertical-align: middle;
   width: 25%;
 }
-.button-wrap a:hover {
-  text-decoration: none;
-}
 .footerBar-button {
-  border-radius: 0px;
-    padding: 10px 30px;
-    font-size: 13px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    letter-spacing: 1px;
-    background-color: #fff !important;
-    color: #777 !important;
-    background-color: transparent;
-    display: inline-block;
-    -webkit-transition: all ease 0.3s;
-    -moz-transition: all ease 0.3s;
-    transition: all ease 0.3s;
 }

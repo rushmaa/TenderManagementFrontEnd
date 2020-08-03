@@ -73,11 +73,20 @@ class Navbar extends Component {
                   NOTICE
                 </Link>
               </ReactBootStrap.Nav.Link>
-              <ReactBootStrap.Nav.Link>
-              <Link to="/HELP/FAQ" className="main-nav">
-                SUPPORT & FAQ'S
-                </Link>
-              </ReactBootStrap.Nav.Link>
+              <ReactBootStrap.NavDropdown
+                title="HELP / FAQ"
+                id="collasible-nav-dropdown"
+              >
+                <ReactBootStrap.NavDropdown.Item>
+                  <Link to="/HELP/FAQ">SUPPORT & FAQ'S</Link>
+                </ReactBootStrap.NavDropdown.Item>
+                <ReactBootStrap.NavDropdown.Item>
+                  <Link to="/HELP/Request-Support">Request Support</Link>
+                </ReactBootStrap.NavDropdown.Item>
+                <ReactBootStrap.NavDropdown.Item>
+                  <Link to="/HELP/Document-Library">Document Library</Link>
+                </ReactBootStrap.NavDropdown.Item>
+              </ReactBootStrap.NavDropdown>
             </ReactBootStrap.Nav>
             {user?.User?.User?.type === "admin" && (
                 <ReactBootStrap.Nav.Link>
@@ -89,8 +98,8 @@ class Navbar extends Component {
             <ReactBootStrap.Nav>
               <ReactBootStrap.Nav.Link>
                 <Link to="/" className="main-nav">
-                  <b>{user?.User?.User?.businessName &&
-                    "Welcome, " + user?.User?.User?.businessName}</b>
+                  {user?.User?.User?.businessName &&
+                    "Welcome, " + user?.User?.User?.businessName}
                 </Link>
               </ReactBootStrap.Nav.Link>
               <ReactBootStrap.Nav.Link>

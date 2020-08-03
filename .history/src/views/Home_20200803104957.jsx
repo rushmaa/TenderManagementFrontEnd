@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { FileTextFill, ArrowRightCircleFill } from "react-bootstrap-icons";
-import { Button, Row, Col } from "react-bootstrap";
-import ReactPlayer from "react-player";
 
 //Components
 import Card from "../components/Card";
@@ -133,72 +131,89 @@ class Home extends React.Component {
           </div>
         </div>
 
-        {/*Video and Context*/}
-        <div className="container-fluid videoContainer">
+        <div class="container">
           <div
-            className="spacer"
-            data-desktop="80"
+            class="themesflat-spacer clearfix"
+            data-desktop="104"
             data-mobi="60"
             data-smobi="60"
+            style="height:104px"
           ></div>
-          <Row>
-            <Col md={6}>
-              <div className="videoHeight">
-                <h2 className="videoHeading">
+          <div class="row equalize sm-equalize-auto">
+            <div class="col-md-6" style="height: 387px;">
+              <div
+                class="themesflat-spacer clearfix"
+                data-desktop="33"
+                data-mobi="0"
+                data-smobi="0"
+                style="height:33px"
+              ></div>
+
+              <div class="themesflat-headings style-1 clearfix">
+                <h2 class="heading letter-spacing--09px clearfix">
                   WE HAVE A WIDE BREADTH OF EXPERIENCE
                 </h2>
-                <div className="decorator"></div>
-                <p className="sub-heading">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
+                <div class="sep clearfix"></div>
+                <p class="sub-heading clearfix">
+                  The breadth of knowledge and experience at Financial Group
+                  assures our clients that we have the skills necessary to focus
+                  on their important financial matters.
                 </p>
               </div>
-            </Col>
-            <Col md={6}>
-              <div className="videoHeight">
-                <ReactPlayer
-                  url="https://www.youtube.com/watch?v=ap9PvIr9RTg"
-                  className="video"
-                />
+
+              <div
+                class="themesflat-spacer clearfix"
+                data-desktop="20"
+                data-mobi="20"
+                data-smobi="20"
+                style="height:20px"
+              ></div>
+              <h3 class="title-video">
+                We are independent and free from third party influence.
+              </h3>
+              <div
+                class="themesflat-spacer clearfix"
+                data-desktop="21"
+                data-mobi="20"
+                data-smobi="20"
+                style="height:21px"
+              ></div>
+              <a href="#" class="themesflat-button blue">
+                WATCH MORE VIDEO
+              </a>
+              <div
+                class="themesflat-spacer clearfix"
+                data-desktop="28"
+                data-mobi="60"
+                data-smobi="60"
+                style="height:28px"
+              ></div>
+            </div>
+
+            <div
+              class="col-md-6 half-background style-1"
+              style="height: 387px;"
+            >
+              <div class="themesflat-icon style-1 clearfix background">
+                <a
+                  class="icon-wrap popup-video"
+                  href="https://www.youtube.com/watch?v=LQpedLhpQsk"
+                >
+                  <span class="icon">
+                    <i class="finance-icon-playbutton"></i>
+                  </span>
+                </a>
               </div>
-            </Col>
-          </Row>
+            </div>
+          </div>
           <div
-            className="spacer"
+            class="themesflat-spacer clearfix"
             data-desktop="80"
             data-mobi="60"
             data-smobi="60"
+            style="height:80px"
           ></div>
-        </div>
-
-        <div class="contactBar">
-          <div class="container">
-            <Row>
-              <Col>
-                <div class="footerbar-spacer"></div>
-                <div class="inner">
-                  <div class="heading-wrap">
-                    
-                      <h3 class="heading">
-                        If You are interst in this Product, Contact ADB System
-                      </h3>
-                   
-                  </div>
-                  <div class="button-wrap">
-                    <Link to="#"
-                      class="footerBar-button"
-                    >
-                      CONTACT US TODAY
-                    </Link>
-                  </div>
-                </div>
-                <div class="footerbar-spacer"></div>
-              </Col>
-            </Row>
-          </div>
+          <div class="border-h-1 dark"></div>
         </div>
       </div>
     );

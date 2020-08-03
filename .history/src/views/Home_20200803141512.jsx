@@ -178,24 +178,25 @@ class Home extends React.Component {
           <div class="container">
             <Row>
               <Col>
-                <div class="footerbar-spacer"></div>
+                <div class="spacer"></div>
                 <div class="inner">
                   <div class="heading-wrap">
-                    
-                      <h3 class="heading">
+                    <div class="text-wrap">
+                      <h3 class="heading mobi-padding-top20 mobi-padding-bottom20">
                         If You are interst in this Product, Contact ADB System
                       </h3>
-                   
+                    </div>
                   </div>
                   <div class="button-wrap">
-                    <Link to="#"
+                    <a
+                      href="#"
                       class="footerBar-button"
                     >
                       CONTACT US TODAY
-                    </Link>
+                    </a>
                   </div>
                 </div>
-                <div class="footerbar-spacer"></div>
+                <div class="spacer"></div>
               </Col>
             </Row>
           </div>

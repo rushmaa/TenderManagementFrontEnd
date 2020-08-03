@@ -89,8 +89,8 @@ class Navbar extends Component {
             <ReactBootStrap.Nav>
               <ReactBootStrap.Nav.Link>
                 <Link to="/" className="main-nav">
-                  <b>{user?.User?.User?.businessName &&
-                    "Welcome, " + user?.User?.User?.businessName}</b>
+                  {user?.User?.User?.businessName &&
+                    "Welcome, " + user?.User?.User?.businessName}
                 </Link>
               </ReactBootStrap.Nav.Link>
               <ReactBootStrap.Nav.Link>

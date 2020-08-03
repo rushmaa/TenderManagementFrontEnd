@@ -178,24 +178,40 @@ class Home extends React.Component {
           <div class="container">
             <Row>
               <Col>
-                <div class="footerbar-spacer"></div>
-                <div class="inner">
-                  <div class="heading-wrap">
-                    
-                      <h3 class="heading">
-                        If You are interst in this Product, Contact ADB System
-                      </h3>
-                   
-                  </div>
-                  <div class="button-wrap">
-                    <Link to="#"
-                      class="footerBar-button"
-                    >
-                      CONTACT US TODAY
-                    </Link>
+                <div
+                  class="spacer"
+                  data-desktop="24"
+                  data-mobi="40"
+                  data-smobi="40"
+                  
+                ></div>
+
+                <div class="themesflat-action-box style-1 has-icon padding-left-106 padding-right-113">
+                  <div class="inner">
+                    <div class="heading-wrap">
+                      <div class="text-wrap">
+                        <h3 class="heading mobi-padding-top20 mobi-padding-bottom20">
+                          If You are interst in this Product, Contact ADB System
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="button-wrap">
+                      <a
+                        href="#"
+                        class="themesflat-button white font-weight-600 margin-top-10 margin-bottom-13"
+                      >
+                        CONTACT US TODAY
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div class="footerbar-spacer"></div>
+
+                <div
+                  class="spacer"
+                  data-desktop="20"
+                  data-mobi="40"
+                  data-smobi="40"
+                ></div>
               </Col>
             </Row>
           </div>

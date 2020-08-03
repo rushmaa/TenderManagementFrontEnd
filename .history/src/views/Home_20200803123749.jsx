@@ -133,7 +133,6 @@ class Home extends React.Component {
           </div>
         </div>
 
-        {/*Video and Context*/}
         <div className="container-fluid videoContainer">
           <div
             className="spacer"
@@ -155,6 +154,11 @@ class Home extends React.Component {
                   printer took a galley of type and scrambled it to make a type
                   specimen book.
                 </p>
+                <p className="sub-heading">
+                  The breadth of knowledge and experience at Financial Group
+                  assures our clients that we have the skills necessary to focus
+                  on their important financial matters.
+                </p>
               </div>
             </Col>
             <Col md={6}>
@@ -172,33 +176,6 @@ class Home extends React.Component {
             data-mobi="60"
             data-smobi="60"
           ></div>
-        </div>
-
-        <div class="contactBar">
-          <div class="container">
-            <Row>
-              <Col>
-                <div class="footerbar-spacer"></div>
-                <div class="inner">
-                  <div class="heading-wrap">
-                    
-                      <h3 class="heading">
-                        If You are interst in this Product, Contact ADB System
-                      </h3>
-                   
-                  </div>
-                  <div class="button-wrap">
-                    <Link to="#"
-                      class="footerBar-button"
-                    >
-                      CONTACT US TODAY
-                    </Link>
-                  </div>
-                </div>
-                <div class="footerbar-spacer"></div>
-              </Col>
-            </Row>
-          </div>
         </div>
       </div>
     );

@@ -178,7 +178,7 @@ class Home extends React.Component {
           <div class="container">
             <Row>
               <Col>
-                <div class="footerbar-spacer"></div>
+                <div class="spacer"></div>
                 <div class="inner">
                   <div class="heading-wrap">
                     
@@ -188,14 +188,15 @@ class Home extends React.Component {
                    
                   </div>
                   <div class="button-wrap">
-                    <Link to="#"
+                    <a
+                      href="#"
                       class="footerBar-button"
                     >
                       CONTACT US TODAY
-                    </Link>
+                    </a>
                   </div>
                 </div>
-                <div class="footerbar-spacer"></div>
+                <div class="spacer"></div>
               </Col>
             </Row>
           </div>

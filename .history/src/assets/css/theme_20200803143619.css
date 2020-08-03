@@ -270,9 +270,6 @@
   vertical-align: middle;
   width: 25%;
 }
-.button-wrap a:hover {
-  text-decoration: none;
-}
 .footerBar-button {
   border-radius: 0px;
     padding: 10px 30px;
