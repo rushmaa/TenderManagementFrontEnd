@@ -22,12 +22,10 @@ class PublishContract extends React.Component {
       <div className="main-container pt-3">
         <div className="container-fluid">
           <Card
-            title="News"
-            text="This page displays news items in condensed form with the most recent item on top.  Click on a headline to view the full details of that news item."
+            title="Publishing Guidelines"
           />
           <NewsDetail
             tenderName="Publish a Contract"
-            tenderDate=" 29/09/2006"
           />
           <div className="pt-4">
             <Link
@@ -80,10 +78,7 @@ class PublishContract extends React.Component {
             <p>
               For more information on the disclosure requirements which apply to
               Contracts please refer to DPC Circular PC027, a copy of which is
-              posted at&nbsp;
-              <Link to="https://dpc.sa.gov.au/documents/rendition/B17980">
-                https://dpc.sa.gov.au/documents/rendition/B17980
-              </Link>
+              posted at our Current Tenders page.
             </p>
 
             <p>
@@ -103,7 +98,7 @@ class PublishContract extends React.Component {
           </div>
 
           <Link to="/News" className="linkStyle">
-            <ArrowLeftCircleFill color="#003366" /> Return to News
+            <ArrowLeftCircleFill color="#003366" /> Return to Publishing Guidelines
           </Link>
         </div>
       </div>

@@ -14,13 +14,12 @@ class News extends React.Component {
       <div className="main-container pt-3">
         <div className="container-fluid">
           <Card
-            title="News"
-            text="This page displays news items in condensed form with the most recent item on top.  Click on a headline to view the full details of that news item."
+            title="Publishing Guidelines"
+            text="This page has guidelines for publishing your organisation's documents on our website."
           />
           <Link to="/News/Publish-Tender" className="linkStyle">
             <NewsDetail
               tenderName="Publish a Tender"
-              tenderDate=" 29/09/2006"
             />
           </Link>
           <div>
@@ -50,14 +49,13 @@ class News extends React.Component {
           <Link to="/News/Publish-Council" className="linkStyle">
             <NewsDetail
               tenderName="Publish a Council Tender "
-              tenderDate=" 29/09/2006"
             />
           </Link>
           <div>
             <p className="displayInline">
               Councils can either contact the Electronic Services Program at the
-              LGA on (08) 8224 2000, OR contact ADB Tenders & Contracts Helpdesk
-              on (08) 84621401to set up your Council as a tender issuing
+              LGA OR contact ADB Tenders & Contracts Helpdesk
+              to set up your Council as a tender issuing
               authority (Agency) or receive help with placing your tender.{" "}
             </p>
 
@@ -80,7 +78,6 @@ class News extends React.Component {
           <Link to="/News/Publish-Contract" className="linkStyle">
             <NewsDetail
               tenderName="Publish a Contract"
-              tenderDate=" 29/09/2006"
             />
           </Link>
           <div>

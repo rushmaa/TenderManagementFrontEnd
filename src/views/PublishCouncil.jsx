@@ -18,12 +18,10 @@ class PublishCouncil extends React.Component {
       <div className="main-container pt-3">
         <div className="container-fluid">
           <Card
-            title="News"
-            text="This page displays news items in condensed form with the most recent item on top.  Click on a headline to view the full details of that news item."
+            title="Publishing Guidelines"
           />
           <NewsDetail
             tenderName="Publish a Council Tender "
-            tenderDate=" 29/09/2006"
           />
           <div className="pt-4">
             <Link
@@ -39,22 +37,10 @@ class PublishCouncil extends React.Component {
 
           <div className="contents pt-3">
             <p>
-              Councils can either contact the Electronic Services Program at the
-              LGA on <strong>(08) 8224 2000</strong>, email{" "}
-              <a href="mailto:dcw_support@lga.sa.gov.au">
-                dcwsupport@lga.sa.gov.au
-              </a>{" "}
-              or visit{" "}
-              <a
-                href="http://www.lga.sa.gov.au/goto/satenders"
-                class="external"
-              >
-                http://www.lga.sa.gov.au/goto/satenders
-              </a>{" "}
-              <strong>OR</strong> contact ADB Tenders &amp; Contracts Helpdesk on
-              (<strong>08) 84621401</strong>, email{" "}
-              <a href="mailto:satendersandcontracts@sharedservices.sa.gov.au">
-                satendersandcontracts@sharedservices.sa.gov.au
+              Councils can contact ADB Tenders &amp; Contracts Helpdesk on
+              <strong> 1300 784 249</strong>, email{" "}
+              <a href="info@adbsystems.com.au">
+                info@adbsystems.com.au
               </a>{" "}
               to set up your Council as a tender issuing authority ("Agency") or
               receive help with placing your tender.
@@ -74,19 +60,15 @@ class PublishCouncil extends React.Component {
               <li>
                 Return this document together with an electronic copy of the
                 tender specification to{" "}
-                <a href="mailto:dcw_support@lga.sa.gov.au">
+                <a href="mailto:info@adbsystems.com.au">
                   dcw_support@lga.sa.gov.au
-                </a>
-                &nbsp;or&nbsp;
-                <a href="mailto:satendersandcontracts@sharedservices.sa.gov.au">
-                  satendersandcontracts@sharedservices.sa.gov.au
                 </a>
               </li>
             </ol>
           </div>
 
           <Link to="/News" className="linkStyle">
-            <ArrowLeftCircleFill color="#003366" /> Return to News
+            <ArrowLeftCircleFill color="#003366" /> Return to Publishing Guidelines
           </Link>
         </div>
       </div>

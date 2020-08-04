@@ -18,10 +18,9 @@ class PublishTender extends React.Component {
       <div className="main-container pt-3">
         <div className="container-fluid">
           <Card
-            title="News"
-            text="This page displays news items in condensed form with the most recent item on top.  Click on a headline to view the full details of that news item."
+            title="Publishing Guidelines"
           />
-          <NewsDetail tenderName="Publish a Tender" tenderDate=" 29/09/2006" />
+          <NewsDetail tenderName="Publish a Tender" />
           <div className="pt-4">
             <Link
               to="/Files/SAGovernment.doc"
@@ -86,7 +85,7 @@ class PublishTender extends React.Component {
             </div>
 
             <Link to="/News" className="linkStyle">
-              <ArrowLeftCircleFill color="#003366" /> Return to News
+              <ArrowLeftCircleFill color="#003366" /> Return to Publishing Guidelines
             </Link>
           </div>
         </div>
