@@ -8,13 +8,14 @@ import Card from "react-bootstrap/Card";
 import NewsDetail from "../components/NewsDetail";
 import Title from "../components/Title";
 import "../assets/css/theme.css";
+import CardComp from "../components/Card"
 
 class Home extends React.Component {
   render() {
     return (
       <div className="main-container pt-3">
         <div className="container-fluid">
-          <Card title="Welcome to the ADB Systems website" />
+          <CardComp title="Welcome to the ADB Systems website" />
           <p className="pt-3">
             Welcome to the ADB Systems website. The site offers convenient
             access to all procurement opportunities open to the public within
