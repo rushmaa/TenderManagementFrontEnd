@@ -1,6 +1,15 @@
+/*Common*/
+body {
+  padding:0;
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Rubik", sans-serif;
+}
+
 /*Main Header*/
 .headerRow {
-  background-color: #f5f5f5;
+  background-color: #f8fafe;
   height: 75px;
 }
 .col-Heading h1 {
@@ -67,7 +76,7 @@
 
 /*Card Component*/
 .card {
-  background-color: #dff !important;
+  background-color: #f8fafe !important;
   border: none !important;
   text-align: center;
 }
@@ -242,9 +251,55 @@
   margin: auto;
 }
 
+/*Services*/
+.bgColor {
+  background-color: #f8fafe !important;
+}
+.small-title {
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #d11;
+  font-weight: 800;
+}
+.avatar-md {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+.avatar-title {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #2f55d4;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 500;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+.bg-soft-primary {
+  background-color: rgba(47, 85, 212, 0.1) !important;
+}
+.rounded-circle {
+  border-radius: 50%!important;
+}
+.icon-dual-primary {
+  color: #2f55d4;
+  fill: rgba(47, 85, 212, 0.2);
+}
+
 /*Footer Bar*/
 .contactBar {
   background-color: #037;
+  
+}
+.footerbar-container {
+  width: 68% !important;
+  height: 120px;
 }
 .footerbar-spacer {
   height: 40px;

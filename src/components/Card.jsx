@@ -5,6 +5,7 @@ import { Question } from "react-bootstrap-icons";
 
 const Card = props => {
   return (
+    
     <div className='card'>
       <div className='card-body'>
         <h2 className='card-title'>{props.title} <Question className="iconStyle"/></h2>
