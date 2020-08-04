@@ -40,8 +40,7 @@ const MenuProps = {
   },
 };
 
-var names = [
-];
+var names = [];
 
 function getStyles(name, personName, theme) {
   return {
@@ -52,14 +51,9 @@ function getStyles(name, personName, theme) {
   };
 }
 
-export default function KeywordSelector() {
-  const classes = useStyles();
-  const theme = useTheme();
+export default function KeywordSelector(props) {
   const [personName, setPersonName] = React.useState([]);
   const [values, setValues] = React.useState();
-  const handleChange = (event) => {
-    setPersonName(event.target.value);
-  };
 
   const handleChangeMultiple = (event) => {
     const { options } = event.target;
@@ -70,6 +64,7 @@ export default function KeywordSelector() {
       }
     }
     setPersonName(value);
+    
   };
 
   return (
@@ -81,6 +76,8 @@ export default function KeywordSelector() {
             if (ev.key === 'Enter') {
                 names.push(values)
                 setValues('')
+                props.onChange(names)
+                ev.preventDefault();
             }
           }}
         label="Keywords" 

@@ -5,7 +5,6 @@ import { Search, Calendar3 } from "react-bootstrap-icons";
 import axios from "axios";
 //Components
 import Card from "../components/Card";
-import Title from "../components/Title";
 import DatePicker from "../components/DatePicker";
 import ModalDialog from "../components/ModalDialog";
 import KeywordSelector from "../components/KeywordSelector";
@@ -13,7 +12,21 @@ import KeywordSelector from "../components/KeywordSelector";
 class AddTender extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { modalIsHiden: false, modalError: false, selectedFile: null };
+    this.state = { 
+      modalIsHiden: false, modalError: false, selectedFile: null,
+      tenderCode: '',
+      tenderState: '',
+      tenderName: '',
+      category: '',
+      issuedBy: '',
+      openingdateFrom: '',
+      openingdateTo: '',
+      closingdateFrom: '',
+      closingdateTo: '',
+      grouping: '',
+      categories : [],
+      fileList : []
+    };
 
 
     // fetch("http://localhost:5000/tender/getfile").then((response) => response.blob()).then((blob) => {
@@ -30,9 +43,10 @@ class AddTender extends React.Component {
   onChange(e) {
     let files = e.target.files[0];
     var form = new FormData();
-    form.append('filename', 'tendercode.pdf')
+    var filename= Math.floor(Math.random() * 1000) + 1; 
+    form.append('filename', `${filename}.pdf`)
     form.append('file', files)
-
+    this.state.fileList.push(`${filename}.pdf`)
     axios.post("http://localhost:5000/upload", form, {
       headers: { 'Content-Type': 'application/json' }
     })
@@ -42,22 +56,26 @@ class AddTender extends React.Component {
 
     console.warn("data files", files);
   }
+  componentDidUpdate(){
+    console.log('current state==', this.state.categories)
+  }
 
-  handleClick(event) {
-    event.preventDefault();
-
+  handleClick() {
+    console.log('submiting')
     axios
       .post("http://localhost:5000/tender/addNewTender", {
-        tenderCode: event.target.tenderCode.value,
-        tenderState: event.target.tenderState.value,
-        tenderName: event.target.tenderName.value,
-        category: event.target.tenderCategory.value,
-        issuedBy: event.target.tenderIssuedby.value,
-        openingdateFrom: event.target.openingDateFrom.value,
-        openingdateTo: event.target.openingDateTo.value,
-        closingdateFrom: event.target.closingDateFrom.value,
-        closingdateTo: event.target.closingDateTo.value,
-        grouping: event.target.tenderGrouping.value,
+        tenderCode: this.state.tenderCode,
+        tenderState: this.state.tenderState,
+        tenderName: this.state.tenderName,
+        category: this.state.tenderCategory,
+        issuedBy: this.state.tenderIssuedby,
+        openingdateFrom: this.state.openingdateFrom,
+        openingdateTo: this.state.openingdateTo,
+        closingdateFrom: this.state.closingdateFrom,
+        closingdateTo: this.state.closingdateTo,
+        grouping: this.state.tenderGrouping,
+        categories: this.state.categories.join(','),
+        fileList: this.state.fileList.join(','),
       })
       .then(
         (response) => {
@@ -65,29 +83,27 @@ class AddTender extends React.Component {
           if (response.data) {
             if (response.data === "Successfully Added Tender") {
               console.log("SuccessFull redirecting");
+              this.props.history.push('/tenders/Current')
               //TODO: redirect to another page
               console.log(this.state.modalIsHiden);
               this.state.modalIsHiden = true;
               this.state.modalError = false;
             } else {
               console.log("Unsucessfull");
-              this.state.modalIsHiden = true;
-              this.state.modalError = true;
+              this.setState({
+                modalError : true
+              })
               //TODO: show message
             }
           } else {
             console.log("No data received");
-            this.state.modalIsHiden = true;
-            this.state.modalError = true;
+            this.props.history.push('/tenders/Current')
             //TODO: show message
           }
-          this.forceUpdate();
         },
         (error) => {
           console.log(error);
-          this.state.modalIsHiden = true;
-          this.state.modalError = true;
-          this.forceUpdate();
+        
           //TODO: show message
         }
       );
@@ -112,7 +128,7 @@ class AddTender extends React.Component {
             text="This page can add your tender and it will show it in Current Tender page."
           />
           <div className="pt-3 main-container">
-            <Form onSubmit={(event) => event.preventDefault()}>
+            <Form >
               <Form.Group as={Row} controlId="formPlaintextPassword">
                 <Form.Label column sm="2">
                   Tender Code
@@ -122,6 +138,11 @@ class AddTender extends React.Component {
                     id="tenderCode"
                     type="Tender Code"
                     placeholder="Tender Code"
+                    onChange={(e)=>{
+                      this.setState({
+                        tenderCode:e.target.value
+                    })}
+                  }
                   />
                 </Col>
               </Form.Group>
@@ -131,7 +152,11 @@ class AddTender extends React.Component {
                   Tender State
                 </Form.Label>
                 <Col sm="4">
-                  <select id="tenderState" className="form-control">
+                  <select id="tenderState" className="form-control" onChange={(e)=>{
+                    this.setState({
+                      tenderState : e.target.value
+                    })
+                  }}>
                     <option value="Any">Any</option>
                     <option value="Open">Open</option>
                     <option value="Closed">Closed</option>
@@ -151,6 +176,11 @@ class AddTender extends React.Component {
                     id="tenderName"
                     type="Tender Name"
                     placeholder="Tender Name"
+                    onChange={(e)=>{
+                      this.setState({
+                        tenderName:e.target.value
+                    })}
+                  }
                   />
                 </Col>
               </Form.Group>
@@ -164,6 +194,11 @@ class AddTender extends React.Component {
                     id="tenderCategory"
                     type="Category"
                     placeholder="Category"
+                    onChange={(e)=>{
+                      this.setState({
+                        tenderCategory:e.target.value
+                    })}
+                  }
                   />
                 </Col>
               </Form.Group>
@@ -173,7 +208,11 @@ class AddTender extends React.Component {
                   Issued By
                 </Form.Label>
                 <Col sm="4">
-                  <select id="tenderIssuedby" className="form-control">
+                  <select id="tenderIssuedby" className="form-control" onChange={(e)=>{
+                    this.setState({
+                      tenderIssuedby : e.target.value
+                    })
+                  }}>
                     <option value="grapefruit">Grapefruit</option>
                     <option value="lime">Lime</option>
                     <option value="coconut">Coconut</option>
@@ -190,12 +229,21 @@ class AddTender extends React.Component {
                   <Form.Group as={Row}>
                     <Col sm={6}>
                       <InputGroup>
-                        <DatePicker label={'From'} />
+                        <DatePicker label={'From'} onChange={(date)=>{
+                          console.log('date==',date)
+                      this.setState({
+                        openingdateFrom:date
+                    })}
+                  }/>
                       </InputGroup>
                     </Col>
                     <Col sm={6}>
                       <InputGroup>
-                        <DatePicker label={'To'} />
+                        <DatePicker label={'To'} onChange={(date)=>{
+                      this.setState({
+                        openingdateTo:date
+                    })}
+                  }/>
                       </InputGroup>
                     </Col>
                   </Form.Group>
@@ -210,12 +258,20 @@ class AddTender extends React.Component {
                   <Form.Group as={Row}>
                     <Col sm={6}>
                       <InputGroup>
-                        <DatePicker label={'From'} />
+                        <DatePicker label={'From'} onChange={(date)=>{
+                      this.setState({
+                        closingdateFrom:date
+                    })}
+                  }/>
                       </InputGroup>
                     </Col>
                     <Col sm={6}>
                       <InputGroup>
-                        <DatePicker label={'To'} />
+                        <DatePicker label={'To'} onChange={(date)=>{
+                      this.setState({
+                        closingdateTo:date
+                    })}
+                  }/>
                       </InputGroup>
                     </Col>
                   </Form.Group>
@@ -227,7 +283,11 @@ class AddTender extends React.Component {
                   Grouping
                 </Form.Label>
                 <Col sm="4">
-                  <select id="tenderGrouping" className="form-control">
+                  <select id="tenderGrouping" className="form-control" onChange={(e)=>{
+                    this.setState({
+                      tenderGrouping : e.target.value
+                    })
+                  }}>
                     <option value="None">None</option>
                     <option value="Buyer">Buyer</option>
                     <option value="Categories">Categories</option>
@@ -240,9 +300,14 @@ class AddTender extends React.Component {
                 <Form.Label column sm="2">
                   Keywords
                 </Form.Label>
-                <KeywordSelector />
+                <KeywordSelector onChange={(listItem)=>{
+                  console.log('listitem==', listItem)
+                  this.setState({
+                    categories: listItem
+                  })
+                }}/>
               </Form.Group>
-              <Form.Group as={Row} controlId="formPlaintextPassword">
+              <Form.Group as={Row} controlId="formPlaintextPassword" >
                 <Form.Label column sm="2">
                   Upload Documents
                 </Form.Label>
@@ -256,7 +321,7 @@ class AddTender extends React.Component {
               </Form.Group>
 
               <div className="btnPosition">
-                <Button variant="primary" value="Submit" type="submit" onClick={() => this.handleClick.bind(this)}>
+                <Button variant="primary"  type="button" onClick={() => this.handleClick()}>
                   Add Tender
                 </Button>{" "}
                 <Button variant="primary" type="reset" value="Reset">

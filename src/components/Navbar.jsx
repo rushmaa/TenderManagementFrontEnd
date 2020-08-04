@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import "../assets/css/theme.css";
 import * as ReactBootStrap from "react-bootstrap";
 import { connect } from "react-redux";
-import { BoxArrowDownRight } from "react-bootstrap-icons";
-import Signup from "../views/Signup";
+
 class Navbar extends Component {
   render() {
     const user = this.props.store.getState();

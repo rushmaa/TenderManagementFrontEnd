@@ -11,7 +11,12 @@ const [value, setValue] = React.useState();
       options={top100Films}
       getOptionLabel={(option) => option.keywords}
       style={{ width: 300 }}
+      onSubmit={(e)=>{
+        e.preventDefault()
+      }}
       onChange={(event, newValue) => {
+        console.log('on ch called',event)
+        event.preventDefault();
         setValue(newValue);
         console.log('newValue==',newValue)
       }}
