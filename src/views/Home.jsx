@@ -141,8 +141,8 @@ class Home extends React.Component {
             <div>
               <p className="displayInline">
                 Councils may either contact the LGA Electronic Services Program
-                at (08) 8224 2000, OR contact ADB Tenders & Contracts Helpdesk
-                on 1300 784 249 to arrange the Council as a contract issuing
+                 OR contact the ADB Tenders & Contracts Helpdesk
+                 to arrange the Council as a contract issuing
                 authority ("Agency") or seek help with the tender.{" "}
               </p>
 
