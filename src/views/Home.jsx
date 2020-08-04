@@ -3,12 +3,10 @@ import { Link } from "react-router-dom";
 import { FileTextFill, ArrowRightCircleFill } from "react-bootstrap-icons";
 import { Button, Row, Col } from "react-bootstrap";
 import ReactPlayer from "react-player";
-
 //Components
-import Card from "../components/Card";
+import Card from "react-bootstrap/Card";
 import NewsDetail from "../components/NewsDetail";
 import Title from "../components/Title";
-
 import "../assets/css/theme.css";
 
 class Home extends React.Component {
@@ -33,7 +31,6 @@ class Home extends React.Component {
             suit your preferences, save the results as a search profile and then
             choose the Notification option to receive automatic email updates.
           </p>
-          <h4 className="displayInline">Not a registered member: </h4>
 
 
           {/*Video and Context*/}
@@ -77,6 +74,111 @@ class Home extends React.Component {
             ></div>
           </div>
 
+          <Row>
+          <Col md={1}></Col>
+              <Col md={3}>
+          <div class="container">
+          <Card style={{ width: '20rem', height: '14rem' }}>
+             <Card.Body>
+             <Card.Title>Not a member?</Card.Title>
+             <Card.Text>
+             What are you waiting for? Go ahead and register yourself as a Supplier or Agency account!
+                </Card.Text>
+                <Button variant="primary"><Card.Link href="/signup">Sign Up</Card.Link></Button>
+             </Card.Body>
+          </Card>
+          </div>
+          </Col>
+          <Col md={3}>
+          </Col>
+              <Col md={3}>
+          <div class="container">
+          <Card style={{ width: '20rem', height: '14rem' }}>
+             <Card.Body>
+             <Card.Title>Admin</Card.Title>
+             <Card.Text>
+             Log in to your Admin account through provided login credentials
+                </Card.Text>
+                <Button variant="primary"><Card.Link href="/login">Login</Card.Link></Button>
+             </Card.Body>
+          </Card>
+          </div>     
+          </Col>
+            </Row>
+
+                <div className="spacer" >
+                 </div>
+
+            <Row>
+            <Col md={1}></Col>
+              <Col md={3}>
+          <div class="container">
+          <Card style={{ width: '20rem', height: '14rem' }}>
+             <Card.Body>
+             <Card.Title>Tenders</Card.Title>
+             <Card.Text>
+             Want to browse through the latest tenders? Feel free to peruse through prsent tenders here!
+                </Card.Text>
+                <Button variant="primary"><Card.Link href="/tenders/Current">Present Tenders</Card.Link></Button>
+             </Card.Body>
+          </Card>
+          </div>
+          </Col>
+          <Col md={3}>
+          </Col>
+              <Col md={3}>
+          <div class="container">
+          <Card style={{ width: '20rem', height: '14rem' }}>
+             <Card.Body>
+             <Card.Title>Publish a Tender</Card.Title>
+             <Card.Text>
+             Guidelines on publishing a tender on our website.
+                </Card.Text>
+                <Button variant="primary"><Card.Link href="News/Publish-Tender">Learn more</Card.Link></Button>
+             </Card.Body>
+          </Card>
+          </div>
+          </Col>
+            </Row>
+            
+                <div className="spacer" >
+                 </div>
+
+            <Row>
+            <Col md={1}></Col>
+              <Col md={3}>
+             <div class="container">
+          <Card style={{ width: '20rem', height: '14rem' }}>
+             <Card.Body>
+             <Card.Title>Publish a Council Tender</Card.Title>
+             <Card.Text>
+             Guidelines on publishing a council tender on our website.
+                </Card.Text>
+                <Button variant="primary"><Card.Link href="News/Publish-Council">Learn more</Card.Link></Button>
+             </Card.Body>
+          </Card>
+          </div>
+          </Col>
+          <Col md={3}>
+          </Col>
+              <Col md={3}>
+           <div class="container">
+          <Card style={{ width: '20rem', height: '14rem' }}>
+             <Card.Body>
+             <Card.Title>Publish a Contract</Card.Title>
+             <Card.Text>
+             Guidelines on publishing a contract on our website.
+                </Card.Text>
+                <Button variant="primary"><Card.Link href="News/Publish-Contract">Learn more</Card.Link></Button>
+             </Card.Body>
+          </Card>
+          </div>
+          </Col>
+            </Row>
+
+            <div className="spacer" >
+                 </div>
+
           <div class="contactBar">
             <div class="container">
               <Row>
@@ -85,7 +187,7 @@ class Home extends React.Component {
                   <div class="inner">
                     <div class="heading-wrap">
                       <h3 class="heading">
-                        If You are interst in this Product, Contact ADB System
+                        Interested in this product? Wait no further and contact ADB Systems today!
                       </h3>
                     </div>
                     <div class="button-wrap">
@@ -98,104 +200,9 @@ class Home extends React.Component {
                 </Col>
               </Row>
             </div>
-          </div>
-
-          <div className="pt-3">
-            <Title header="Latest News" />
-            <Link to="/News/Publish-Tender" className="linkStyle">
-              <NewsDetail
-                tenderName="Publish a Tender"
-                tenderDate=" 29/09/2006"
-              />
-            </Link>
-            <div>
-              <p className="displayInline">
-                The website is designed to publish all Australian Public Sector
-                tenders and any related documents which may be provided
-                available for download by registered site users. The agencies
-                are responsible for granting of tenders.{" "}
-              </p>
-
-              <Link to="/News/Publish-Tender" className="linkStyle">
-                Read More <ArrowRightCircleFill color="#003366" />
-              </Link>
-            </div>
-            <div>
-              <Link
-                to="/Files/AGovernment.doc"
-                target="_blank"
-                download
-                className="linkStyle"
-              >
-                <FileTextFill className="pr-1" />
-                Australian Government Advertisement Required Information V3.doc
-                (54 KB)
-              </Link>
-            </div>
-            <Link to="/News/Publish-Council" className="linkStyle">
-              <NewsDetail
-                tenderName="Publish a Council Tender "
-                tenderDate=" 29/09/2006"
-              />
-            </Link>
-            <div>
-              <p className="displayInline">
-                Councils may either contact the LGA Electronic Services Program
-                 OR contact the ADB Tenders & Contracts Helpdesk
-                 to arrange the Council as a contract issuing
-                authority ("Agency") or seek help with the tender.{" "}
-              </p>
-
-              <Link to="/News/Publish-Contract" className="linkStyle">
-                Read More <ArrowRightCircleFill color="#003366" />
-              </Link>
-            </div>
-            <div>
-              <Link
-                to="/Files/LocalGovernment.doc"
-                target="_blank"
-                download
-                className="linkStyle"
-              >
-                <FileTextFill className="pr-1" />
-                Local Government Advertisement Required information 20070516.doc
-                (188 KB)
-              </Link>
-            </div>
-            <Link to="/News/Publish-Contract" className="linkStyle">
-              <NewsDetail
-                tenderName="Publish a Contract"
-                tenderDate=" 29/09/2006"
-              />
-            </Link>
-            <div>
-              <p className="displayInline">
-                The site is designed as required by the DPC Circular PC027
-                'Disclosure of Government Contracts' to disclose contracts
-                within the Australian Public Sector. To send a publication
-                contract to the site download the attached document, fill out
-                the specifics as needed in the application and submit it to ADB
-                Systems Tenders & Contracts.{" "}
-              </p>
-
-              <Link to="/News/Publish-Council" className="linkStyle">
-                Read More <ArrowRightCircleFill color="#003366" />
-              </Link>
-            </div>
-            <div>
-              <Link
-                to="/Files/ContractDisclosure.doc"
-                target="_blank"
-                download
-                className="linkStyle"
-              >
-                <FileTextFill className="pr-1" />
-                Contract Disclosure Proforma July 2019.doc (49 KB)
-              </Link>
+          </div>     
             </div>
           </div>
-        </div>
-      </div>
     );
   }
 }
