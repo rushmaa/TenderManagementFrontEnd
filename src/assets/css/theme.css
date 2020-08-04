@@ -67,8 +67,9 @@
 
 /*Card Component*/
 .card {
-  background-color: #e7ebf0 !important;
+  background-color: #dff !important;
   border: none !important;
+  text-align: center;
 }
 
 /*Title*/
@@ -275,16 +276,16 @@
 }
 .footerBar-button {
   border-radius: 0px;
-    padding: 10px 30px;
-    font-size: 13px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    letter-spacing: 1px;
-    background-color: #fff !important;
-    color: #777 !important;
-    background-color: transparent;
-    display: inline-block;
-    -webkit-transition: all ease 0.3s;
-    -moz-transition: all ease 0.3s;
-    transition: all ease 0.3s;
+  padding: 10px 30px;
+  font-size: 13px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: #fff !important;
+  color: #777 !important;
+  background-color: transparent;
+  display: inline-block;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
