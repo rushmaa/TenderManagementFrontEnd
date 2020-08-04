@@ -34,9 +34,7 @@ class Home extends React.Component {
             choose the Notification option to receive automatic email updates.
           </p>
           <h4 className="displayInline">Not a registered member: </h4>
-          <span className="registrationLink">
-            To register as a member click this link
-          </span>
+
 
           {/*Video and Context*/}
           <div className="container-fluid videoContainer">
