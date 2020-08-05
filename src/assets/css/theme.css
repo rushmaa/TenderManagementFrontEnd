@@ -1,9 +1,14 @@
 /*Common*/
 body {
-  padding:0;
+  padding: 0;
   margin: 0;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Rubik", sans-serif;
 }
 
@@ -285,17 +290,44 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgba(47, 85, 212, 0.1) !important;
 }
 .rounded-circle {
-  border-radius: 50%!important;
+  border-radius: 50% !important;
 }
 .icon-dual-primary {
   color: #2f55d4;
   fill: rgba(47, 85, 212, 0.2);
 }
 
+/*Home - Card*/
+.cardBody {
+  height: 25em;
+  background-color: #fff !important;
+  box-shadow: 0px 1px 5px 0px rgba(000000, 0, 0, 0.05);
+}
+.cardContent {
+  transform: translate(0px, 45px);
+}
+.cardBtn:hover {
+  background-color: #037 !important;
+  color: #fff !important;
+}
+.cardBtn {
+  background-color: #fff !important;
+  border: 2px solid #037;
+  color: #037 !important;
+  border-radius: 0px !important;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all ease 0.3s !important;
+  width: 10em;
+  height: 45px;
+}
+a:hover {
+  color: #fff !important;
+}
+
 /*Footer Bar*/
 .contactBar {
   background-color: #037;
-  
 }
 .footerbar-container {
   width: 68% !important;
