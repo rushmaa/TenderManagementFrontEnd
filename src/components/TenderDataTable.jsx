@@ -32,7 +32,7 @@ const TenderDataTable = (props) => {
             </div>
             <div>{element.detailsIssuedBy}</div>
             <div>
-              Category 1: Medical Equipment and Accessories and Supplies - 20%
+              {element.category}
             </div>
           </React.Fragment>
         ),

@@ -42,7 +42,7 @@ const DisplayTender = (props) => {
           descriptionListItem2={element?.descriptionListItem2}
         />
         <SpecificationDocuments
-          specificationItem1={element?.specificationItem1}
+          fileList={element?.fileList}
         />
         <Responses responsesItem1={element?.responsesItem1} />
       </div>
