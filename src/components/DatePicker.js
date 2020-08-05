@@ -8,7 +8,7 @@ import {
 
 const DatePicker = (props) => {
   const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2014-08-18T21:11:54")
+    new Date("2020-08-18T21:11:54")
   );
 
   const handleDateChange = (date) => {

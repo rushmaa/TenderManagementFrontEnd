@@ -35,9 +35,10 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router history={history}>
-        <Header />
-        <Navbar store={store} />
+          <Header />
+           <Navbar store={store} />
         <Switch>
+           
           <Route exact path="/NoAccess" component={NoAccess} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/" component={UserLogin} />

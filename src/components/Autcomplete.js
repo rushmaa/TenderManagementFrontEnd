@@ -2,32 +2,51 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import axios from "axios";
 
-export default function ComboBox() {
+export default function ComboBox(props) {
+  // setTenderContent
+  const getalltenders = ()=>{
+    axios.get("http://localhost:5000/tender/getalltenders").then(
+      (response) => {
+        console.log(response);
+        if (response.data.tenders) {
+          response.data.tenders.forEach(element => {
+            var categories = element.categories.split(',');
+            categories.forEach(category => {
+              TenderSearchData.push({tenderCode: element.tenderCode,  keywords:category , tenderContent:element})
+            });
+          });
+        } else {
+          console.log("No data received");
+        }
+      },
+      (error) => {
+        console.log(error);
+        //TODO: show message
+      }
+    );
+  }
+
 const [value, setValue] = React.useState();
+getalltenders()
   return (
     <Autocomplete
       id="combo-box-demo"
-      options={top100Films}
+      options={TenderSearchData}
       getOptionLabel={(option) => option.keywords}
       style={{ width: 300 }}
       onSubmit={(e)=>{
         e.preventDefault()
       }}
       onChange={(event, newValue) => {
-        console.log('on ch called',event)
         event.preventDefault();
         setValue(newValue);
-        console.log('newValue==',newValue)
+        props.setTenderContent(newValue)
       }}
       renderInput={(params) => <TextField {...params} label="Search Tenders" variant="outlined" />}
     />
   );
 }
 
-const top100Films = [
-    {tenderCode:'DH046241',  keywords:'buyer1'},
-    {tenderCode:'DH046241',  keywords:'buyer2'},
-    {tenderCode:'DH046241',  keywords:'buyer3'},
-    {tenderCode:'DH046241',  keywords:'buyer4'},
-];
+var TenderSearchData = [];
