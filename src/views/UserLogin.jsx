@@ -108,8 +108,8 @@ class UserLogin extends React.Component {
           >
             <Tabs>
               <TabList>
-                <Tab> Supplier Login</Tab>
-                <Tab>Agency Login</Tab>
+                <Tab> User Login</Tab>
+                <Tab>Admin Login</Tab>
               </TabList>
 
               <TabPanel>
@@ -185,7 +185,7 @@ class UserLogin extends React.Component {
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input
-                      placeholder="Username"
+                      placeholder="Admin Name"
                       onChange={(e) =>
                         this.setState({ username: e.target.value })
                       }

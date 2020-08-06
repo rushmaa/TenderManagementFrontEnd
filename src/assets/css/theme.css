@@ -50,6 +50,9 @@ h6 {
   color: #fff;
   font-size: 17px;
 }
+.nav-link {
+  color: #fff ;
+}
 .logRight {
   justify-content: flex-end !important;
 }
@@ -375,4 +378,20 @@ a:hover {
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
   transition: all ease 0.3s;
+}
+
+/*News Page*/
+.newsContainer {
+  width: 85%;
+  margin: auto;
+}
+.newsTitle {
+  background: #f8fafe;
+  border-left: 3px solid #003377;
+  padding: 8px 15px 11px;
+}
+.slideNews {
+  display: inline-block;
+  padding: 30px 15px;
+  width: 100%;
 }

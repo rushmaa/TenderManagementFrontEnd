@@ -34,9 +34,6 @@ class Navbar extends Component {
                   <Link to="/tenders/Current">Present Tender</Link>
                 </ReactBootStrap.NavDropdown.Item>
                 <ReactBootStrap.NavDropdown.Item>
-                  <Link to="/add-tender">Lodge Tender</Link>
-                </ReactBootStrap.NavDropdown.Item>
-                <ReactBootStrap.NavDropdown.Item>
                   <Link to="/tenders/Future">Upcoming Tender</Link>
                 </ReactBootStrap.NavDropdown.Item>
                 <ReactBootStrap.NavDropdown.Item>
@@ -67,11 +64,22 @@ class Navbar extends Component {
                   <Link to="/search/tenders">Advanced Search</Link>
                 </ReactBootStrap.NavDropdown.Item>
               </ReactBootStrap.NavDropdown>
-              <ReactBootStrap.Nav.Link>
+              <ReactBootStrap.NavDropdown
+                title="NOTICE"
+                id="collasible-nav-dropdown"
+              >
+                  <ReactBootStrap.NavDropdown.Item>
+                <Link to="/Publish-Guildline" className="main-nav">
+                  Publish Guidlines
+                </Link> 
+                </ReactBootStrap.NavDropdown.Item>
+                <ReactBootStrap.NavDropdown.Item>
                 <Link to="/News" className="main-nav">
-                  NOTICE
-                </Link>
-              </ReactBootStrap.Nav.Link>
+                  News
+                </Link> 
+                </ReactBootStrap.NavDropdown.Item>
+
+              </ReactBootStrap.NavDropdown>
               <ReactBootStrap.Nav.Link>
               <Link to="/HELP/FAQ" className="main-nav">
                 SUPPORT & FAQ'S
@@ -79,11 +87,14 @@ class Navbar extends Component {
               </ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
             {user?.User?.User?.type === "admin" && (
-                <ReactBootStrap.Nav.Link>
-                  <Link to="/admin" className="main-nav">
-                    ADMIN
-                  </Link>
-                </ReactBootStrap.Nav.Link>
+                 <ReactBootStrap.NavDropdown
+                 title="ADMIN"
+                 id="collasible-nav-dropdown"
+               >
+                 <ReactBootStrap.NavDropdown.Item>
+                   <Link to="/add-tender">Add Tender</Link>
+                 </ReactBootStrap.NavDropdown.Item>
+               </ReactBootStrap.NavDropdown>
               )}
             <ReactBootStrap.Nav>
               <ReactBootStrap.Nav.Link>

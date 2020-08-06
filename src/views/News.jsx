@@ -1,109 +1,146 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Row, Col } from "react-bootstrap";
+import Carousel from "react-bootstrap/Carousel";
 
 //Components
 import Card from "../components/Card";
-import NewsDetail from "../components/NewsDetail";
-
 import "../assets/css/theme.css";
-import { FileTextFill, ArrowRightCircleFill } from "react-bootstrap-icons";
 
 class News extends React.Component {
   render() {
     return (
       <div className="main-container pt-3">
         <div className="container-fluid">
-          <Card
-            title="Publishing Guidelines"
-            text="This page has guidelines for publishing your organisation's documents on our website."
-          />
-          <Link to="/News/Publish-Tender" className="linkStyle">
-            <NewsDetail
-              tenderName="Publish a Tender"
-            />
-          </Link>
-          <div>
-            <p className="displayInline">
-              The site is designed for the publication of all Australian Public
-              Sector tenders and any associated documentation that can be made
-              available for download by registered users of the site. Agencies
-              are responsible for the publication of tenders.{" "}
-            </p>
+          <Card title="News" text="This page has News" />
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="holder.js/800x400?text=First slide&bg=373940"
+                alt="First slide"
+              />
+              <Carousel.Caption>
+                <h3>First slide label</h3>
+                <p>
+                  Nulla vitae elit libero, a pharetra augue mollis interdum.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="holder.js/800x400?text=Second slide&bg=282c34"
+                alt="Third slide"
+              />
 
-            <Link to="/News/Publish-Tender" className="linkStyle">
-              Read More <ArrowRightCircleFill color="#003366" />
-            </Link>
-          </div>
-          <div>
-            <Link
-              to="/Files/AGovernment.doc"
-              target="_blank"
-              download
-              className="linkStyle"
-            >
-              <FileTextFill className="pr-1" />
-              Australian Government Advertisement Required Information V3.doc
-              (54 KB)
-            </Link>
-          </div>
-          <Link to="/News/Publish-Council" className="linkStyle">
-            <NewsDetail
-              tenderName="Publish a Council Tender "
-            />
-          </Link>
-          <div>
-            <p className="displayInline">
-              Councils can either contact the Electronic Services Program at the
-              LGA OR contact ADB Tenders & Contracts Helpdesk
-              to set up your Council as a tender issuing
-              authority (Agency) or receive help with placing your tender.{" "}
-            </p>
+              <Carousel.Caption>
+                <h3>Second slide label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="holder.js/800x400?text=Third slide&bg=20232a"
+                alt="Third slide"
+              />
 
-            <Link to="/News/Publish-Council" className="linkStyle">
-              Read More <ArrowRightCircleFill color="#003366" />
-            </Link>
-          </div>
-          <div>
-            <Link
-              to="/Files/LocalGovernment.doc"
-              target="_blank"
-              download
-              className="linkStyle"
-            >
-              <FileTextFill className="pr-1" />
-              Local Government Advertisement Required information 20070516.doc
-              (188 KB)
-            </Link>
-          </div>
-          <Link to="/News/Publish-Contract" className="linkStyle">
-            <NewsDetail
-              tenderName="Publish a Contract"
-            />
-          </Link>
-          <div>
-            <p className="displayInline">
-              The site is designed for the publication of contracts within the
-              Australian Public Sector as required by the DPC Circular PC027
-              'Disclosure of Government Contracts'. To submit a contract for
-              publication to the site download the attached document, complete
-              the details as requested on the form and return it to ADB Tenders
-              & Contracts.{" "}
-            </p>
+              <Carousel.Caption>
+                <h3>Third slide label</h3>
+                <p>
+                  Praesent commodo cursus magna, vel scelerisque nisl
+                  consectetur.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
 
-            <Link to="/News/Publish-Contract" className="linkStyle">
-              Read More <ArrowRightCircleFill color="#003366" />
-            </Link>
-          </div>
-          <div>
-            <Link
-              to="/Files/ContractDisclosure.doc"
-              target="_blank"
-              download
-              className="linkStyle"
-            >
-              <FileTextFill className="pr-1" />
-              Contract Disclosure Proforma July 2019.doc (49 KB)
-            </Link>
+          <div className="newsContainer">
+            <div className="container-fluid">
+              <div>
+                <div className="spacer"></div>
+                <Row>
+                  <Col md={8}>
+                    <h4 class="newsTitle">Latest Posts</h4>
+                  </Col>
+                  <Col md={4}>
+                    <h4 class="newsTitle">Recommended</h4>
+                    <ul>
+                      <li class="post">
+                        <div className="post_content">
+                          <h5>
+                            <a
+                              href="?page=post_gallery"
+                              title="The Public Health Crisis Hiding in Our Food"
+                            >
+                              The Public Health Crisis Hiding in Our Food
+                            </a>
+                          </h5>
+                          <ul className="postDetails simple">
+                            <li class="category">
+                              <a
+                                href="?page=category&amp;cat=health"
+                                title="HEALTH"
+                              >
+                                HEALTH
+                              </a>
+                            </li>
+                            <li className="date">10:11 PM, Feb 02</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="post">
+                        <div className="post_content">
+                          <h5>
+                            <a
+                              href="?page=post_gallery"
+                              title="The Public Health Crisis Hiding in Our Food"
+                            >
+                              The Public Health Crisis Hiding in Our Food
+                            </a>
+                          </h5>
+                          <ul className="postDetails simple">
+                            <li class="category">
+                              <a
+                                href="?page=category&amp;cat=health"
+                                title="HEALTH"
+                              >
+                                HEALTH
+                              </a>
+                            </li>
+                            <li className="date">10:11 PM, Feb 02</li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="post">
+                        <div className="post_content">
+                          <h5>
+                            <a
+                              href="?page=post_gallery"
+                              title="The Public Health Crisis Hiding in Our Food"
+                            >
+                              The Public Health Crisis Hiding in Our Food
+                            </a>
+                          </h5>
+                          <ul className="postDetails simple">
+                            <li class="category">
+                              <a
+                                href="?page=category&amp;cat=health"
+                                title="HEALTH"
+                              >
+                                HEALTH
+                              </a>
+                            </li>
+                            <li className="date">10:11 PM, Feb 02</li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </Col>
+                </Row>
+              </div>
+            </div>
           </div>
         </div>
       </div>

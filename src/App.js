@@ -1,7 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+
 import Navbar from "./components/Navbar";
 import { Header } from "./components/Header";
+import history from "./history";
+
+import Reducer from "./store/reducers/Reducer";
+
+import FAQ from "./views/FAQ";
+import RequestSupport from "./views/RequestSupport";
+import DisplayTender from "./views/DisplayTender";
+import DocumentLibrary from "./views/DocumentLibrary";
 import UserLogin from "./views/UserLogin";
 import Current from "./views/Current";
 import Elodgement from "./views/Elodgement";
@@ -13,14 +24,6 @@ import AcrossGovContracts from "./views/AcrossGovContracts";
 import Tenders from "./views/Tenders";
 import Contracts from "./views/Contracts";
 import News from "./views/News";
-import history from "./history";
-import FAQ from "./views/FAQ";
-import RequestSupport from "./views/RequestSupport";
-import DisplayTender from "./views/DisplayTender";
-import DocumentLibrary from "./views/DocumentLibrary";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-import Reducer from "./store/reducers/Reducer";
 import Home from "./views/Home";
 import AddTender from "./views/AddTender";
 import AdminDashboard from "./views/Admin/AdminDashboard";
@@ -29,6 +32,7 @@ import PublishCouncil from "./views/PublishCouncil";
 import PublishContract from "./views/PublishContract";
 import PublishTender from "./views/PublishTender";
 import NoAccess from "./views/NoAccess";
+import PublishGuildlines from "./views/PublishGuidline";
 
 const App = () => {
   const store = createStore(Reducer);
@@ -62,6 +66,7 @@ const App = () => {
           <Route exact path="/search/tenders" component={Tenders} />
           <Route exact path="/search/contracts" component={Contracts} />
           <Route exact path="/News" component={News} />
+          <Route exact path="/Publish-Guildline" component={PublishGuildlines} />
           <Route exact path="/News/Publish-Council" component={PublishCouncil} />
           <Route exact path="/News/Publish-Contract" component={PublishContract} />
           <Route exact path="/News/Publish-Tender" component={PublishTender} />
