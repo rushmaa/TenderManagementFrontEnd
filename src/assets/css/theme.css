@@ -44,7 +44,7 @@ h6 {
 }
 /*Navbar Component*/
 .navbar {
-  background-color: #037 !important;
+  background-color: #0f1b42 !important;
 }
 .main-nav {
   color: #fff;
@@ -207,7 +207,7 @@ h6 {
 }
 .btn-primary {
   color: #fff;
-  background-color: #037 !important;
+  background-color: #0f1b42 !important;
 }
 .displayInline {
   display: inline;
@@ -310,13 +310,13 @@ h6 {
   transform: translate(0px, 45px);
 }
 .cardBtn:hover {
-  background-color: #037 !important;
+  background-color: #0f1b42 !important;
   color: #fff !important;
 }
 .cardBtn {
   background-color: #fff !important;
-  border: 2px solid #037;
-  color: #037 !important;
+  border: 2px solid #0f1b42;
+  color: #0f1b42 !important;
   border-radius: 0px !important;
   font-weight: 500;
   letter-spacing: 1px;
@@ -330,7 +330,7 @@ a:hover {
 
 /*Footer Bar*/
 .contactBar {
-  background-color: #037;
+  background-color: #0f1b42;
 }
 .footerbar-container {
   width: 68% !important;
@@ -380,6 +380,27 @@ a:hover {
   transition: all ease 0.3s;
 }
 
+/*Footer*/
+.footerContainer {
+  background-color: #0f1b42;
+    color: rgba(255, 255, 255, 0.5);
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+.footerTitle {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: 600;
+}
+.footerIcon, .footerMediaBody {
+  display: inline-block;
+}
+.footerLink {
+  color: rgba(255, 255, 255, 0.5);
+}
+.footerLink:hover {
+  text-decoration: none;
+} 
 /*News Page*/
 .newsContainer {
   width: 85%;

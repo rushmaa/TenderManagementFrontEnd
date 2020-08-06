@@ -39,7 +39,7 @@ export class Header extends Component {
             <Col  className="col-Heading">
               <h1>Aussie Digital Tenders and Contracts Management</h1>
             </Col>
-            <Col md={3} className="col-Searching">
+            <Col md={{ span: 2, offset: 2 }} className="col-Searching">
               <div>
               <ComboBox setTenderContent={(tenderContent)=>this.setTenderContent(tenderContent)}/>
               </div>

@@ -6,11 +6,12 @@ import Carousel from "react-bootstrap/Carousel";
 //Components
 import Card from "../components/Card";
 import "../assets/css/theme.css";
+import FooterComp from "../components/Footer";
 
 class News extends React.Component {
   render() {
     return (
-      <div className="main-container pt-3">
+      <div className="pt-3">
         <div className="container-fluid">
           <Card title="News" text="This page has News" />
           <Carousel>
@@ -143,6 +144,9 @@ class News extends React.Component {
             </div>
           </div>
         </div>
+       {/*Footer*/} 
+          <FooterComp />
+      
       </div>
     );
   }

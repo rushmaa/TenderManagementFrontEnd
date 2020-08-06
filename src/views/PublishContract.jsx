@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 //Components
 import Card from "../components/Card";
 import NewsDetail from "../components/NewsDetail";
+import FooterComp from "../components/Footer";
 
 import "../assets/css/theme.css";
 import { FileTextFill, ArrowLeftCircleFill } from "react-bootstrap-icons";
@@ -101,6 +102,8 @@ class PublishContract extends React.Component {
             <ArrowLeftCircleFill color="#003366" /> Return to Publishing Guidelines
           </Link>
         </div>
+      {/*Footer*/} 
+      <FooterComp />
       </div>
     );
   }

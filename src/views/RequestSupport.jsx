@@ -1,6 +1,7 @@
 import React from "react";
 //Components
 import Card from "../components/Card";
+import FooterComp from "../components/Footer";
 
 class RequestSupport extends React.Component {
   render() {
@@ -11,6 +12,9 @@ class RequestSupport extends React.Component {
           title="Request Support"
         />
         <h3>Request Support</h3>
+
+         {/*Footer*/} 
+         <FooterComp />
       </div>
     </div>
     );

@@ -8,6 +8,7 @@ import MainForm from "../components/Form/MainForm";
 import { TenderTableData } from "../Data/TenderTableData";
 import { connect } from "react-redux";
 import axios from "axios";
+import FooterComp from "../components/Footer";
 
 const Current = (props) => {
   const [showTable, setShowTable] = React.useState(true);
@@ -61,7 +62,7 @@ const Current = (props) => {
   };
 
   return (
-    <div className="main-container pt-3">
+    <div className="pt-3">
       <div className="container-fluid">
         <Card
           title="Current Tenders"
@@ -72,6 +73,9 @@ const Current = (props) => {
         <Title header="Search Criteria" />
         <MainForm toggleTable={proxy} />
       </div>
+      <div className="spacer"></div>
+     {/*Footer*/} 
+     <FooterComp />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import React  from "react";
 import Card from "../components/Card";
 import Title from "../components/Title";
 import MainForm from "../components/Form/MainForm";
+import FooterComp from "../components/Footer";
 
 class Newthisweek extends React.Component {
   render() {
@@ -18,6 +19,10 @@ class Newthisweek extends React.Component {
         <Title header="Search Criteria"/>
         <h3>NEW THIS WEEK Tenders</h3>
         <MainForm />
+
+        <div className="spacer"></div>
+         {/*Footer*/} 
+         <FooterComp />
       </div>
     </div>
     );

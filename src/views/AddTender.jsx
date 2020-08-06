@@ -9,28 +9,31 @@ import Card from "../components/Card";
 import DatePicker from "../components/DatePicker";
 import ModalDialog from "../components/ModalDialog";
 import KeywordSelector from "../components/KeywordSelector";
+import FooterComp from "../components/Footer";
 
 class AddTender extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalIsHiden: false, modalError: false, selectedFile: null,
-      tenderCode: '',
-      tenderState: '',
-      tenderName: '',
-      category: '',
-      issuedBy: '',
-      openingdateFrom: '',
-      openingdateTo: '',
-      closingdateFrom: '',
-      closingdateTo: '',
-      grouping: '',
+      modalIsHiden: false,
+      modalError: false,
+      selectedFile: null,
+      tenderCode: "",
+      tenderState: "",
+      tenderName: "",
+      category: "",
+      issuedBy: "",
+      openingdateFrom: "",
+      openingdateTo: "",
+      closingdateFrom: "",
+      closingdateTo: "",
+      grouping: "",
       categories: [],
       fileList: [],
-      enquiries: '',
-      contactName: '',
-      contactEmail: '',
-      responses: '',
+      enquiries: "",
+      contactName: "",
+      contactEmail: "",
+      responses: "",
     };
 
     // enquiry: this.state.enquiries,
@@ -52,21 +55,23 @@ class AddTender extends React.Component {
     let files = e.target.files[0];
     var form = new FormData();
     var filename = Math.floor(Math.random() * 1000) + 1;
-    form.append('filename', `${filename}.pdf`)
-    form.append('file', files)
-    this.state.fileList.push(`${filename}.pdf`)
-    axios.post("http://localhost:5000/upload", form, {
-      headers: { 'Content-Type': 'application/json' }
-    })
-      .then(res => { // then print response status
-        console.log(res.statusText)
+    form.append("filename", `${filename}.pdf`);
+    form.append("file", files);
+    this.state.fileList.push(`${filename}.pdf`);
+    axios
+      .post("http://localhost:5000/upload", form, {
+        headers: { "Content-Type": "application/json" },
       })
+      .then((res) => {
+        // then print response status
+        console.log(res.statusText);
+      });
 
     console.warn("data files", files);
   }
 
   handleClick() {
-    console.log('submiting')
+    console.log("submiting");
     axios
       .post("http://localhost:5000/tender/addNewTender", {
         tenderCode: this.state.tenderCode,
@@ -77,8 +82,8 @@ class AddTender extends React.Component {
         openingdateTo: this.state.openingdateTo,
         closingdateTo: this.state.closingdateTo,
         grouping: this.state.tenderGrouping,
-        categories: this.state.categories.join(','),
-        fileList: this.state.fileList.join(','),
+        categories: this.state.categories.join(","),
+        fileList: this.state.fileList.join(","),
         enquiry: this.state.enquiries,
         name: this.state.contactName,
         email: this.state.contactEmail,
@@ -90,7 +95,7 @@ class AddTender extends React.Component {
           if (response.data) {
             if (response.data === "Successfully Added Tender") {
               console.log("SuccessFull redirecting");
-              this.props.history.push('/tenders/Current')
+              this.props.history.push("/tenders/Current");
               //TODO: redirect to another page
               console.log(this.state.modalIsHiden);
               this.state.modalIsHiden = true;
@@ -98,13 +103,13 @@ class AddTender extends React.Component {
             } else {
               console.log("Unsucessfull");
               this.setState({
-                modalError: true
-              })
+                modalError: true,
+              });
               //TODO: show message
             }
           } else {
             console.log("No data received");
-            this.props.history.push('/tenders/Current')
+            this.props.history.push("/tenders/Current");
             //TODO: show message
           }
         },
@@ -116,7 +121,7 @@ class AddTender extends React.Component {
       );
   }
   render() {
-    console.log("props=", this.props)
+    console.log("props=", this.props);
     let modal;
     if (this.state.modalIsHiden) {
       modal = <ModalDialog errorFlag={this.state.modalError} />;
@@ -135,7 +140,7 @@ class AddTender extends React.Component {
               text="This page can add your tender and it will show it in Current Tender page."
             />
             <div className="pt-3 main-container">
-              <Form >
+              <Form>
                 <Form.Group as={Row} controlId="formPlaintextPassword">
                   <Form.Label column sm="2">
                     Tender Code
@@ -147,10 +152,9 @@ class AddTender extends React.Component {
                       placeholder="Tender Code"
                       onChange={(e) => {
                         this.setState({
-                          tenderCode: e.target.value
-                        })
-                      }
-                      }
+                          tenderCode: e.target.value,
+                        });
+                      }}
                     />
                   </Col>
                 </Form.Group>
@@ -160,11 +164,15 @@ class AddTender extends React.Component {
                     Tender State
                   </Form.Label>
                   <Col sm="4">
-                    <select id="tenderState" className="form-control" onChange={(e) => {
-                      this.setState({
-                        tenderState: e.target.value
-                      })
-                    }}>
+                    <select
+                      id="tenderState"
+                      className="form-control"
+                      onChange={(e) => {
+                        this.setState({
+                          tenderState: e.target.value,
+                        });
+                      }}
+                    >
                       <option value="Any">Any</option>
                       <option value="Open">Open</option>
                       <option value="Closed">Closed</option>
@@ -186,10 +194,9 @@ class AddTender extends React.Component {
                       placeholder="Tender Name"
                       onChange={(e) => {
                         this.setState({
-                          tenderName: e.target.value
-                        })
-                      }
-                      }
+                          tenderName: e.target.value,
+                        });
+                      }}
                     />
                   </Col>
                 </Form.Group>
@@ -205,10 +212,9 @@ class AddTender extends React.Component {
                       placeholder="Category"
                       onChange={(e) => {
                         this.setState({
-                          tenderCategory: e.target.value
-                        })
-                      }
-                      }
+                          tenderCategory: e.target.value,
+                        });
+                      }}
                     />
                   </Col>
                 </Form.Group>
@@ -218,11 +224,15 @@ class AddTender extends React.Component {
                     Issued By
                   </Form.Label>
                   <Col sm="4">
-                    <select id="tenderIssuedby" className="form-control" onChange={(e) => {
-                      this.setState({
-                        tenderIssuedby: e.target.value
-                      })
-                    }}>
+                    <select
+                      id="tenderIssuedby"
+                      className="form-control"
+                      onChange={(e) => {
+                        this.setState({
+                          tenderIssuedby: e.target.value,
+                        });
+                      }}
+                    >
                       <option value="grapefruit">Grapefruit</option>
                       <option value="lime">Lime</option>
                       <option value="coconut">Coconut</option>
@@ -239,12 +249,14 @@ class AddTender extends React.Component {
                     <Form.Group as={Row}>
                       <Col sm={6}>
                         <InputGroup>
-                          <DatePicker label={'To'} onChange={(date) => {
-                            this.setState({
-                              openingdateTo: date
-                            })
-                          }
-                          } />
+                          <DatePicker
+                            label={"To"}
+                            onChange={(date) => {
+                              this.setState({
+                                openingdateTo: date,
+                              });
+                            }}
+                          />
                         </InputGroup>
                       </Col>
                     </Form.Group>
@@ -259,12 +271,14 @@ class AddTender extends React.Component {
                     <Form.Group as={Row}>
                       <Col sm={6}>
                         <InputGroup>
-                          <DatePicker label={'To'} onChange={(date) => {
-                            this.setState({
-                              closingdateTo: date
-                            })
-                          }
-                          } />
+                          <DatePicker
+                            label={"To"}
+                            onChange={(date) => {
+                              this.setState({
+                                closingdateTo: date,
+                              });
+                            }}
+                          />
                         </InputGroup>
                       </Col>
                     </Form.Group>
@@ -276,11 +290,15 @@ class AddTender extends React.Component {
                     Grouping
                   </Form.Label>
                   <Col sm="4">
-                    <select id="tenderGrouping" className="form-control" onChange={(e) => {
-                      this.setState({
-                        tenderGrouping: e.target.value
-                      })
-                    }}>
+                    <select
+                      id="tenderGrouping"
+                      className="form-control"
+                      onChange={(e) => {
+                        this.setState({
+                          tenderGrouping: e.target.value,
+                        });
+                      }}
+                    >
                       <option value="None">None</option>
                       <option value="Buyer">Buyer</option>
                       <option value="Categories">Categories</option>
@@ -300,10 +318,9 @@ class AddTender extends React.Component {
                       placeholder="Contact Name"
                       onChange={(e) => {
                         this.setState({
-                          contactName: e.target.value
-                        })
-                      }
-                      }
+                          contactName: e.target.value,
+                        });
+                      }}
                     />
                   </Col>
                 </Form.Group>
@@ -318,10 +335,9 @@ class AddTender extends React.Component {
                       placeholder="Contact Email"
                       onChange={(e) => {
                         this.setState({
-                          contactEmail: e.target.value
-                        })
-                      }
-                      }
+                          contactEmail: e.target.value,
+                        });
+                      }}
                     />
                   </Col>
                 </Form.Group>
@@ -336,10 +352,9 @@ class AddTender extends React.Component {
                       placeholder="Enquiries"
                       onChange={(e) => {
                         this.setState({
-                          enquiries: e.target.value
-                        })
-                      }
-                      }
+                          enquiries: e.target.value,
+                        });
+                      }}
                     />
                   </Col>
                 </Form.Group>
@@ -354,10 +369,9 @@ class AddTender extends React.Component {
                       placeholder="Responses"
                       onChange={(e) => {
                         this.setState({
-                          responses: e.target.value
-                        })
-                      }
-                      }
+                          responses: e.target.value,
+                        });
+                      }}
                     />
                   </Col>
                 </Form.Group>
@@ -365,13 +379,15 @@ class AddTender extends React.Component {
                   <Form.Label column sm="2">
                     Keywords
                   </Form.Label>
-                  <KeywordSelector onChange={(listItem) => {
-                    this.setState({
-                      categories: listItem
-                    })
-                  }} />
+                  <KeywordSelector
+                    onChange={(listItem) => {
+                      this.setState({
+                        categories: listItem,
+                      });
+                    }}
+                  />
                 </Form.Group>
-                <Form.Group as={Row} controlId="formPlaintextPassword" >
+                <Form.Group as={Row} controlId="formPlaintextPassword">
                   <Form.Label column sm="2">
                     Upload Documents
                   </Form.Label>
@@ -385,7 +401,11 @@ class AddTender extends React.Component {
                 </Form.Group>
 
                 <div className="btnPosition">
-                  <Button variant="primary" type="button" onClick={() => this.handleClick()}>
+                  <Button
+                    variant="primary"
+                    type="button"
+                    onClick={() => this.handleClick()}
+                  >
                     Add Tender
                   </Button>{" "}
                   <Button variant="primary" type="reset" value="Reset">
@@ -395,14 +415,18 @@ class AddTender extends React.Component {
               </Form>
             </div>
           </div>
+
+          {/*Footer*/}
+          <FooterComp />
         </div>
       );
     } else {
-      return (<React.Fragment>
-        <h1>You are not an Admin user</h1>
-      </React.Fragment>)
+      return (
+        <React.Fragment>
+          <h1>You are not an Admin user</h1>
+        </React.Fragment>
+      );
     }
-
   }
 }
 const mapStateToProps = (state) => {

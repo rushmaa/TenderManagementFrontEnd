@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../components/Card";
 import Title from "../components/Title";
 import MainForm from "../components/Form/MainForm";
+import FooterComp from "../components/Footer";
 
 class Elodgement extends React.Component {
   render() {
@@ -16,6 +17,9 @@ class Elodgement extends React.Component {
         <Title header="Search Result"/>
         <Title header="Search Criteria"/>
         <MainForm />
+
+         {/*Footer*/} 
+         <FooterComp />
       </div>
     </div>
     );

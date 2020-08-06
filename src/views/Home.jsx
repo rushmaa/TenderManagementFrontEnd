@@ -5,14 +5,16 @@ import { Button, Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import ReactPlayer from "react-player";
 
+
 //Components
 import "../assets/css/theme.css";
-import NewsDetail from "../components/NewsDetail";
+import FooterComp from "../components/Footer";
 import Title from "../components/Title";
 import CardComp from "../components/Card";
 import FooterBar from "../components/FooterBar";
 import HomeService from "../components/HomeService";
 import HomeCard from "../components/HomeCard";
+
 
 class Home extends React.Component {
   render() {
@@ -39,6 +41,9 @@ class Home extends React.Component {
 
           {/*Home Cards*/}
           <HomeCard />
+
+          {/*Footer Contact Me Bar*/}
+          <FooterBar />
 
            {/*Home Service*/}
            <HomeService />
@@ -74,9 +79,9 @@ class Home extends React.Component {
             <div className="spacer"></div>
           </div>
 
-          {/*Footer Contact Me Bar*/}
-          <FooterBar />
-
+         
+          {/*Footer*/} 
+          <FooterComp />
         </div>
       </div>
     );

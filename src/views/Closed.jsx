@@ -4,6 +4,7 @@ import React  from "react";
 import Card from "../components/Card";
 import Title from "../components/Title";
 import MainForm from "../components/Form/MainForm";
+import FooterComp from "../components/Footer";
 
 class Closed extends React.Component {
   render() {
@@ -17,6 +18,9 @@ class Closed extends React.Component {
         <Title header="Search Criteria"/>
         <h3>Closed Tenders</h3>
         <MainForm />
+        <div className="spacer"></div>
+         {/*Footer*/} 
+         <FooterComp />
       </div>
     </div>
     );

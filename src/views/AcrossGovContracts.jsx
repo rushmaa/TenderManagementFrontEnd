@@ -2,6 +2,7 @@ import React from "react";
 //Components
 import Card from "../components/Card";
 import Title from "../components/Title";
+import FooterComp from "../components/Footer";
 
 class AcrossGovContracts extends React.Component {
   render() {
@@ -14,6 +15,9 @@ class AcrossGovContracts extends React.Component {
         />
          <Title header="Search Result"/>
          <h3>Across Government Tenders</h3>
+
+           {/*Footer*/} 
+           <FooterComp />
       </div>
     </div>
     );

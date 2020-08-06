@@ -8,6 +8,7 @@ import { Contacts } from "../components/Contacts";
 import { SpecificationDocuments } from "../components/SpecificationDocuments";
 import { Responses } from "../components/Responses";
 import { TenderTitle } from "../components/TenderTitle";
+import FooterComp from "../components/Footer";
 // import { TenderData } from "../Data/TenderTableData";
 import jsPDF from "jspdf";
 
@@ -46,6 +47,9 @@ const DisplayTender = (props) => {
         />
         <Responses responsesItem1={element?.responsesItem1} />
       </div>
+    
+     {/*Footer*/} 
+     <FooterComp />
     </div>
   );
 };

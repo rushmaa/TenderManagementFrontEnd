@@ -2,6 +2,8 @@ import React from "react";
 //Components
 import Card from "../components/Card";
 import Title from "../components/Title";
+import FooterComp from "../components/Footer";
+
 class Awarded extends React.Component {
   render() {
     return (
@@ -13,6 +15,9 @@ class Awarded extends React.Component {
         />
         <Title header="Select an Agency"/>
         <h3>Awarded Tenders</h3>
+
+         {/*Footer*/} 
+         <FooterComp />
       </div>
     </div>
     );
