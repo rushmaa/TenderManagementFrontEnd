@@ -31,8 +31,8 @@ const Tenders = (props) => {
         <Title header="Search Criteria" />
         <MainForm toggleTable={proxy} />
         <div className="spacer"></div>
-        {/*Footer*/}
-        <FooterComp />
+       // {/*Footer*/}
+       //<FooterComp />
       </div>
     </div>
   );

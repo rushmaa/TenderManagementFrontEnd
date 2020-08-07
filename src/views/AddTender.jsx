@@ -54,10 +54,11 @@ class AddTender extends React.Component {
   onChange(e) {
     let files = e.target.files[0];
     var form = new FormData();
+    var fileListItems=this.state.fileList;
     var filename = Math.floor(Math.random() * 1000) + 1;
     form.append("filename", `${filename}.pdf`);
     form.append("file", files);
-    this.state.fileList.push(`${filename}.pdf`);
+    fileListItems.push(`${filename}.pdf`);
     axios
       .post("http://localhost:5000/upload", form, {
         headers: { "Content-Type": "application/json" },
@@ -65,6 +66,7 @@ class AddTender extends React.Component {
       .then((res) => {
         // then print response status
         console.log(res.statusText);
+        this.setState({fileList: fileListItems})
       });
 
     console.warn("data files", files);
@@ -88,6 +90,7 @@ class AddTender extends React.Component {
         name: this.state.contactName,
         email: this.state.contactEmail,
         responsesItem1: this.state.responses,
+        descriptionLevel1: this.state.descriptionLevel1
       })
       .then(
         (response) => {
@@ -128,305 +131,324 @@ class AddTender extends React.Component {
     } else {
       console.log("in false");
     }
-    if (this.props?.User?.User?.type === "admin") {
-      return (
-        <div className="pt-3">
-          {/* Suceess message -START */}
-          {modal}
-          {/* END */}
-          <div className="container-fluid">
-            <Card
-              title="Add Tender"
-              text="This page can add your tender and it will show it in Current Tender page."
-            />
-            <div className="pt-3 main-container">
-              <Form>
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Tender Code
+    // if (this.props?.User?.User?.type === "admin") {
+    return (
+      <div className="pt-3">
+        {/* Suceess message -START */}
+        {modal}
+        {/* END */}
+        <div className="container-fluid">
+          <Card
+            title="Add Tender"
+            text="This page can add your tender and it will show it in Current Tender page."
+          />
+          <div className="pt-3 main-container">
+            <Form>
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Tender Code
                   </Form.Label>
-                  <Col sm="4">
-                    <Form.Control
-                      id="tenderCode"
-                      type="Tender Code"
-                      placeholder="Tender Code"
-                      onChange={(e) => {
-                        this.setState({
-                          tenderCode: e.target.value,
-                        });
-                      }}
-                    />
-                  </Col>
-                </Form.Group>
-
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Tender State
-                  </Form.Label>
-                  <Col sm="4">
-                    <select
-                      id="tenderState"
-                      className="form-control"
-                      onChange={(e) => {
-                        this.setState({
-                          tenderState: e.target.value,
-                        });
-                      }}
-                    >
-                      <option value="Any">Any</option>
-                      <option value="Open">Open</option>
-                      <option value="Closed">Closed</option>
-                      <option value="AdvanceNotice">Advance Notice</option>
-                      <option value="Awarded">Awarded</option>
-                      <option value="NotAwarded">Not Awarded</option>
-                    </select>
-                  </Col>
-                </Form.Group>
-
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Tender Name
-                  </Form.Label>
-                  <Col sm="4">
-                    <Form.Control
-                      id="tenderName"
-                      type="Tender Name"
-                      placeholder="Tender Name"
-                      onChange={(e) => {
-                        this.setState({
-                          tenderName: e.target.value,
-                        });
-                      }}
-                    />
-                  </Col>
-                </Form.Group>
-
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Category
-                  </Form.Label>
-                  <Col sm="4">
-                    <Form.Control
-                      id="tenderCategory"
-                      type="Category"
-                      placeholder="Category"
-                      onChange={(e) => {
-                        this.setState({
-                          tenderCategory: e.target.value,
-                        });
-                      }}
-                    />
-                  </Col>
-                </Form.Group>
-
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Issued By
-                  </Form.Label>
-                  <Col sm="4">
-                    <select
-                      id="tenderIssuedby"
-                      className="form-control"
-                      onChange={(e) => {
-                        this.setState({
-                          tenderIssuedby: e.target.value,
-                        });
-                      }}
-                    >
-                      <option value="grapefruit">Grapefruit</option>
-                      <option value="lime">Lime</option>
-                      <option value="coconut">Coconut</option>
-                      <option value="mango">Mango</option>
-                    </select>
-                  </Col>
-                </Form.Group>
-
-                <Form.Group as={Row}>
-                  <Form.Label as="legend" column sm={2}>
-                    Opening Date
-                  </Form.Label>
-                  <Col sm={4}>
-                    <Form.Group as={Row}>
-                      <Col sm={6}>
-                        <InputGroup>
-                          <DatePicker
-                            label={"To"}
-                            onChange={(date) => {
-                              this.setState({
-                                openingdateTo: date,
-                              });
-                            }}
-                          />
-                        </InputGroup>
-                      </Col>
-                    </Form.Group>
-                  </Col>
-                </Form.Group>
-
-                <Form.Group as={Row}>
-                  <Form.Label as="legend" column sm={2}>
-                    Closing Date
-                  </Form.Label>
-                  <Col sm={4}>
-                    <Form.Group as={Row}>
-                      <Col sm={6}>
-                        <InputGroup>
-                          <DatePicker
-                            label={"To"}
-                            onChange={(date) => {
-                              this.setState({
-                                closingdateTo: date,
-                              });
-                            }}
-                          />
-                        </InputGroup>
-                      </Col>
-                    </Form.Group>
-                  </Col>
-                </Form.Group>
-
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Grouping
-                  </Form.Label>
-                  <Col sm="4">
-                    <select
-                      id="tenderGrouping"
-                      className="form-control"
-                      onChange={(e) => {
-                        this.setState({
-                          tenderGrouping: e.target.value,
-                        });
-                      }}
-                    >
-                      <option value="None">None</option>
-                      <option value="Buyer">Buyer</option>
-                      <option value="Categories">Categories</option>
-                      <option value="Status">Status</option>
-                      <option value="Type">Type</option>
-                    </select>
-                  </Col>
-                </Form.Group>
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Contact Name
-                  </Form.Label>
-                  <Col sm="4">
-                    <Form.Control
-                      id="contactName"
-                      type="Contact Name"
-                      placeholder="Contact Name"
-                      onChange={(e) => {
-                        this.setState({
-                          contactName: e.target.value,
-                        });
-                      }}
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Contact Email
-                  </Form.Label>
-                  <Col sm="4">
-                    <Form.Control
-                      id="contactEmail"
-                      type="Contact Email"
-                      placeholder="Contact Email"
-                      onChange={(e) => {
-                        this.setState({
-                          contactEmail: e.target.value,
-                        });
-                      }}
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Enquiries
-                  </Form.Label>
-                  <Col sm="4">
-                    <Form.Control
-                      id="Enquiries"
-                      type="Enquiries"
-                      placeholder="Enquiries"
-                      onChange={(e) => {
-                        this.setState({
-                          enquiries: e.target.value,
-                        });
-                      }}
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Responses
-                  </Form.Label>
-                  <Col sm="4">
-                    <Form.Control
-                      id="Responses"
-                      type="Responses"
-                      placeholder="Responses"
-                      onChange={(e) => {
-                        this.setState({
-                          responses: e.target.value,
-                        });
-                      }}
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Keywords
-                  </Form.Label>
-                  <KeywordSelector
-                    onChange={(listItem) => {
+                <Col sm="4">
+                  <Form.Control
+                    id="tenderCode"
+                    type="Tender Code"
+                    placeholder="Tender Code"
+                    onChange={(e) => {
                       this.setState({
-                        categories: listItem,
+                        tenderCode: e.target.value,
                       });
                     }}
                   />
-                </Form.Group>
-                <Form.Group as={Row} controlId="formPlaintextPassword">
-                  <Form.Label column sm="2">
-                    Upload Documents
+                </Col>
+              </Form.Group>
+
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Tender State
                   </Form.Label>
-                  <Col sm="4">
-                    <input
-                      type="file"
-                      name="foo"
-                      onChange={(e) => this.onChange(e)}
-                    />
-                  </Col>
-                </Form.Group>
-
-                <div className="btnPosition">
-                  <Button
-                    variant="primary"
-                    type="button"
-                    onClick={() => this.handleClick()}
+                <Col sm="4">
+                  <select
+                    id="tenderState"
+                    className="form-control"
+                    onChange={(e) => {
+                      this.setState({
+                        tenderState: e.target.value,
+                      });
+                    }}
                   >
-                    Add Tender
-                  </Button>{" "}
-                  <Button variant="primary" type="reset" value="Reset">
-                    Clear
-                  </Button>
-                </div>
-              </Form>
-            </div>
-          </div>
+                    <option value="Any">Any</option>
+                    <option value="Open">Open</option>
+                    <option value="Closed">Closed</option>
+                    <option value="AdvanceNotice">Advance Notice</option>
+                    <option value="Awarded">Awarded</option>
+                    <option value="NotAwarded">Not Awarded</option>
+                  </select>
+                </Col>
+              </Form.Group>
 
-          {/*Footer*/}
-          <FooterComp />
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Tender Name
+                  </Form.Label>
+                <Col sm="4">
+                  <Form.Control
+                    id="tenderName"
+                    type="Tender Name"
+                    placeholder="Tender Name"
+                    onChange={(e) => {
+                      this.setState({
+                        tenderName: e.target.value,
+                      });
+                    }}
+                  />
+                </Col>
+              </Form.Group>
+
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Category
+                  </Form.Label>
+                <Col sm="4">
+                  <Form.Control
+                    id="tenderCategory"
+                    type="Category"
+                    placeholder="Category"
+                    onChange={(e) => {
+                      this.setState({
+                        tenderCategory: e.target.value,
+                      });
+                    }}
+                  />
+                </Col>
+              </Form.Group>
+
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Issued By
+                  </Form.Label>
+                <Col sm="4">
+                  <select
+                    id="tenderIssuedby"
+                    className="form-control"
+                    onChange={(e) => {
+                      this.setState({
+                        tenderIssuedby: e.target.value,
+                      });
+                    }}
+                  >
+                    <option value="grapefruit">Grapefruit</option>
+                    <option value="lime">Lime</option>
+                    <option value="coconut">Coconut</option>
+                    <option value="mango">Mango</option>
+                  </select>
+                </Col>
+              </Form.Group>
+
+              <Form.Group as={Row}>
+                <Form.Label as="legend" column sm={2}>
+                  Opening Date
+                  </Form.Label>
+                <Col sm={4}>
+                  <Form.Group as={Row}>
+                    <Col sm={6}>
+                      <InputGroup>
+                        <DatePicker
+                          label={"To"}
+                          onChange={(date) => {
+                            this.setState({
+                              openingdateTo: date,
+                            });
+                          }}
+                        />
+                      </InputGroup>
+                    </Col>
+                  </Form.Group>
+                </Col>
+              </Form.Group>
+
+              <Form.Group as={Row}>
+                <Form.Label as="legend" column sm={2}>
+                  Closing Date
+                  </Form.Label>
+                <Col sm={4}>
+                  <Form.Group as={Row}>
+                    <Col sm={6}>
+                      <InputGroup>
+                        <DatePicker
+                          label={"To"}
+                          onChange={(date) => {
+                            this.setState({
+                              closingdateTo: date,
+                            });
+                          }}
+                        />
+                      </InputGroup>
+                    </Col>
+                  </Form.Group>
+                </Col>
+              </Form.Group>
+
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Grouping
+                  </Form.Label>
+                <Col sm="4">
+                  <select
+                    id="tenderGrouping"
+                    className="form-control"
+                    onChange={(e) => {
+                      this.setState({
+                        tenderGrouping: e.target.value,
+                      });
+                    }}
+                  >
+                    <option value="None">None</option>
+                    <option value="Buyer">Buyer</option>
+                    <option value="Categories">Categories</option>
+                    <option value="Status">Status</option>
+                    <option value="Type">Type</option>
+                  </select>
+                </Col>
+              </Form.Group>
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Contact Name
+                  </Form.Label>
+                <Col sm="4">
+                  <Form.Control
+                    id="contactName"
+                    type="Contact Name"
+                    placeholder="Contact Name"
+                    onChange={(e) => {
+                      this.setState({
+                        contactName: e.target.value,
+                      });
+                    }}
+                  />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Contact Email
+                  </Form.Label>
+                <Col sm="4">
+                  <Form.Control
+                    id="contactEmail"
+                    type="Contact Email"
+                    placeholder="Contact Email"
+                    onChange={(e) => {
+                      this.setState({
+                        contactEmail: e.target.value,
+                      });
+                    }}
+                  />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Enquiries
+                  </Form.Label>
+                <Col sm="4">
+                  <Form.Control
+                    id="Enquiries"
+                    type="Enquiries"
+                    placeholder="Enquiries"
+                    onChange={(e) => {
+                      this.setState({
+                        enquiries: e.target.value,
+                      });
+                    }}
+                  />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Responses
+                  </Form.Label>
+                <Col sm="4">
+                  <Form.Control
+                    id="Responses"
+                    type="Responses"
+                    placeholder="Responses"
+                    onChange={(e) => {
+                      this.setState({
+                        responses: e.target.value,
+                      });
+                    }}
+                  />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Description
+                  </Form.Label>
+                <Col sm="4">
+                  <Form.Control
+                    id="descriptionLevel1"
+                    placeholder="Description"
+                    onChange={(e) => {
+                      this.setState({
+                        descriptionLevel1: e.target.value,
+                      });
+                    }}
+                  />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Keywords
+                  </Form.Label>
+                <KeywordSelector
+                  onChange={(listItem) => {
+                    this.setState({
+                      categories: listItem,
+                    });
+                  }}
+                />
+              </Form.Group>
+              <Form.Group as={Row} controlId="formPlaintextPassword">
+                <Form.Label column sm="2">
+                  Upload Documents
+                  </Form.Label>
+                <Col sm="4">
+                  <input
+                    type="file"
+                    onChange={(e) => this.onChange(e)}
+                  />
+                  {
+                    this.state.fileList.map(i => <p>{i}</p>)
+                  }
+                </Col>
+              </Form.Group>
+                  
+              <div className="btnPosition">
+                <Button
+                  variant="primary"
+                  type="button"
+                  onClick={() => this.handleClick()}
+                >
+                  Add Tender
+                  </Button>{" "}
+                  
+                <Button variant="primary" type="reset" value="Reset">
+                  Clear
+                  </Button>
+              </div>
+            </Form>
+          </div>
         </div>
-      );
-    } else {
-      return (
-        <React.Fragment>
-          <h1>You are not an Admin user</h1>
-        </React.Fragment>
-      );
-    }
+
+        {/*Footer*/}
+        <FooterComp />
+      </div>
+    );
+    // } else {
+    //   return (
+    //     <React.Fragment>
+    //       <h1>You are not an Admin user</h1>
+    //     </React.Fragment>
+    //   );
+    // }
   }
 }
 const mapStateToProps = (state) => {
