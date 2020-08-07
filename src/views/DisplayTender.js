@@ -1,4 +1,3 @@
-
 import React from "react";
 import Card from "../components/Card";
 import TenderRequestSection from "../components/TenderRequestSection";
@@ -8,6 +7,7 @@ import { Contacts } from "../components/Contacts";
 import { SpecificationDocuments } from "../components/SpecificationDocuments";
 import { Responses } from "../components/Responses";
 import { TenderTitle } from "../components/TenderTitle";
+import FooterComp from "../components/Footer";
 
 // import { TenderData } from "../Data/TenderTableData";
 import jsPDF from "jspdf";
@@ -19,7 +19,7 @@ const DisplayTender = (props) => {
   })*/
   const element = props.location.state.tender;
   return (
-    <div className="main-container pt-3">
+    <div className="pt-3">
       <div className="container-fluid">
         <Card
           title="Current Tenders"
@@ -42,13 +42,9 @@ const DisplayTender = (props) => {
           descriptionListItem1={element?.descriptionListItem1}
           descriptionListItem2={element?.descriptionListItem2}
         />
-        <SpecificationDocuments
-          fileList={element?.fileList}
-        />
+        <SpecificationDocuments fileList={element?.fileList} />
         <Responses responsesItem1={element?.responsesItem1} />
       </div>
-    
-
     </div>
   );
 };

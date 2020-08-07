@@ -75,7 +75,7 @@ class News extends React.Component {
                               href="?page=post_gallery"
                               title="The Public Health Crisis Hiding in Our Food"
                             >
-                              The Public Health Crisis Hiding in Our Food
+                              The Healthcare Tender
                             </a>
                           </h5>
                           <ul className="postDetails simple">
@@ -98,7 +98,7 @@ class News extends React.Component {
                               href="?page=post_gallery"
                               title="The Public Health Crisis Hiding in Our Food"
                             >
-                              The Public Health Crisis Hiding in Our Food
+                              The Public Health Crisis Tender
                             </a>
                           </h5>
                           <ul className="postDetails simple">
@@ -121,7 +121,7 @@ class News extends React.Component {
                               href="?page=post_gallery"
                               title="The Public Health Crisis Hiding in Our Food"
                             >
-                              The Public Health Crisis Hiding in Our Food
+                                The Healthcare Tender
                             </a>
                           </h5>
                           <ul className="postDetails simple">

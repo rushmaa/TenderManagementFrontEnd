@@ -28,3 +28,4 @@ class Closed extends React.Component {
 }
 
 export default Closed;
+

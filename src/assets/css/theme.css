@@ -51,7 +51,7 @@ h6 {
   font-size: 17px;
 }
 .nav-link {
-  color: #fff ;
+  color: #fff;
 }
 .logRight {
   justify-content: flex-end !important;
@@ -383,16 +383,17 @@ a:hover {
 /*Footer*/
 .footerContainer {
   background-color: #0f1b42;
-    color: rgba(255, 255, 255, 0.5);
-    padding-top: 80px;
-    padding-bottom: 40px;
+  color: rgba(255, 255, 255, 0.5);
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 .footerTitle {
   font-size: 20px;
   color: #ffffff;
   font-weight: 600;
 }
-.footerIcon, .footerMediaBody {
+.footerIcon,
+.footerMediaBody {
   display: inline-block;
 }
 .footerLink {
@@ -400,7 +401,8 @@ a:hover {
 }
 .footerLink:hover {
   text-decoration: none;
-} 
+}
+
 /*News Page*/
 .newsContainer {
   width: 85%;
@@ -415,4 +417,34 @@ a:hover {
   display: inline-block;
   padding: 30px 15px;
   width: 100%;
+}
+
+/*Publish Guildlines*/
+.newsletterContainer {
+  background-color: #f8fafe;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.newletterInput {
+  margin-bottom: 0;
+  background-color: #fff;
+  border: 2px solid #ededed;
+  height: 49px;
+  font-size: 15px;
+  padding-left: 20px;
+  width: 380px;
+  margin-top: -2px;
+  margin-right: 5px;
+  box-shadow: none;
+  border-radius: 3px;
+}
+.newsletterForm {
+  width: 70%;
+  margin: auto;
+}
+.newletterInput {
+  display: inline-block;
+}
+.submit-newsletter {
+  display: inline-block;
 }
