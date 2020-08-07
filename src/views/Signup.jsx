@@ -5,7 +5,7 @@ import { Button } from "reactstrap";
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 const Signup = (props) => {
     const createAccount = () => {
-        fetch(`http://localhost:5000/user/signup`, {
+        fetch(`http://tmback.nithiresearch.com/user/signup`, {
             method: "post",
             body: JSON.stringify({ businessName: businessname, address: address, city: city, state: state, postcode: postcode, country: country, email: email, password: password, }),
             headers: {

@@ -7,7 +7,7 @@ import axios from "axios";
 export default function ComboBox(props) {
   // setTenderContent
   const getalltenders = ()=>{
-    axios.get("http://localhost:5000/tender/getalltenders").then(
+    axios.get("http://tmback.nithiresearch.com/tender/getalltenders").then(
       (response) => {
         console.log(response);
         if (response.data.tenders) {

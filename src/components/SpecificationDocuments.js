@@ -5,7 +5,7 @@ import GetAppIcon from '@material-ui/icons/GetApp';
 export const SpecificationDocuments = (props) => {
   const getDocument=(event, filename)=>{
       event.preventDefault();
-     fetch("http://localhost:5000/tender/getfile?name=468.pdf")
+     fetch("http://tmback.nithiresearch.com/tender/getfile?name=468.pdf")
      .then((response) => response.blob()).then((blob) => {
       const url = window.URL.createObjectURL(new Blob([blob]));
       const link = document.createElement('a');

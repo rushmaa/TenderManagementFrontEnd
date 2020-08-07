@@ -40,7 +40,7 @@ class AddTender extends React.Component {
     // name: this.state.contactName,
     // email: this.state.contactEmail,
     // responsesItem1: this.state.responses,
-    // fetch("http://localhost:5000/tender/getfile").then((response) => response.blob()).then((blob) => {
+    // fetch("http://tmback.nithiresearch.com/tender/getfile").then((response) => response.blob()).then((blob) => {
     //   const url = window.URL.createObjectURL(new Blob([blob]));
     //   const link = document.createElement('a');
     //   link.href = url;
@@ -60,7 +60,7 @@ class AddTender extends React.Component {
     form.append("file", files);
     fileListItems.push(`${filename}.pdf`);
     axios
-      .post("http://localhost:5000/upload", form, {
+      .post("http://tmback.nithiresearch.com/upload", form, {
         headers: { "Content-Type": "application/json" },
       })
       .then((res) => {
@@ -75,7 +75,7 @@ class AddTender extends React.Component {
   handleClick() {
     console.log("submiting");
     axios
-      .post("http://localhost:5000/tender/addNewTender", {
+      .post("http://tmback.nithiresearch.com/tender/addNewTender", {
         tenderCode: this.state.tenderCode,
         tenderState: this.state.tenderState,
         tenderName: this.state.tenderName,

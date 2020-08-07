@@ -32,7 +32,7 @@ var [rowList, setRowList] = React.useState();
   }
 
   const sendAcceptRequest = (data) => {
-    fetch(`http://localhost:5000/user/update/`, {
+    fetch(`http://tmback.nithiresearch.com/user/update/`, {
       method: "post",
       body: JSON.stringify({ email: data }),
       headers: {
@@ -46,7 +46,7 @@ var [rowList, setRowList] = React.useState();
   }
 
   const sendRejectRequest = (data) => {
-    fetch(`http://localhost:5000/user/reject/`, {
+    fetch(`http://tmback.nithiresearch.com/user/reject/`, {
       method: "post",
       body: JSON.stringify({ email: data }),
       headers: {

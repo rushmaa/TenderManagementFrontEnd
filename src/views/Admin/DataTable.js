@@ -7,7 +7,7 @@ export default function DataTable(props) {
 const [listitems, setListItems] = React.useState([]);
   function accept() {
     selectedList.forEach(element => {
-      fetch(`http://localhost:5000/user/update`, {
+      fetch(`http://tmback.nithiresearch.com/user/update`, {
       method: "post",
       body: JSON.stringify({ email: element }),
       headers: {
@@ -33,7 +33,7 @@ const [listitems, setListItems] = React.useState([]);
 
   function reject() {
     selectedList.forEach(element => {
-      fetch(`http://localhost:5000/user/reject`, {
+      fetch(`http://tmback.nithiresearch.com/user/reject`, {
       method: "post",
       body: JSON.stringify({ email: element }),
       headers: {

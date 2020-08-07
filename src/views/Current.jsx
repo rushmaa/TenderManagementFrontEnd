@@ -20,7 +20,7 @@ const Current = (props) => {
   });
   React.useEffect(() => {
     if (props.User.User.type === "admin") {
-      fetch(`http://localhost:5000/user/getunconfirmeduser`, {
+      fetch(`http://tmback.nithiresearch.com/user/getunconfirmeduser`, {
         method: "get",
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const Current = (props) => {
         });
     }
     // ! NEW CALL TO DB
-    axios.get("http://localhost:5000/tender/getalltenders").then(
+    axios.get("http://tmback.nithiresearch.com/tender/getalltenders").then(
       (response) => {
         console.log(response);
         if (response.data.tenders) {
