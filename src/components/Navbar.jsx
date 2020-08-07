@@ -94,6 +94,9 @@ class Navbar extends Component {
                  <ReactBootStrap.NavDropdown.Item>
                    <Link to="/add-tender">Add Tender</Link>
                  </ReactBootStrap.NavDropdown.Item>
+                 <ReactBootStrap.NavDropdown.Item>
+                   <Link to="/admin">Admin Dashboard</Link>
+                 </ReactBootStrap.NavDropdown.Item>
                </ReactBootStrap.NavDropdown>
               )}
             <ReactBootStrap.Nav>
