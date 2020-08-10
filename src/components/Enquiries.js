@@ -4,7 +4,11 @@ export const Enquiries = (props) => {
   return (
     <div class="container-fluid float-left">
       <TitleContainer title={"Enquiries"} />
-      <p>{props.enquiry}</p>
+
+      <div className="container-fluid">
+      <p className="singleTenderPt">{props.enquiry}</p>
+      </div>
+     
     </div>
   );
 };

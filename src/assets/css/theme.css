@@ -205,6 +205,9 @@ h6 {
   color: #003366;
   text-decoration: underline;
 }
+.linkStyle:hover {
+  color: #003366 !important;
+}
 .btn-primary {
   color: #fff;
   background-color: #0f1b42 !important;
@@ -447,4 +450,19 @@ a:hover {
 }
 .submit-newsletter {
   display: inline-block;
+}
+
+/*WIP*/
+.maintainImage {
+  height: 22em;
+  padding: 30px;
+}
+.Imagecontainer {
+  width: 30% !important;
+  margin: auto !important;
+}
+
+/*Single Tender*/
+.singleTenderPt {
+  padding-top: 4.5em;
 }

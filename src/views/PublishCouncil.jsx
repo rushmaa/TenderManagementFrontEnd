@@ -16,7 +16,7 @@ import {
 class PublishCouncil extends React.Component {
   render() {
     return (
-      <div className="main-container pt-3">
+      <div className="pt-3">
         <div className="container-fluid">
           <Card
             title="Publishing Guidelines"
@@ -26,7 +26,7 @@ class PublishCouncil extends React.Component {
           />
           <div className="pt-4">
             <Link
-              to="/Files/ContractDisclosure.doc"
+              to="/Files/PublishCouncil.docx"
               target="_blank"
               download
               className="linkStyle"
@@ -68,11 +68,11 @@ class PublishCouncil extends React.Component {
             </ol>
           </div>
 
-          <Link to="/News" className="linkStyle">
+          <Link to="/Publish-Guildline" className="linkStyle">
             <ArrowLeftCircleFill color="#003366" /> Return to Publishing Guidelines
           </Link>
         </div>
-     
+        <div className="spacer"></div>
       {/*Footer*/} 
       <FooterComp />
       </div>

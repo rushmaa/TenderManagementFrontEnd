@@ -3,6 +3,8 @@ import React from "react";
 import Card from "../components/Card";
 import Title from "../components/Title";
 import FooterComp from "../components/Footer";
+import WorkInProgress from "../components/WorkInProgress";
+
 
 class Awarded extends React.Component {
   render() {
@@ -13,8 +15,7 @@ class Awarded extends React.Component {
           title="Contracts"
           text="This page displays a list of contracts awarded by the Government of South Australia. Select an Agency to display the summarised view of contracts for that Agency."
         />
-        <Title header="Select an Agency"/>
-        <h3>Awarded Tenders</h3>
+         <WorkInProgress />
 
          {/*Footer*/} 
          <FooterComp />

@@ -1,7 +1,9 @@
 import React from "react";
+import { Button, Row, Col } from "react-bootstrap";
 //Components
 import FooterComp from "../components/Footer";
 import Card from "../components/Card";
+import WorkInProgress from "../components/WorkInProgress";
 
 class FAQ extends React.Component {
   render() {
@@ -14,6 +16,7 @@ class FAQ extends React.Component {
           />
 
           {/*FAQ Section*/}
+         <WorkInProgress />
 
           {/*Footer*/}
           <FooterComp />

@@ -16,7 +16,7 @@ import {
 class PublishTender extends React.Component {
   render() {
     return (
-      <div className="main-container pt-3">
+      <div className="pt-3">
         <div className="container-fluid">
           <Card
             title="Publishing Guidelines"
@@ -24,7 +24,7 @@ class PublishTender extends React.Component {
           <NewsDetail tenderName="Publish a Tender" />
           <div className="pt-4">
             <Link
-              to="/Files/SAGovernment.doc"
+              to="/Files/PublishTender.docx"
               target="_blank"
               download
               className="linkStyle"
@@ -85,12 +85,12 @@ class PublishTender extends React.Component {
               </p>
             </div>
 
-            <Link to="/News" className="linkStyle">
+            <Link to="/Publish-Guildline" className="linkStyle">
               <ArrowLeftCircleFill color="#003366" /> Return to Publishing Guidelines
             </Link>
           </div>
         </div>
-     
+        <div className="spacer"></div>
       {/*Footer*/} 
       <FooterComp />
       </div>

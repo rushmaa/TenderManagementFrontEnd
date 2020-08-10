@@ -52,7 +52,7 @@ class Navbar extends Component {
                 </ReactBootStrap.NavDropdown.Item>
                 <ReactBootStrap.NavDropdown.Item>
                   <Link to="/contracts/across-gov-contracts">
-                    Goverment
+                  Government
                   </Link>
                 </ReactBootStrap.NavDropdown.Item>
               </ReactBootStrap.NavDropdown>

@@ -16,7 +16,7 @@ export class Header extends Component {
     }
     console.log('this.props.push==',this.props)
   }
-  
+ 
   setTenderContent(tenderContent) {
     this.setState({
       tenderContent : tenderContent
@@ -27,6 +27,9 @@ export class Header extends Component {
     if (this.state.redirect) {
       console.log('this.state.redirect==',this.state.redirect)
       this.state.redirect=false;
+
+      const user = this.props.store.getState();
+  
       return  (
       <React.Fragment>
         <Redirect push 
@@ -44,6 +47,7 @@ export class Header extends Component {
               <ComboBox setTenderContent={(tenderContent)=>this.setTenderContent(tenderContent)}/>
               </div>
             </Col>
+            
             <Col md={1} className="col-Searching">
               <div>
                 <Button variant="outline-danger" onClick={()=>{

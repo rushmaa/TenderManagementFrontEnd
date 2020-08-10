@@ -20,7 +20,7 @@ class PublishContract extends React.Component {
 
   render() {
     return (
-      <div className="main-container pt-3">
+      <div className="pt-3">
         <div className="container-fluid">
           <Card
             title="Publishing Guidelines"
@@ -30,7 +30,7 @@ class PublishContract extends React.Component {
           />
           <div className="pt-4">
             <Link
-              to="/Files/LocalGovernment.doc"
+              to="/Files/PublishContract.docx"
               target="_blank"
               download
               className="linkStyle"
@@ -98,10 +98,11 @@ class PublishContract extends React.Component {
             </p>
           </div>
 
-          <Link to="/News" className="linkStyle">
+          <Link to="/Publish-Guildline" className="linkStyle">
             <ArrowLeftCircleFill color="#003366" /> Return to Publishing Guidelines
           </Link>
         </div>
+        <div className="spacer"></div>
       {/*Footer*/} 
       <FooterComp />
       </div>
