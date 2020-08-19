@@ -28,7 +28,7 @@ export class Header extends Component {
       console.log('this.state.redirect==',this.state.redirect)
       this.state.redirect=false;
 
-      const user = this.props.store?.getState();
+      const user = this.props.store.getState();
   
       return  (
       <React.Fragment>

@@ -74,7 +74,6 @@ class AddTender extends React.Component {
 
   handleClick() {
     console.log("submiting");
-    this.state.categories.push(this.state.tenderCode)
     axios
       .post("http://tmback.nithiresearch.com/tender/addNewTender", {
         tenderCode: this.state.tenderCode,

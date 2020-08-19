@@ -6,13 +6,11 @@ import axios from "axios";
 
 export default function ComboBox(props) {
   // setTenderContent
-  React.useEffect(()=>getalltenders(),[])
   const getalltenders = ()=>{
     axios.get("http://tmback.nithiresearch.com/tender/getalltenders").then(
       (response) => {
         console.log(response);
         if (response.data.tenders) {
-          
           response.data.tenders.forEach(element => {
             var categories = element.categories.split(',');
             categories.forEach(category => {
@@ -31,7 +29,7 @@ export default function ComboBox(props) {
   }
 
 const [value, setValue] = React.useState();
-
+getalltenders()
   return (
     <Autocomplete
       id="combo-box-demo"
