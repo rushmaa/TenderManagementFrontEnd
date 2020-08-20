@@ -396,7 +396,7 @@ class AddTender extends React.Component {
               </Form.Group>
               <Form.Group as={Row} controlId="formPlaintextPassword">
                 <Form.Label column sm="2">
-                  Keywords
+                  Keywords *Please click Enter once you've entered a keyword and it will appear on the list 
                   </Form.Label>
                 <KeywordSelector
                   onChange={(listItem) => {
@@ -419,6 +419,9 @@ class AddTender extends React.Component {
                     this.state.fileList.map(i => <p>{i}</p>)
                   }
                 </Col>
+                <Form.Label column sm="2">
+                 *Please refresh the page once you've successfully added your desired tender. 
+                  </Form.Label>
               </Form.Group>
                   
               <div className="btnPosition">
