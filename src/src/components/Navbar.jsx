@@ -6,7 +6,9 @@ import { connect } from "react-redux";
 
 class Navbar extends Component {
   render() {
-    const user = this.props.store.getState();
+    try {
+      const user = this.props.store.getState();
+    } catch (error) {}
     return (
       <div>
         <ReactBootStrap.Navbar collapseOnSelect expand="lg">
@@ -51,9 +53,7 @@ class Navbar extends Component {
                   <Link to="/contracts/awared">Completed</Link>
                 </ReactBootStrap.NavDropdown.Item>
                 <ReactBootStrap.NavDropdown.Item>
-                  <Link to="/contracts/across-gov-contracts">
-                  Government
-                  </Link>
+                  <Link to="/contracts/across-gov-contracts">Government</Link>
                 </ReactBootStrap.NavDropdown.Item>
               </ReactBootStrap.NavDropdown>
               <ReactBootStrap.NavDropdown
@@ -68,42 +68,43 @@ class Navbar extends Component {
                 title="NOTICE"
                 id="collasible-nav-dropdown"
               >
-                  <ReactBootStrap.NavDropdown.Item>
-                <Link to="/Publish-Guildline" className="main-nav">
-                  Publish Guidlines
-                </Link> 
+                <ReactBootStrap.NavDropdown.Item>
+                  <Link to="/Publish-Guildline" className="main-nav">
+                    Publish Guidlines
+                  </Link>
                 </ReactBootStrap.NavDropdown.Item>
                 <ReactBootStrap.NavDropdown.Item>
-                <Link to="/News" className="main-nav">
-                  News
-                </Link> 
+                  <Link to="/News" className="main-nav">
+                    News
+                  </Link>
                 </ReactBootStrap.NavDropdown.Item>
-
               </ReactBootStrap.NavDropdown>
               <ReactBootStrap.Nav.Link>
-              <Link to="/HELP/FAQ" className="main-nav">
-                SUPPORT & FAQ'S
+                <Link to="/HELP/FAQ" className="main-nav">
+                  SUPPORT & FAQ'S
                 </Link>
               </ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
             {user?.User?.User?.type === "admin" && (
-                 <ReactBootStrap.NavDropdown
-                 title="ADMIN"
-                 id="collasible-nav-dropdown"
-               >
-                 <ReactBootStrap.NavDropdown.Item>
-                   <Link to="/add-tender">Add Tender</Link>
-                 </ReactBootStrap.NavDropdown.Item>
-                 <ReactBootStrap.NavDropdown.Item>
-                   <Link to="/admin">Admin Dashboard</Link>
-                 </ReactBootStrap.NavDropdown.Item>
-               </ReactBootStrap.NavDropdown>
-              )}
+              <ReactBootStrap.NavDropdown
+                title="ADMIN"
+                id="collasible-nav-dropdown"
+              >
+                <ReactBootStrap.NavDropdown.Item>
+                  <Link to="/add-tender">Add Tender</Link>
+                </ReactBootStrap.NavDropdown.Item>
+                <ReactBootStrap.NavDropdown.Item>
+                  <Link to="/admin">Admin Dashboard</Link>
+                </ReactBootStrap.NavDropdown.Item>
+              </ReactBootStrap.NavDropdown>
+            )}
             <ReactBootStrap.Nav>
               <ReactBootStrap.Nav.Link>
                 <Link to="/" className="main-nav">
-                  <b>{user?.User?.User?.businessName &&
-                    "Welcome, " + user?.User?.User?.businessName}</b>
+                  <b>
+                    {user?.User?.User?.businessName &&
+                      "Welcome, " + user?.User?.User?.businessName}
+                  </b>
                 </Link>
               </ReactBootStrap.Nav.Link>
               <ReactBootStrap.Nav.Link>
